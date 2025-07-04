@@ -7,9 +7,6 @@ import {
   Mail,
   Phone,
   MapPin,
-  Linkedin,
-  Twitter,
-  Facebook,
   Send,
   CheckCircle,
   Clock,
@@ -134,24 +131,41 @@ export default function ContactPage() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        company: "",
-        service: "",
-        message: "",
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
       });
-    }, 3000);
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || "Failed to send message");
+      }
+
+      setIsSubmitted(true);
+
+      // Reset form after 3 seconds
+      setTimeout(() => {
+        setIsSubmitted(false);
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          company: "",
+          service: "",
+          message: "",
+        });
+      }, 3000);
+    } catch (error) {
+      console.error("Error sending message:", error);
+      alert("Failed to send message. Please try again or contact us directly.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const services = [
@@ -448,24 +462,18 @@ export default function ContactPage() {
 
                 <div className="space-y-3 text-gray-600">
                   <div className="flex justify-between items-center">
-                    <span className="font-medium">Morning Session</span>
+                    <span className="font-medium">Core Hours</span>
                     <span>{convertedHours.morning}</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="font-medium">Evening Session</span>
+                    <span className="font-medium">After Hours</span>
                     <span>{convertedHours.evening}</span>
-                  </div>
-                  <div className="mt-4 p-3 bg-blue-50 rounded-lg">
-                    <p className="text-sm text-blue-700">
-                      For the fastest response and best service, please reach
-                      out during these hours in your timezone.
-                    </p>
                   </div>
                 </div>
               </div>
 
               {/* Social Media */}
-              <div className="mt-8">
+              {/* <div className="mt-8">
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">
                   Follow Us
                 </h3>
@@ -489,7 +497,7 @@ export default function ContactPage() {
                     <Facebook className="h-5 w-5" />
                   </a>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

@@ -114,7 +114,7 @@ export default function Home() {
               </div>
             </div>
             <h2 className="text-xl md:text-2xl font-semibold text-slate-800 mb-8 tracking-wide uppercase">
-              A decade in technology consulting and development
+              A decade in technology development and consulting
             </h2>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Link
