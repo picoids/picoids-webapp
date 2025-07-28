@@ -9,60 +9,11 @@ import {
   Smartphone,
   Brain,
   Users,
-  Star,
   Globe,
   Settings,
 } from "lucide-react";
 
 export default function Home() {
-  const testimonials = [
-    {
-      name: "Sarah Johnson",
-      role: "CTO, TechCorp Inc.",
-      content:
-        "Picoids transformed our legacy systems and helped us achieve 40% cost savings while improving performance.",
-      rating: 5,
-    },
-    {
-      name: "Michael Chen",
-      role: "CEO, StartupXYZ",
-      content:
-        "Their cloud migration expertise was invaluable. We went from on-premise to fully cloud-native in 6 months.",
-      rating: 5,
-    },
-    {
-      name: "Emily Rodriguez",
-      role: "IT Director, Global Retail",
-      content:
-        "The AI integration project exceeded our expectations. Our customer service efficiency improved by 60%.",
-      rating: 5,
-    },
-  ];
-
-  const insights = [
-    {
-      title: "The Future of Cloud Computing in 2024",
-      excerpt:
-        "Explore the latest trends and technologies shaping the cloud computing landscape.",
-      date: "Dec 15, 2024",
-      category: "Cloud Services",
-    },
-    {
-      title: "Building Scalable Microservices Architecture",
-      excerpt:
-        "Learn best practices for designing and implementing microservices for modern applications.",
-      date: "Dec 10, 2024",
-      category: "Application Development",
-    },
-    {
-      title: "AI-Powered Business Transformation",
-      excerpt:
-        "How artificial intelligence is revolutionizing business processes and decision-making.",
-      date: "Dec 5, 2024",
-      category: "AI Integration",
-    },
-  ];
-
   return (
     <div className="min-h-screen">
       <Header />
@@ -329,49 +280,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Client Testimonials */}
-      <section className="section-padding bg-slate-50">
-        <div className="container-custom">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-              What Our Clients Say
-            </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Trusted by leading companies across industries for their digital
-              transformation needs.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {testimonials.map((testimonial, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 border border-slate-100"
-              >
-                <div className="flex mb-6">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className="h-5 w-5 text-yellow-400 fill-current"
-                    />
-                  ))}
-                </div>
-                <p className="text-slate-700 mb-6 italic leading-relaxed text-lg">
-                  &ldquo;{testimonial.content}&rdquo;
-                </p>
-                <div className="border-t border-slate-100 pt-4">
-                  <p className="font-bold text-slate-900 text-lg">
-                    {testimonial.name}
-                  </p>
-                  <p className="text-slate-600">{testimonial.role}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Latest Insights */}
+      {/*
       <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="text-center mb-20">
@@ -427,6 +337,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      */}
 
       {/* CTA Section */}
       <section className="section-padding bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-700">

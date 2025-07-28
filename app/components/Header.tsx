@@ -115,12 +115,7 @@ const Header = () => {
             <Link href="/about" className={getLinkClasses("/about")}>
               About
             </Link>
-            <Link
-              href="/case-studies"
-              className={getLinkClasses("/case-studies")}
-            >
-              Case Studies
-            </Link>
+            {/* <Link href="/case-studies" className={getLinkClasses("/case-studies")}>Case Studies</Link> */}
             <Link href="/blog" className={getLinkClasses("/blog")}>
               Insights
             </Link>
@@ -165,12 +160,7 @@ const Header = () => {
               <Link href="/about" className={getLinkClasses("/about")}>
                 About
               </Link>
-              <Link
-                href="/case-studies"
-                className={getLinkClasses("/case-studies")}
-              >
-                Case Studies
-              </Link>
+              {/* <Link href="/case-studies" className={getLinkClasses("/case-studies")}>Case Studies</Link> */}
               <Link href="/blog" className={getLinkClasses("/blog")}>
                 Insights
               </Link>
