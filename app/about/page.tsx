@@ -53,27 +53,6 @@ export default function AboutPage() {
     { number: "24/7", label: "On Demand Support" },
   ];
 
-  const team = [
-    {
-      name: "Alex Johnson",
-      role: "CEO & Founder",
-      bio: "Visionary leader with 15+ years in technology consulting and digital transformation.",
-      image: "/team/alex.jpg",
-    },
-    {
-      name: "Sarah Chen",
-      role: "CTO",
-      bio: "Technology expert specializing in cloud architecture and AI integration.",
-      image: "/team/sarah.jpg",
-    },
-    {
-      name: "Michael Rodriguez",
-      role: "Head of Engineering",
-      bio: "Experienced engineering leader focused on scalable application development.",
-      image: "/team/michael.jpg",
-    },
-  ];
-
   return (
     <div className="min-h-screen">
       <Header />
@@ -237,39 +216,6 @@ export default function AboutPage() {
                 solutions remain optimal and continue to drive value.
               </p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Leadership Team */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Leadership Team
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Meet the experienced professionals who drive our success and
-              innovation.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {team.map((member) => (
-              <div
-                key={member.name}
-                className="bg-white rounded-lg p-6 text-center shadow-sm"
-              >
-                <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <Users className="h-12 w-12 text-gray-400" />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-1">
-                  {member.name}
-                </h3>
-                <p className="text-blue-600 font-medium mb-3">{member.role}</p>
-                <p className="text-gray-600">{member.bio}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
