@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Link from "next/link";
@@ -76,15 +77,18 @@ export default function ReliabilityVsAIUsesPage() {
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
             <div className="prose prose-lg max-w-none">
-              <h2>1. Tesla Autopilot: "Level 2" Meets Level-0 Attention</h2>
+              <h2>
+                1. Tesla Autopilot: &ldquo;Level 2&rdquo; Meets Level-0
+                Attention
+              </h2>
               <p>
                 A 2024 NHTSA investigation found 956 crashes in which Autopilot
                 was <em>alleged</em> to be active; more than half of the
                 vehicles struck clearly visible hazards five seconds—or even ten
                 seconds—before impact, yet neither the driver nor the software
                 reacted in time. The agency concluded that Autopilot's
-                driver-engagement controls were "insufficient," encouraging
-                complacency and eroding overall safety.
+                driver-engagement controls were &ldquo;insufficient,&rdquo;
+                encouraging complacency and eroding overall safety.
               </p>
               <p>
                 <strong>Take-away:</strong> AI that degrades human vigilance is
@@ -106,7 +110,7 @@ export default function ReliabilityVsAIUsesPage() {
                 <strong>
                   Blue-green deploys, feature flags and rollback drills
                 </strong>{" "}
-                aren't optional for AI-driven production systems. Small
+                aren&apos;t optional for AI-driven production systems. Small
                 regression tests cannot surface complex, emergent behaviours
                 under live data and latency.
               </p>
