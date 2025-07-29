@@ -5,9 +5,9 @@ import { ArrowRight, CheckCircle, Users, Clock, Award } from "lucide-react";
 import { notFound } from "next/navigation";
 
 interface ServicePageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 const services = {
@@ -567,8 +567,9 @@ const services = {
   },
 };
 
-export default function ServicePage({ params }: ServicePageProps) {
-  const service = services[params.slug as keyof typeof services];
+export default async function ServicePage({ params }: ServicePageProps) {
+  const { slug } = await params;
+  const service = services[slug as keyof typeof services];
 
   if (!service) {
     notFound();

@@ -47,10 +47,10 @@ export default function AboutPage() {
   ];
 
   const stats = [
-    { number: "150+", label: "Projects Completed" },
-    { number: "50+", label: "Happy Clients" },
+    { number: "10+", label: "Years Combined Experience" },
+    { number: "100%", label: "Client Satisfaction" },
     { number: "99.9%", label: "Uptime Guarantee" },
-    { number: "24/7", label: "Support Available" },
+    { number: "24/7", label: "On Demand Support" },
   ];
 
   const team = [
@@ -103,20 +103,23 @@ export default function AboutPage() {
                 Our Story
               </h2>
               <p className="text-lg text-gray-600 mb-6">
-                Founded in 2020, Picoids Technology and Consulting Pvt. Ltd.
-                emerged from a vision to bridge the gap between traditional
-                business practices and cutting-edge technology solutions.
+                Incorporated in 2025, Picoids Technology and Consulting Pvt.
+                Ltd. was born from a vision to bridge the gap between
+                traditional business practices and cutting-edge technology
+                solutions.
               </p>
               <p className="text-lg text-gray-600 mb-6">
-                We started as a small team of passionate technologists who
-                believed that every business, regardless of size, deserves
-                access to world-class technology solutions that drive growth and
-                innovation.
+                As a fresh, dynamic startup less than a year old, we bring
+                together passionate technologists who believe that every
+                business, regardless of size, deserves access to world-class
+                technology solutions that drive growth and innovation.
               </p>
               <p className="text-lg text-gray-600">
-                Today, we&apos;ve grown into a trusted partner for enterprises
-                and startups alike, delivering transformative solutions that
-                help our clients stay ahead in an increasingly digital world.
+                Though we&apos;re just beginning our journey, our team brings
+                years of combined experience and expertise, ready to become a
+                trusted partner for enterprises and startups alike, delivering
+                transformative solutions that help our clients stay ahead in an
+                increasingly digital world.
               </p>
             </div>
             <div className="bg-gray-100 rounded-lg p-8">

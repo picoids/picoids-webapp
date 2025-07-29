@@ -53,11 +53,11 @@ export default function PrivacyPage() {
                   Introduction
                 </h2>
                 <p className="text-gray-600 mb-4">
-                  Picoids Technology and Consulting Pvt. Ltd. ("we," "our," or
-                  "us") is committed to protecting your privacy. This Privacy
-                  Policy explains how we collect, use, disclose, and safeguard
-                  your information when you visit our website or use our
-                  services.
+                  Picoids Technology and Consulting Pvt. Ltd. (&ldquo;we,&rdquo;
+                  &ldquo;our,&rdquo; or &ldquo;us&rdquo;) is committed to
+                  protecting your privacy. This Privacy Policy explains how we
+                  collect, use, disclose, and safeguard your information when
+                  you visit our website or use our services.
                 </p>
                 <p className="text-gray-600">
                   By using our website and services, you consent to the data
@@ -199,7 +199,7 @@ export default function PrivacyPage() {
 
               <div className="mb-12">
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                  Children's Privacy
+                  Children&apos;s Privacy
                 </h2>
                 <p className="text-gray-600 mb-4">
                   Our services are not intended for children under the age of
@@ -216,7 +216,7 @@ export default function PrivacyPage() {
                 <p className="text-gray-600 mb-4">
                   We may update this Privacy Policy from time to time. We will
                   notify you of any changes by posting the new Privacy Policy on
-                  this page and updating the "Last Updated" date.
+                  this page and updating the &ldquo;Last Updated&rdquo; date.
                 </p>
               </div>
 

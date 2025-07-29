@@ -1,7 +1,7 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Link from "next/link";
-import { ArrowRight, Calendar, User, Search, Filter } from "lucide-react";
+import { ArrowRight, Calendar, User } from "lucide-react";
 
 export const metadata = {
   title: "Blog & Insights - Picoids Technology and Consulting",
@@ -12,23 +12,34 @@ export const metadata = {
 export default function BlogPage() {
   const articles = [
     {
+      id: "reliability-vs-ai-uses",
+      title: "Reliability vs AI Uses: When Innovation Out-Runs Trust",
+      excerpt:
+        "Artificial-intelligence systems promise speed, scale and insight—but when we shortcut the engineering discipline that underpins reliability, those same systems can break in spectacular ways. Learn from real-world cautionary tales.",
+      author: "Picoids Team",
+      date: "Jun 20, 2025",
+      category: "AI Integration",
+      readTime: "15 min read",
+      featured: true,
+    },
+    {
       id: "cloud-computing-2024",
       title: "The Future of Cloud Computing in 2024: Trends and Predictions",
       excerpt:
         "Explore the latest trends and technologies shaping the cloud computing landscape, from edge computing to serverless architectures.",
-      author: "Sarah Chen",
-      date: "Dec 15, 2024",
+      author: "Picoids Team",
+      date: "Jun 15, 2025",
       category: "Cloud Services",
       readTime: "8 min read",
-      featured: true,
+      featured: false,
     },
     {
       id: "microservices-architecture",
       title: "Building Scalable Microservices Architecture: Best Practices",
       excerpt:
         "Learn best practices for designing and implementing microservices for modern applications, including service discovery and data consistency.",
-      author: "Michael Rodriguez",
-      date: "Dec 10, 2024",
+      author: "Picoids Team",
+      date: "Jun 12, 2025",
       category: "Application Development",
       readTime: "12 min read",
       featured: false,
@@ -38,8 +49,8 @@ export default function BlogPage() {
       title: "AI-Powered Business Transformation: A Complete Guide",
       excerpt:
         "How artificial intelligence is revolutionizing business processes and decision-making across industries.",
-      author: "Alex Johnson",
-      date: "Dec 5, 2024",
+      author: "Picoids Team",
+      date: "Jun 10, 2025",
       category: "AI Integration",
       readTime: "15 min read",
       featured: false,
@@ -49,8 +60,8 @@ export default function BlogPage() {
       title: "Essential Cybersecurity Best Practices for 2024",
       excerpt:
         "Protect your business with these essential cybersecurity practices and stay ahead of evolving threats.",
-      author: "Emily Rodriguez",
-      date: "Nov 28, 2024",
+      author: "Picoids Team",
+      date: "Jun 8, 2025",
       category: "Technology Consulting",
       readTime: "10 min read",
       featured: false,
@@ -60,8 +71,8 @@ export default function BlogPage() {
       title: "Mobile App Development Trends That Will Dominate 2024",
       excerpt:
         "Discover the latest trends in mobile app development, from cross-platform frameworks to emerging technologies.",
-      author: "David Kim",
-      date: "Nov 20, 2024",
+      author: "Picoids Team",
+      date: "Jun 7, 2025",
       category: "Going Mobile",
       readTime: "9 min read",
       featured: false,
@@ -71,8 +82,8 @@ export default function BlogPage() {
       title: "DevOps Automation: Streamlining Your Development Pipeline",
       excerpt:
         "Learn how to implement effective DevOps automation to improve deployment speed and reliability.",
-      author: "Lisa Wang",
-      date: "Nov 15, 2024",
+      author: "Picoids Team",
+      date: "Jun 5, 2025",
       category: "App Modernization",
       readTime: "11 min read",
       featured: false,
@@ -82,8 +93,8 @@ export default function BlogPage() {
       title: "Data Analytics Strategies for Business Growth",
       excerpt:
         "Unlock the power of data analytics to drive business growth and make informed decisions.",
-      author: "Robert Chen",
-      date: "Nov 10, 2024",
+      author: "Picoids Team",
+      date: "Jun 3, 2025",
       category: "Technology Consulting",
       readTime: "13 min read",
       featured: false,
@@ -93,22 +104,12 @@ export default function BlogPage() {
       title: "Legacy System Modernization: When and How to Start",
       excerpt:
         "A comprehensive guide to modernizing legacy systems and transforming your technology infrastructure.",
-      author: "Jennifer Lee",
-      date: "Nov 5, 2024",
+      author: "Picoids Team",
+      date: "Jun 1, 2025",
       category: "App Modernization",
       readTime: "14 min read",
       featured: false,
     },
-  ];
-
-  const categories = [
-    "All",
-    "Cloud Services",
-    "Application Development",
-    "AI Integration",
-    "Technology Consulting",
-    "Going Mobile",
-    "App Modernization",
   ];
 
   return (
@@ -179,32 +180,6 @@ export default function BlogPage() {
                   </div>
                 </div>
               ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Search and Filter */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="flex flex-col md:flex-row gap-4 mb-8">
-            <div className="flex-1 relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
-              <input
-                type="text"
-                placeholder="Search articles..."
-                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              />
-            </div>
-            <div className="flex items-center space-x-2">
-              <Filter className="h-5 w-5 text-gray-500" />
-              <select className="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                {categories.map((category) => (
-                  <option key={category} value={category}>
-                    {category}
-                  </option>
-                ))}
-              </select>
-            </div>
           </div>
         </div>
       </section>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import {
@@ -62,15 +62,14 @@ export default function ContactPage() {
   };
 
   // Convert business hours range
-  const convertBusinessHours = (
-    startTime: string,
-    endTime: string,
-    targetTimezone: string
-  ) => {
-    const startConverted = convertTime(startTime, targetTimezone);
-    const endConverted = convertTime(endTime, targetTimezone);
-    return `${startConverted} - ${endConverted}`;
-  };
+  const convertBusinessHours = useCallback(
+    (startTime: string, endTime: string, targetTimezone: string) => {
+      const startConverted = convertTime(startTime, targetTimezone);
+      const endConverted = convertTime(endTime, targetTimezone);
+      return `${startConverted} - ${endConverted}`;
+    },
+    []
+  );
 
   // Detect user's timezone on component mount
   useEffect(() => {
@@ -93,7 +92,7 @@ export default function ContactPage() {
       morning: morningConverted,
       evening: eveningConverted,
     });
-  }, []);
+  }, [convertBusinessHours]);
 
   // Update converted hours when timezone changes
   useEffect(() => {
@@ -114,7 +113,7 @@ export default function ContactPage() {
         evening: eveningConverted,
       });
     }
-  }, [selectedTimezone]);
+  }, [selectedTimezone, convertBusinessHours]);
 
   const handleChange = (
     e: React.ChangeEvent<
