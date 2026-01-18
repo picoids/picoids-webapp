@@ -142,6 +142,7 @@ function ContactForm() {
     try {
       // Execute reCAPTCHA v3
       const token = await executeRecaptcha("contact_form");
+      console.log("reCAPTCHA token generated:", token ? "✓ Token received" : "✗ No token");
 
       const response = await fetch("/api/contact", {
         method: "POST",
@@ -525,8 +526,10 @@ function ContactForm() {
 export default function ContactPage() {
   const reCaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || "";
 
+  // If no site key, render form without reCAPTCHA protection
   if (!reCaptchaSiteKey) {
     console.warn("reCAPTCHA site key is not configured. CAPTCHA protection is disabled.");
+    return <ContactForm />;
   }
 
   return (
