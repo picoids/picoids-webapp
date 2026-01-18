@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import { GoogleReCaptchaProvider, useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import {
@@ -13,7 +14,7 @@ import {
   Globe,
 } from "lucide-react";
 
-export default function ContactPage() {
+function ContactForm() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -29,6 +30,7 @@ export default function ContactPage() {
     morning: "",
     evening: "",
   });
+  const { executeRecaptcha } = useGoogleReCaptcha();
 
   // Convert IST time to user's timezone
   const convertTime = (istTime: string, targetTimezone: string) => {
@@ -128,15 +130,28 @@ export default function ContactPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Verify reCAPTCHA is loaded
+    if (!executeRecaptcha) {
+      alert("reCAPTCHA is not loaded. Please refresh the page and try again.");
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
+      // Execute reCAPTCHA v3
+      const token = await executeRecaptcha("contact_form");
+
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          recaptchaToken: token,
+        }),
       });
 
       const result = await response.json();
@@ -504,5 +519,27 @@ export default function ContactPage() {
 
       <Footer />
     </div>
+  );
+}
+
+export default function ContactPage() {
+  const reCaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || "";
+
+  if (!reCaptchaSiteKey) {
+    console.warn("reCAPTCHA site key is not configured. CAPTCHA protection is disabled.");
+  }
+
+  return (
+    <GoogleReCaptchaProvider
+      reCaptchaKey={reCaptchaSiteKey}
+      scriptProps={{
+        async: false,
+        defer: false,
+        appendTo: "head",
+        nonce: undefined,
+      }}
+    >
+      <ContactForm />
+    </GoogleReCaptchaProvider>
   );
 }

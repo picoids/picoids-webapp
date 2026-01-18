@@ -12,6 +12,39 @@ const escapeHtml = (text: string) => {
   return text.replace(/[&<>"']/g, (m) => map[m]);
 };
 
+// Verify reCAPTCHA token with Google's API
+async function verifyRecaptcha(token: string): Promise<boolean> {
+  const secretKey = process.env.RECAPTCHA_SECRET_KEY;
+
+  if (!secretKey) {
+    console.warn("reCAPTCHA secret key is not configured. Skipping verification.");
+    return true; // Allow requests if reCAPTCHA is not configured (for development)
+  }
+
+  try {
+    const response = await fetch(
+      "https://www.google.com/recaptcha/api/siteverify",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: `secret=${secretKey}&response=${token}`,
+      }
+    );
+
+    const data = await response.json();
+    
+    // Verify response
+    // Score threshold: 0.5 (adjustable, 0.0 = bot, 1.0 = human)
+    // For reCAPTCHA v3, we check the score. For v2, we check success.
+    return data.success === true && (data.score === undefined || data.score >= 0.5);
+  } catch (error) {
+    console.error("reCAPTCHA verification error:", error);
+    return false; // Fail securely - reject if verification fails
+  }
+}
+
 // Get access token from Microsoft Graph API using client credentials flow
 async function getAccessToken(): Promise<string> {
   const tenantId = process.env.MICROSOFT_TENANT_ID;
@@ -143,7 +176,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const { name, email, phone, company, service, message } =
+    const { name, email, phone, company, service, message, recaptchaToken } =
       await request.json();
 
     // Validate required fields
@@ -152,6 +185,24 @@ export async function POST(request: NextRequest) {
         { error: "Name, email, and message are required" },
         { status: 400 }
       );
+    }
+
+    // Verify reCAPTCHA token
+    if (process.env.RECAPTCHA_SECRET_KEY) {
+      if (!recaptchaToken) {
+        return NextResponse.json(
+          { error: "reCAPTCHA verification is required" },
+          { status: 400 }
+        );
+      }
+
+      const isValidRecaptcha = await verifyRecaptcha(recaptchaToken);
+      if (!isValidRecaptcha) {
+        return NextResponse.json(
+          { error: "reCAPTCHA verification failed. Please try again." },
+          { status: 400 }
+        );
+      }
     }
 
     // Validate email format
