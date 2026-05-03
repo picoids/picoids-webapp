@@ -620,11 +620,11 @@ export async function generateMetadata({
   const service = services[slug as keyof typeof services];
   if (!service) {
     return {
-      title: "Service | Picoids Technology and Consulting",
+      title: "Service",
     };
   }
   return {
-    title: `${service.title} | Picoids Technology and Consulting`,
+    title: service.title,
     description: service.description,
     openGraph: {
       title: service.headline,

@@ -16,7 +16,10 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Picoids Technology and Consulting | Your Digital Transformation Partner",
+  title: {
+    absolute:
+      "Picoids Technology and Consulting | Your Digital Transformation Partner",
+  },
   description:
     "Fresh technology consulting for cloud, applications, AI integration, and digital transformation. Incorporated in 2025—we combine proven delivery with modern methodologies.",
   openGraph: {

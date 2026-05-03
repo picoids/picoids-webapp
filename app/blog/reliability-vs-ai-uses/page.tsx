@@ -1,46 +1,62 @@
 /* eslint-disable react/no-unescaped-entities */
+import type { Metadata } from "next";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import BlogPostingJsonLd from "../../components/BlogPostingJsonLd";
 import Link from "next/link";
 import { ArrowLeft, Calendar, User, Clock, Share2 } from "lucide-react";
 
-export const metadata = {
-  title:
-    "Reliability vs AI Uses: When Innovation Out-Runs Trust - Picoids Technology and Consulting",
-  description:
-    "Learn from real-world cautionary tales about AI reliability and how to marry AI ambition with rock-solid dependability.",
+const ARTICLE_PATH = "/blog/reliability-vs-ai-uses";
+const HEADLINE =
+  "Reliability vs AI Uses: When Innovation Out-Runs Trust";
+const DESCRIPTION =
+  "Learn from real-world cautionary tales about AI reliability and how to marry AI ambition with rock-solid dependability.";
+const PUBLISHED = "2026-01-28T09:00:00+05:30";
+
+export const metadata: Metadata = {
+  title: HEADLINE,
+  description: DESCRIPTION,
+  openGraph: {
+    type: "article",
+    publishedTime: PUBLISHED,
+    modifiedTime: PUBLISHED,
+    authors: ["Picoids Team"],
+    title: HEADLINE,
+    description: DESCRIPTION,
+  },
 };
 
 export default function ReliabilityVsAIUsesPage() {
   return (
     <div className="min-h-screen">
+      <BlogPostingJsonLd
+        headline={HEADLINE}
+        description={DESCRIPTION}
+        datePublished={PUBLISHED}
+        authorName="Picoids Team"
+        path={ARTICLE_PATH}
+      />
       <Header />
 
-      {/* Article Header */}
-      <section className="theme-page-hero">
+      <header className="theme-page-hero">
         <div className="container-custom">
-          <div className="max-w-3xl">
-            <Link
-              href="/blog"
-              className="inline-flex items-center text-sm font-medium text-theme-muted hover:text-theme-fg mb-8"
-            >
+          <div className="theme-page-intro">
+            <Link href="/blog" className="theme-link-back-hero">
               <ArrowLeft className="h-4 w-4 mr-2" />
               Back to insights
             </Link>
 
-            <div className="border border-theme-border rounded-xl bg-theme-surface p-8 shadow-sm">
+            <div className="theme-article-hero-card">
               <div className="flex items-center flex-wrap gap-3 mb-6">
-                <span className="border border-theme-border bg-theme-surface-muted text-theme-icon-strong px-2.5 py-1 rounded-md text-xs font-medium uppercase tracking-wide">
-                  AI integration
-                </span>
+                <span className="theme-chip-accent">AI integration</span>
                 <span className="text-theme-subtle text-sm">15 min read</span>
               </div>
 
-              <h1 className="text-3xl md:text-4xl font-semibold text-theme-fg mb-6 tracking-tight leading-tight">
+              <h1 className="theme-article-title">
                 Reliability vs AI Uses: When Innovation Out-Runs Trust
               </h1>
 
-              <p className="text-lg text-theme-muted mb-8 leading-relaxed">
+              <p className="theme-article-lede">
                 Artificial-intelligence systems promise speed, scale and
                 insight—but when we shortcut the engineering discipline that
                 underpins <strong>reliability</strong>, those same systems can
@@ -49,23 +65,20 @@ export default function ReliabilityVsAIUsesPage() {
                 marrying AI ambition with rock-solid dependability.
               </p>
 
-              <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-theme-muted">
+              <div className="theme-article-meta-row">
                 <div className="flex items-center">
                   <User className="h-4 w-4 mr-2 shrink-0" />
                   Picoids Team
                 </div>
                 <div className="flex items-center">
                   <Calendar className="h-4 w-4 mr-2 shrink-0" />
-                  Jun 20, 2025
+                  Jan 28, 2026
                 </div>
                 <div className="flex items-center">
                   <Clock className="h-4 w-4 mr-2 shrink-0" />
                   15 min read
                 </div>
-                <button
-                  type="button"
-                  className="flex items-center text-theme-fg hover:text-theme-icon-strong font-medium"
-                >
+                <button type="button" className="theme-share-trigger">
                   <Share2 className="h-4 w-4 mr-2" />
                   Share
                 </button>
@@ -73,13 +86,12 @@ export default function ReliabilityVsAIUsesPage() {
             </div>
           </div>
         </div>
-      </section>
+      </header>
 
-      {/* Article Content */}
       <section className="section-padding bg-theme-surface">
         <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <div className="prose prose-lg max-w-none">
+          <article className="theme-article-body-shell">
+            <div className="theme-article-prose">
               <h2>
                 1. Tesla Autopilot: &ldquo;Level 2&rdquo; Meets Level-0
                 Attention
@@ -327,52 +339,47 @@ export default function ReliabilityVsAIUsesPage() {
                 </ul>
               </div>
             </div>
-          </div>
+          </article>
         </div>
       </section>
 
-      {/* Related Articles */}
       <section className="theme-page-section-muted">
         <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl font-semibold text-theme-fg mb-8 tracking-tight">
-              Related articles
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="bg-theme-surface border border-theme-border rounded-xl p-6 shadow-sm">
-                <span className="border border-theme-border bg-theme-surface-muted text-theme-icon-strong px-2.5 py-1 rounded-md text-xs font-medium mb-4 inline-block">
-                  AI integration
-                </span>
-                <h3 className="text-lg font-semibold text-theme-fg mb-3 tracking-tight">
+          <div className="theme-article-body-shell">
+            <h2 className="theme-section-heading">Related articles</h2>
+            <div className="theme-related-grid">
+              <div className="theme-related-card">
+                <span className="theme-chip mb-4 inline-block">AI integration</span>
+                <h3 className="theme-related-heading">
                   AI-Powered Business Transformation: A Complete Guide
                 </h3>
-                <p className="text-theme-muted mb-4 text-sm leading-relaxed">
+                <p className="theme-related-lede">
                   How artificial intelligence is revolutionizing business
                   processes and decision-making across industries.
                 </p>
                 <Link
                   href="/blog/ai-business-transformation"
-                  className="text-sm font-medium text-theme-fg hover:text-theme-icon-strong inline-flex items-center"
+                  className="theme-related-more"
                 >
                   Read article
                   <ArrowLeft className="ml-1 h-4 w-4 rotate-180" />
                 </Link>
               </div>
 
-              <div className="bg-theme-surface border border-theme-border rounded-xl p-6 shadow-sm">
-                <span className="border border-theme-border bg-theme-surface-muted text-theme-icon-strong px-2.5 py-1 rounded-md text-xs font-medium mb-4 inline-block">
+              <div className="theme-related-card">
+                <span className="theme-chip mb-4 inline-block">
                   Technology consulting
                 </span>
-                <h3 className="text-lg font-semibold text-theme-fg mb-3 tracking-tight">
-                  Essential Cybersecurity Best Practices for 2024
+                <h3 className="theme-related-heading">
+                  Essential Cybersecurity Best Practices for 2026
                 </h3>
-                <p className="text-theme-muted mb-4 text-sm leading-relaxed">
+                <p className="theme-related-lede">
                   Protect your business with these essential cybersecurity
                   practices and stay ahead of evolving threats.
                 </p>
                 <Link
                   href="/blog/cybersecurity-best-practices"
-                  className="text-sm font-medium text-theme-fg hover:text-theme-icon-strong inline-flex items-center"
+                  className="theme-related-more"
                 >
                   Read article
                   <ArrowLeft className="ml-1 h-4 w-4 rotate-180" />

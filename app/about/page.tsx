@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-  title: "About Us - Picoids Technology and Consulting",
+  title: "About Us",
   description:
     "Learn about our mission, values, and approach to delivering innovative technology solutions for modern businesses.",
 };

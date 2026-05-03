@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Us | Picoids Technology and Consulting",
+  title: "Contact Us",
   description:
     "Get in touch with Picoids for technology consulting, cloud services, application development, and digital transformation. We reply within one business day.",
   openGraph: {

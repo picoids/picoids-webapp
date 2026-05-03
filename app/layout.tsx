@@ -10,7 +10,11 @@ const siteUrl = getSiteUrl();
 
 export const metadata: Metadata = {
   metadataBase: new URL(`${siteUrl}/`),
-  title: "Picoids Technology and Consulting Pvt. Ltd. - Technology Solutions",
+  title: {
+    default:
+      "Picoids Technology and Consulting Pvt. Ltd. — Technology Solutions",
+    template: "%s | Picoids Technology and Consulting",
+  },
   description:
     "Leading technology consulting firm offering cloud services, application development, AI integration, and digital transformation solutions for modern businesses.",
   keywords:
@@ -23,20 +27,11 @@ export const metadata: Metadata = {
     url: siteUrl,
     siteName: "Picoids Technology and Consulting",
     locale: "en_IN",
-    images: [
-      {
-        url: "/picoids-logo-with-name.svg",
-        width: 1200,
-        height: 630,
-        alt: "Picoids Technology and Consulting",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Picoids Technology and Consulting Pvt. Ltd.",
     description: "Technology solutions for modern businesses",
-    images: ["/picoids-logo-with-name.svg"],
   },
   icons: {
     icon: "/favicon.svg",

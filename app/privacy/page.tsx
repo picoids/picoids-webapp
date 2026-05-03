@@ -5,7 +5,7 @@ import { ArrowLeft, Shield, Eye, Lock, Users } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Picoids Technology and Consulting",
+  title: "Privacy Policy",
   description:
     "How Picoids collects, uses, and protects personal information when you use our website and services.",
   robots: { index: true, follow: true },

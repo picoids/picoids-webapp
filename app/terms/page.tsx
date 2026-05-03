@@ -5,7 +5,7 @@ import { ArrowLeft, FileText, Calendar, Scale, Users } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | Picoids Technology and Consulting",
+  title: "Terms of Service",
   description:
     "Terms governing use of the Picoids website and services. Please read before engaging our consulting offerings.",
   robots: { index: true, follow: true },

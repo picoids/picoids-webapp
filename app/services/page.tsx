@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-  title: "Our Services - Picoids Technology and Consulting",
+  title: "Our Services",
   description:
     "Comprehensive technology services including cloud solutions, application development, AI integration, and digital transformation.",
 };

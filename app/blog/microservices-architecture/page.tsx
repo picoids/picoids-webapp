@@ -1,67 +1,80 @@
+import type { Metadata } from "next";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import BlogPostingJsonLd from "../../components/BlogPostingJsonLd";
 import Link from "next/link";
 import { ArrowLeft, Calendar, User, Clock, Share2 } from "lucide-react";
 
-export const metadata = {
-  title:
-    "Building Scalable Microservices Architecture: Best Practices - Picoids Technology and Consulting",
-  description:
-    "Learn best practices for designing and implementing microservices for modern applications, including service discovery and data consistency.",
+const ARTICLE_PATH = "/blog/microservices-architecture";
+const HEADLINE =
+  "Building Scalable Microservices Architecture: Best Practices";
+const DESCRIPTION =
+  "Learn best practices for designing and implementing microservices for modern applications, including service discovery and data consistency.";
+const PUBLISHED = "2026-01-22T09:00:00+05:30";
+
+export const metadata: Metadata = {
+  title: HEADLINE,
+  description: DESCRIPTION,
+  openGraph: {
+    type: "article",
+    publishedTime: PUBLISHED,
+    modifiedTime: PUBLISHED,
+    authors: ["Picoids Team"],
+    title: HEADLINE,
+    description: DESCRIPTION,
+  },
 };
 
 export default function MicroservicesArchitecturePage() {
   return (
     <div className="min-h-screen">
+      <BlogPostingJsonLd
+        headline={HEADLINE}
+        description={DESCRIPTION}
+        datePublished={PUBLISHED}
+        authorName="Picoids Team"
+        path={ARTICLE_PATH}
+      />
       <Header />
 
-      {/* Article Header */}
-      <section className="theme-page-hero">
+      <header className="theme-page-hero">
         <div className="container-custom">
-          <div className="max-w-3xl">
-            <Link
-              href="/blog"
-              className="inline-flex items-center text-sm font-medium text-theme-muted hover:text-theme-fg mb-8"
-            >
+          <div className="theme-page-intro">
+            <Link href="/blog" className="theme-link-back-hero">
               <ArrowLeft className="h-4 w-4 mr-2" />
               Back to insights
             </Link>
 
-            <div className="border border-theme-border rounded-xl bg-theme-surface p-8 shadow-sm">
+            <div className="theme-article-hero-card">
               <div className="flex items-center flex-wrap gap-3 mb-6">
-                <span className="border border-theme-border bg-theme-surface-muted text-theme-icon-strong px-2.5 py-1 rounded-md text-xs font-medium uppercase tracking-wide">
-                  Application development
-                </span>
+                <span className="theme-chip-accent">Application development</span>
                 <span className="text-theme-subtle text-sm">12 min read</span>
               </div>
 
-              <h1 className="text-3xl md:text-4xl font-semibold text-theme-fg mb-6 tracking-tight leading-tight">
+              <h1 className="theme-article-title">
                 Building Scalable Microservices Architecture: Best Practices
               </h1>
 
-              <p className="text-lg text-theme-muted mb-8 leading-relaxed">
+              <p className="theme-article-lede">
                 Learn best practices for designing and implementing
                 microservices for modern applications, including service
                 discovery and data consistency.
               </p>
 
-              <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-theme-muted">
+              <div className="theme-article-meta-row">
                 <div className="flex items-center">
                   <User className="h-4 w-4 mr-2 shrink-0" />
                   Picoids Team
                 </div>
                 <div className="flex items-center">
                   <Calendar className="h-4 w-4 mr-2 shrink-0" />
-                  Jun 12, 2025
+                  Jan 22, 2026
                 </div>
                 <div className="flex items-center">
                   <Clock className="h-4 w-4 mr-2 shrink-0" />
                   12 min read
                 </div>
-                <button
-                  type="button"
-                  className="flex items-center text-theme-fg hover:text-theme-icon-strong font-medium"
-                >
+                <button type="button" className="theme-share-trigger">
                   <Share2 className="h-4 w-4 mr-2" />
                   Share
                 </button>
@@ -69,13 +82,12 @@ export default function MicroservicesArchitecturePage() {
             </div>
           </div>
         </div>
-      </section>
+      </header>
 
-      {/* Article Content */}
       <section className="section-padding bg-theme-surface">
         <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <div className="prose prose-lg max-w-none">
+          <article className="theme-article-body-shell">
+            <div className="theme-article-prose">
               <h2>Introduction</h2>
               <p>
                 Microservices architecture has become the go-to approach for
@@ -287,52 +299,47 @@ export default function MicroservicesArchitecturePage() {
                 </ul>
               </div>
             </div>
-          </div>
+          </article>
         </div>
       </section>
 
-      {/* Related Articles */}
       <section className="theme-page-section-muted">
         <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl font-semibold text-theme-fg mb-8 tracking-tight">
-              Related articles
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="bg-theme-surface border border-theme-border rounded-xl p-6 shadow-sm">
-                <span className="border border-theme-border bg-theme-surface-muted text-theme-icon-strong px-2.5 py-1 rounded-md text-xs font-medium mb-4 inline-block">
-                  Cloud services
-                </span>
-                <h3 className="text-lg font-semibold text-theme-fg mb-3 tracking-tight">
-                  The Future of Cloud Computing in 2024: Trends and Predictions
+          <div className="theme-article-body-shell">
+            <h2 className="theme-section-heading">Related articles</h2>
+            <div className="theme-related-grid">
+              <div className="theme-related-card">
+                <span className="theme-chip mb-4 inline-block">Cloud services</span>
+                <h3 className="theme-related-heading">
+                  The Future of Cloud Computing in 2026: Trends and Predictions
                 </h3>
-                <p className="text-theme-muted mb-4 text-sm leading-relaxed">
+                <p className="theme-related-lede">
                   Explore the latest trends and technologies shaping the cloud
                   computing landscape.
                 </p>
                 <Link
                   href="/blog/cloud-computing-2024"
-                  className="text-sm font-medium text-theme-fg hover:text-theme-icon-strong inline-flex items-center"
+                  className="theme-related-more"
                 >
                   Read article
                   <ArrowLeft className="ml-1 h-4 w-4 rotate-180" />
                 </Link>
               </div>
 
-              <div className="bg-theme-surface border border-theme-border rounded-xl p-6 shadow-sm">
-                <span className="border border-theme-border bg-theme-surface-muted text-theme-icon-strong px-2.5 py-1 rounded-md text-xs font-medium mb-4 inline-block">
+              <div className="theme-related-card">
+                <span className="theme-chip mb-4 inline-block">
                   App modernization
                 </span>
-                <h3 className="text-lg font-semibold text-theme-fg mb-3 tracking-tight">
+                <h3 className="theme-related-heading">
                   Legacy System Modernization: When and How to Start
                 </h3>
-                <p className="text-theme-muted mb-4 text-sm leading-relaxed">
+                <p className="theme-related-lede">
                   A comprehensive guide to modernizing legacy systems and
                   transforming your technology infrastructure.
                 </p>
                 <Link
                   href="/blog/legacy-system-modernization"
-                  className="text-sm font-medium text-theme-fg hover:text-theme-icon-strong inline-flex items-center"
+                  className="theme-related-more"
                 >
                   Read article
                   <ArrowLeft className="ml-1 h-4 w-4 rotate-180" />

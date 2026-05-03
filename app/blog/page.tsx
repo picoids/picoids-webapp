@@ -1,129 +1,51 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import BlogPagination from "../components/BlogPagination";
 import Link from "next/link";
 import { ArrowRight, Calendar, User } from "lucide-react";
+import {
+  blogArticles,
+  BLOG_POSTS_PER_PAGE,
+} from "@/lib/blog-articles";
 
 export const metadata = {
-  title: "Blog & Insights - Picoids Technology and Consulting",
+  title: "Blog & Insights",
   description:
     "Stay updated with the latest technology trends, insights, and best practices from our expert team.",
 };
 
-export default function BlogPage() {
-  const articles = [
-    {
-      id: "reliability-vs-ai-uses",
-      title: "Reliability vs AI Uses: When Innovation Out-Runs Trust",
-      excerpt:
-        "Artificial-intelligence systems promise speed, scale and insight—but when we shortcut the engineering discipline that underpins reliability, those same systems can break in spectacular ways. Learn from real-world cautionary tales.",
-      author: "Picoids Team",
-      date: "Jun 20, 2025",
-      category: "AI Integration",
-      readTime: "15 min read",
-      featured: true,
-    },
-    {
-      id: "cloud-computing-2024",
-      title: "The Future of Cloud Computing: Trends and Predictions",
-      excerpt:
-        "Explore the latest trends and technologies shaping the cloud computing landscape, from edge computing to serverless architectures.",
-      author: "Picoids Team",
-      date: "Jun 15, 2025",
-      category: "Cloud Services",
-      readTime: "8 min read",
-      featured: false,
-    },
-    {
-      id: "microservices-architecture",
-      title: "Building Scalable Microservices Architecture: Best Practices",
-      excerpt:
-        "Learn best practices for designing and implementing microservices for modern applications, including service discovery and data consistency.",
-      author: "Picoids Team",
-      date: "Jun 12, 2025",
-      category: "Application Development",
-      readTime: "12 min read",
-      featured: false,
-    },
-    {
-      id: "ai-business-transformation",
-      title: "AI-Powered Business Transformation: A Complete Guide",
-      excerpt:
-        "How artificial intelligence is revolutionizing business processes and decision-making across industries.",
-      author: "Picoids Team",
-      date: "Jun 10, 2025",
-      category: "AI Integration",
-      readTime: "15 min read",
-      featured: false,
-    },
-    {
-      id: "cybersecurity-best-practices",
-      title: "Essential Cybersecurity Best Practices for 2024",
-      excerpt:
-        "Protect your business with these essential cybersecurity practices and stay ahead of evolving threats.",
-      author: "Picoids Team",
-      date: "Jun 8, 2025",
-      category: "Technology Consulting",
-      readTime: "10 min read",
-      featured: false,
-    },
-    {
-      id: "mobile-app-development-trends",
-      title: "Mobile App Development Trends That Will Dominate 2024",
-      excerpt:
-        "Discover the latest trends in mobile app development, from cross-platform frameworks to emerging technologies.",
-      author: "Picoids Team",
-      date: "Jun 7, 2025",
-      category: "Going Mobile",
-      readTime: "9 min read",
-      featured: false,
-    },
-    {
-      id: "devops-automation",
-      title: "DevOps Automation: Streamlining Your Development Pipeline",
-      excerpt:
-        "Learn how to implement effective DevOps automation to improve deployment speed and reliability.",
-      author: "Picoids Team",
-      date: "Jun 5, 2025",
-      category: "App Modernization",
-      readTime: "11 min read",
-      featured: false,
-    },
-    {
-      id: "data-analytics-strategies",
-      title: "Data Analytics Strategies for Business Growth",
-      excerpt:
-        "Unlock the power of data analytics to drive business growth and make informed decisions.",
-      author: "Picoids Team",
-      date: "Jun 3, 2025",
-      category: "Technology Consulting",
-      readTime: "13 min read",
-      featured: false,
-    },
-    {
-      id: "legacy-system-modernization",
-      title: "Legacy System Modernization: When and How to Start",
-      excerpt:
-        "A comprehensive guide to modernizing legacy systems and transforming your technology infrastructure.",
-      author: "Picoids Team",
-      date: "Jun 1, 2025",
-      category: "App Modernization",
-      readTime: "14 min read",
-      featured: false,
-    },
-  ];
+type BlogPageProps = {
+  searchParams: Promise<{ page?: string }>;
+};
+
+function pageHref(page: number): string {
+  return page <= 1 ? "/blog" : `/blog?page=${page}`;
+}
+
+export default async function BlogPage({ searchParams }: BlogPageProps) {
+  const { page: raw } = await searchParams;
+  const parsed = parseInt(raw ?? "1", 10);
+  const featuredArticles = blogArticles.filter((a) => a.featured);
+  const nonFeatured = blogArticles.filter((a) => !a.featured);
+  const totalPages = Math.max(
+    1,
+    Math.ceil(nonFeatured.length / BLOG_POSTS_PER_PAGE)
+  );
+  const requested =
+    Number.isFinite(parsed) && parsed >= 1 ? parsed : 1;
+  const currentPage = Math.min(requested, totalPages);
+  const start = (currentPage - 1) * BLOG_POSTS_PER_PAGE;
+  const pageSlice = nonFeatured.slice(start, start + BLOG_POSTS_PER_PAGE);
 
   return (
     <div className="min-h-screen">
       <Header />
 
-      {/* Hero Section */}
       <section className="theme-page-hero">
         <div className="container-custom">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-semibold text-theme-fg mb-6 tracking-tight">
-              Insights
-            </h1>
-            <p className="text-lg text-theme-muted leading-relaxed">
+          <div className="theme-page-intro">
+            <h1 className="theme-page-heading-xl">Insights</h1>
+            <p className="theme-lede">
               Notes on engineering discipline, cloud, AI, and delivery—from the
               Picoids team.
             </p>
@@ -131,173 +53,118 @@ export default function BlogPage() {
         </div>
       </section>
 
-      {/* Featured Article */}
-      <section className="theme-page-section">
-        <div className="container-custom">
-          <div className="mb-12">
-            <h2 className="text-2xl font-semibold text-theme-fg mb-8 tracking-tight">
-              Featured
-            </h2>
-            {articles
-              .filter((article) => article.featured)
-              .map((article) => (
-                <div
-                  key={article.id}
-                  className="border border-theme-border rounded-xl p-8 bg-theme-surface-muted/50 shadow-sm"
+      {currentPage === 1 ? (
+        <section className="theme-page-section">
+          <div className="container-custom">
+            <div className="mb-12">
+              <h2 className="theme-section-heading">Featured</h2>
+              {featuredArticles.map((article) => (
+                <Link
+                  key={article.slug}
+                  href={`/blog/${article.slug}`}
+                  className="group theme-blog-featured-card"
                 >
                   <div className="flex items-center flex-wrap gap-3 mb-4">
-                    <span className="border border-theme-border bg-theme-surface text-theme-icon-strong px-2.5 py-1 rounded-md text-xs font-medium uppercase tracking-wide">
+                    <span className="theme-chip-on-surface">
                       {article.category}
                     </span>
                     <span className="text-theme-subtle text-sm">
                       {article.readTime}
                     </span>
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-semibold text-theme-fg mb-4 tracking-tight">
+                  <h3 className="theme-blog-card-title-featured">
                     {article.title}
                   </h3>
-                  <p className="text-lg text-theme-muted mb-6 leading-relaxed">
+                  <p className="theme-blog-card-excerpt-featured">
                     {article.excerpt}
                   </p>
-                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-                    <div className="flex items-center flex-wrap gap-x-6 gap-y-2 text-sm text-theme-subtle">
+                  <div className="theme-blog-card-footer">
+                    <div className="theme-blog-meta-row">
                       <div className="flex items-center">
-                        <User className="h-4 w-4 mr-1" />
+                        <User className="h-4 w-4 mr-1 shrink-0" />
                         {article.author}
                       </div>
                       <div className="flex items-center">
-                        <Calendar className="h-4 w-4 mr-1" />
-                        {article.date}
+                        <Calendar className="h-4 w-4 mr-1 shrink-0" />
+                        {article.dateLabel}
                       </div>
                     </div>
-                    <Link
-                      href={`/blog/${article.id}`}
-                      className="btn-primary inline-flex items-center"
-                    >
+                    <span className="theme-btn-primary-static">
                       Read Article
                       <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
+                    </span>
                   </div>
-                </div>
+                </Link>
               ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      ) : null}
 
-      {/* Articles Grid */}
       <section className="section-padding bg-theme-surface">
         <div className="container-custom">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {articles
-              .filter((article) => !article.featured)
-              .map((article) => (
-                <div
-                  key={article.id}
-                  className="border border-theme-border rounded-xl overflow-hidden hover:shadow-md hover:border-theme-border-strong transition-all bg-theme-surface shadow-sm flex flex-col"
-                >
-                  <div className="p-6 flex flex-col flex-1">
-                    <div className="flex items-center justify-between gap-3 mb-4">
-                      <span className="border border-theme-border bg-theme-surface-muted text-theme-icon-strong px-2.5 py-1 rounded-md text-xs font-medium">
-                        {article.category}
-                      </span>
-                      <span className="text-theme-subtle text-sm shrink-0">
-                        {article.readTime}
-                      </span>
-                    </div>
+          <div className="theme-blog-grid">
+            {pageSlice.map((article) => (
+              <Link
+                key={article.slug}
+                href={`/blog/${article.slug}`}
+                className="group theme-blog-grid-card"
+              >
+                <div className="theme-blog-grid-card-body">
+                  <div className="flex items-center justify-between gap-3 mb-4">
+                    <span className="theme-chip">{article.category}</span>
+                    <span className="text-theme-subtle text-sm shrink-0">
+                      {article.readTime}
+                    </span>
+                  </div>
 
-                    <h3 className="text-lg font-semibold text-theme-fg mb-3 tracking-tight">
-                      {article.title}
-                    </h3>
-                    <p className="text-theme-muted mb-4 text-sm leading-relaxed flex-1">
-                      {article.excerpt}
-                    </p>
+                  <h3 className="theme-blog-card-title-grid">{article.title}</h3>
+                  <p className="theme-blog-card-excerpt-grid">{article.excerpt}</p>
 
-                    <div className="flex flex-col gap-3 mt-auto pt-2">
-                      <div className="flex items-center flex-wrap gap-x-4 gap-y-1 text-sm text-theme-subtle">
-                        <div className="flex items-center">
-                          <User className="h-4 w-4 mr-1" />
-                          {article.author}
-                        </div>
-                        <div className="flex items-center">
-                          <Calendar className="h-4 w-4 mr-1" />
-                          {article.date}
-                        </div>
+                  <div className="theme-blog-card-footer-stack">
+                    <div className="theme-blog-meta-row-tight">
+                      <div className="flex items-center">
+                        <User className="h-4 w-4 mr-1 shrink-0" />
+                        {article.author}
                       </div>
-                      <Link
-                        href={`/blog/${article.id}`}
-                        className="text-sm font-medium text-theme-fg hover:text-theme-icon-strong inline-flex items-center"
-                      >
-                        Read article
-                        <ArrowRight className="ml-1 h-4 w-4" />
-                      </Link>
+                      <div className="flex items-center">
+                        <Calendar className="h-4 w-4 mr-1 shrink-0" />
+                        {article.dateLabel}
+                      </div>
                     </div>
+                    <span className="theme-blog-read-cta">
+                      Read article
+                      <ArrowRight className="ml-1 h-4 w-4" />
+                    </span>
                   </div>
                 </div>
-              ))}
+              </Link>
+            ))}
           </div>
 
-          {/* Pagination */}
-          <div className="mt-12 flex justify-center">
-            <nav
-              className="flex items-center gap-1 border border-theme-border rounded-lg p-1 bg-theme-surface-muted"
-              aria-label="Pagination"
-            >
-              <button
-                type="button"
-                className="px-3 py-2 text-sm text-theme-subtle hover:text-theme-fg rounded-md"
-              >
-                Previous
-              </button>
-              <button
-                type="button"
-                className="px-3 py-2 text-sm bg-theme-inverse text-white rounded-md font-medium"
-              >
-                1
-              </button>
-              <button
-                type="button"
-                className="px-3 py-2 text-sm text-theme-icon-strong hover:bg-theme-surface rounded-md"
-              >
-                2
-              </button>
-              <button
-                type="button"
-                className="px-3 py-2 text-sm text-theme-icon-strong hover:bg-theme-surface rounded-md"
-              >
-                3
-              </button>
-              <button
-                type="button"
-                className="px-3 py-2 text-sm text-theme-subtle hover:text-theme-fg rounded-md"
-              >
-                Next
-              </button>
-            </nav>
-          </div>
+          <BlogPagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            pageHref={pageHref}
+          />
         </div>
       </section>
 
-      {/* Newsletter Signup */}
       <section className="theme-band-cta">
         <div className="container-custom">
-          <div className="max-w-xl">
-            <h2 className="text-2xl md:text-3xl font-semibold mb-4 tracking-tight">
-              Stay informed
-            </h2>
+          <div className="theme-band-cta-inner">
+            <h2 className="theme-band-heading">Stay informed</h2>
             <p className="text-theme-on-inverse-muted mb-8 leading-relaxed text-sm md:text-base">
               Occasional updates on engineering practice and delivery—no spam.
               (Newsletter wiring can connect to your provider when ready.)
             </p>
-            <div className="flex flex-col sm:flex-row gap-2 max-w-md">
+            <div className="theme-newsletter-row">
               <input
                 type="email"
                 placeholder="Work email"
-                className="flex-1 px-4 py-3 rounded-md border border-theme-inverse-outline bg-theme-inverse-hover text-white placeholder:text-theme-subtle focus:outline-none focus:ring-2 focus:ring-white/20 text-sm"
+                className="theme-newsletter-input"
               />
-              <button
-                type="button"
-                className="px-6 py-3 rounded-md bg-theme-surface text-theme-fg text-sm font-medium hover:bg-theme-surface-soft transition-colors"
-              >
+              <button type="button" className="theme-newsletter-button">
                 Subscribe
               </button>
             </div>

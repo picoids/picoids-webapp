@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ArrowRight, TrendingUp, Users, Clock } from "lucide-react";
 
 export const metadata = {
-  title: "Case Studies - Picoids Technology and Consulting",
+  title: "Case Studies",
   description:
     "Explore our successful projects and see how we've helped businesses achieve digital transformation and growth.",
 };

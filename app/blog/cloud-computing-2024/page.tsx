@@ -1,67 +1,80 @@
+import type { Metadata } from "next";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import BlogPostingJsonLd from "../../components/BlogPostingJsonLd";
 import Link from "next/link";
 import { ArrowLeft, Calendar, User, Clock, Share2 } from "lucide-react";
 
-export const metadata = {
-  title:
-    "The Future of Cloud Computing: Trends and Predictions | Picoids Technology and Consulting",
-  description:
-    "Explore the latest trends and technologies shaping the cloud computing landscape, from edge computing to serverless architectures.",
+const ARTICLE_PATH = "/blog/cloud-computing-2024";
+const HEADLINE =
+  "The Future of Cloud Computing in 2026: Trends and Predictions";
+const DESCRIPTION =
+  "Explore the latest trends and technologies shaping the cloud computing landscape, from edge computing to serverless architectures.";
+const PUBLISHED = "2026-01-25T09:00:00+05:30";
+
+export const metadata: Metadata = {
+  title: HEADLINE,
+  description: DESCRIPTION,
+  openGraph: {
+    type: "article",
+    publishedTime: PUBLISHED,
+    modifiedTime: PUBLISHED,
+    authors: ["Picoids Team"],
+    title: HEADLINE,
+    description: DESCRIPTION,
+  },
 };
 
 export default function CloudComputing2024Page() {
   return (
     <div className="min-h-screen">
+      <BlogPostingJsonLd
+        headline={HEADLINE}
+        description={DESCRIPTION}
+        datePublished={PUBLISHED}
+        authorName="Picoids Team"
+        path={ARTICLE_PATH}
+      />
       <Header />
 
-      {/* Article Header */}
-      <section className="theme-page-hero">
+      <header className="theme-page-hero">
         <div className="container-custom">
-          <div className="max-w-3xl">
-            <Link
-              href="/blog"
-              className="inline-flex items-center text-sm font-medium text-theme-muted hover:text-theme-fg mb-8"
-            >
+          <div className="theme-page-intro">
+            <Link href="/blog" className="theme-link-back-hero">
               <ArrowLeft className="h-4 w-4 mr-2" />
               Back to insights
             </Link>
 
-            <div className="border border-theme-border rounded-xl bg-theme-surface p-8 shadow-sm">
+            <div className="theme-article-hero-card">
               <div className="flex items-center flex-wrap gap-3 mb-6">
-                <span className="border border-theme-border bg-theme-surface-muted text-theme-icon-strong px-2.5 py-1 rounded-md text-xs font-medium uppercase tracking-wide">
-                  Cloud services
-                </span>
+                <span className="theme-chip-accent">Cloud services</span>
                 <span className="text-theme-subtle text-sm">8 min read</span>
               </div>
 
-              <h1 className="text-3xl md:text-4xl font-semibold text-theme-fg mb-6 tracking-tight leading-tight">
-                The Future of Cloud Computing in 2024: Trends and Predictions
+              <h1 className="theme-article-title">
+                The Future of Cloud Computing in 2026: Trends and Predictions
               </h1>
 
-              <p className="text-lg text-theme-muted mb-8 leading-relaxed">
+              <p className="theme-article-lede">
                 Explore the latest trends and technologies shaping the cloud
                 computing landscape, from edge computing to serverless
                 architectures.
               </p>
 
-              <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-theme-muted">
+              <div className="theme-article-meta-row">
                 <div className="flex items-center">
                   <User className="h-4 w-4 mr-2 shrink-0" />
                   Picoids Team
                 </div>
                 <div className="flex items-center">
                   <Calendar className="h-4 w-4 mr-2 shrink-0" />
-                  Jun 15, 2025
+                  Jan 25, 2026
                 </div>
                 <div className="flex items-center">
                   <Clock className="h-4 w-4 mr-2 shrink-0" />
                   8 min read
                 </div>
-                <button
-                  type="button"
-                  className="flex items-center text-theme-fg hover:text-theme-icon-strong font-medium"
-                >
+                <button type="button" className="theme-share-trigger">
                   <Share2 className="h-4 w-4 mr-2" />
                   Share
                 </button>
@@ -69,16 +82,15 @@ export default function CloudComputing2024Page() {
             </div>
           </div>
         </div>
-      </section>
+      </header>
 
-      {/* Article Content */}
       <section className="section-padding bg-theme-surface">
         <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <div className="prose prose-lg max-w-none">
+          <article className="theme-article-body-shell">
+            <div className="theme-article-prose">
               <h2>Introduction</h2>
               <p>
-                Cloud computing continues to evolve at a rapid pace, with 2024
+                Cloud computing continues to evolve at a rapid pace, with 2026
                 bringing significant advancements in technology, architecture,
                 and deployment models. As businesses increasingly rely on cloud
                 infrastructure for their digital transformation initiatives,
@@ -154,7 +166,7 @@ export default function CloudComputing2024Page() {
                 centers, and carbon-aware workload scheduling.
               </p>
 
-              <h2>Predictions for 2025 and Beyond</h2>
+              <h2>Predictions for 2027 and Beyond</h2>
               <p>Looking ahead, we can expect to see:</p>
               <ul>
                 <li>Further integration of quantum computing capabilities</li>
@@ -189,52 +201,47 @@ export default function CloudComputing2024Page() {
                 </ul>
               </div>
             </div>
-          </div>
+          </article>
         </div>
       </section>
 
-      {/* Related Articles */}
       <section className="theme-page-section-muted">
         <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl font-semibold text-theme-fg mb-8 tracking-tight">
-              Related articles
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="bg-theme-surface border border-theme-border rounded-xl p-6 shadow-sm">
-                <span className="border border-theme-border bg-theme-surface-muted text-theme-icon-strong px-2.5 py-1 rounded-md text-xs font-medium mb-4 inline-block">
-                  AI integration
-                </span>
-                <h3 className="text-lg font-semibold text-theme-fg mb-3 tracking-tight">
+          <div className="theme-article-body-shell">
+            <h2 className="theme-section-heading">Related articles</h2>
+            <div className="theme-related-grid">
+              <div className="theme-related-card">
+                <span className="theme-chip mb-4 inline-block">AI integration</span>
+                <h3 className="theme-related-heading">
                   Reliability vs AI Uses: When Innovation Out-Runs Trust
                 </h3>
-                <p className="text-theme-muted mb-4 text-sm leading-relaxed">
+                <p className="theme-related-lede">
                   Learn from real-world cautionary tales about AI reliability
                   and how to marry AI ambition with rock-solid dependability.
                 </p>
                 <Link
                   href="/blog/reliability-vs-ai-uses"
-                  className="text-sm font-medium text-theme-fg hover:text-theme-icon-strong inline-flex items-center"
+                  className="theme-related-more"
                 >
                   Read article
                   <ArrowLeft className="ml-1 h-4 w-4 rotate-180" />
                 </Link>
               </div>
 
-              <div className="bg-theme-surface border border-theme-border rounded-xl p-6 shadow-sm">
-                <span className="border border-theme-border bg-theme-surface-muted text-theme-icon-strong px-2.5 py-1 rounded-md text-xs font-medium mb-4 inline-block">
+              <div className="theme-related-card">
+                <span className="theme-chip mb-4 inline-block">
                   Application development
                 </span>
-                <h3 className="text-lg font-semibold text-theme-fg mb-3 tracking-tight">
+                <h3 className="theme-related-heading">
                   Building Scalable Microservices Architecture: Best Practices
                 </h3>
-                <p className="text-theme-muted mb-4 text-sm leading-relaxed">
+                <p className="theme-related-lede">
                   Learn best practices for designing and implementing
                   microservices for modern applications.
                 </p>
                 <Link
                   href="/blog/microservices-architecture"
-                  className="text-sm font-medium text-theme-fg hover:text-theme-icon-strong inline-flex items-center"
+                  className="theme-related-more"
                 >
                   Read article
                   <ArrowLeft className="ml-1 h-4 w-4 rotate-180" />

@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { getBlogSlugs } from "@/lib/blog-articles";
 import { getSiteUrl } from "@/lib/site";
 
 const SERVICE_SLUGS = [
@@ -16,12 +17,6 @@ const SERVICE_SLUGS = [
   "tech-staffing",
   "tech-audits",
   "custom-solutions",
-] as const;
-
-const BLOG_SLUGS = [
-  "reliability-vs-ai-uses",
-  "cloud-computing-2024",
-  "microservices-architecture",
 ] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -62,7 +57,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   }
 
-  for (const slug of BLOG_SLUGS) {
+  for (const slug of getBlogSlugs()) {
     entries.push({
       url: `${base}/blog/${slug}`,
       lastModified,
