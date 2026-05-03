@@ -17,17 +17,17 @@ export default function PrivacyPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="bg-slate-50 border-b border-slate-200/80 section-padding">
+      <section className="theme-page-hero">
         <div className="container-custom">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-semibold text-slate-900 mb-6 tracking-tight">
+            <h1 className="text-4xl md:text-5xl font-semibold text-theme-fg mb-6 tracking-tight">
               Privacy policy
             </h1>
-            <p className="text-lg text-slate-600 mb-8 leading-relaxed max-w-2xl">
+            <p className="text-lg text-theme-muted mb-8 leading-relaxed max-w-2xl">
               How Picoids collects, uses, and protects personal information when
               you use this site and our services.
             </p>
-            <div className="flex items-center flex-wrap gap-x-6 gap-y-2 text-sm text-slate-500">
+            <div className="flex items-center flex-wrap gap-x-6 gap-y-2 text-sm text-theme-subtle">
               <div className="flex items-center">
                 <Shield className="h-4 w-4 mr-2" />
                 Last Updated: December 2024
@@ -42,13 +42,13 @@ export default function PrivacyPage() {
       </section>
 
       {/* Privacy Content */}
-      <section className="section-padding bg-white border-b border-slate-100">
+      <section className="theme-page-section">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
             <div className="mb-8">
               <Link
                 href="/"
-                className="inline-flex items-center text-sm font-medium text-slate-600 hover:text-slate-900 mb-6"
+                className="inline-flex items-center text-sm font-medium text-theme-muted hover:text-theme-fg mb-6"
               >
                 <ArrowLeft className="h-4 w-4 mr-2" />
                 Back to Home
@@ -57,36 +57,36 @@ export default function PrivacyPage() {
 
             <div className="prose prose-lg max-w-none">
               <div className="mb-12">
-                <h2 className="text-2xl font-bold text-slate-900 mb-4">
+                <h2 className="text-2xl font-bold text-theme-fg mb-4">
                   Introduction
                 </h2>
-                <p className="text-slate-600 mb-4">
+                <p className="text-theme-muted mb-4">
                   Picoids Technology and Consulting Pvt. Ltd. (&ldquo;we,&rdquo;
                   &ldquo;our,&rdquo; or &ldquo;us&rdquo;) is committed to
                   protecting your privacy. This Privacy Policy explains how we
                   collect, use, disclose, and safeguard your information when
                   you visit our website or use our services.
                 </p>
-                <p className="text-slate-600">
+                <p className="text-theme-muted">
                   By using our website and services, you consent to the data
                   practices described in this policy.
                 </p>
               </div>
 
               <div className="mb-12">
-                <h2 className="text-2xl font-bold text-slate-900 mb-4">
+                <h2 className="text-2xl font-bold text-theme-fg mb-4">
                   Information We Collect
                 </h2>
                 <div className="space-y-6">
                   <div>
-                    <h3 className="text-xl font-semibold text-slate-900 mb-3">
+                    <h3 className="text-xl font-semibold text-theme-fg mb-3">
                       Personal Information
                     </h3>
-                    <p className="text-slate-600 mb-3">
+                    <p className="text-theme-muted mb-3">
                       We may collect personal information that you voluntarily
                       provide to us, including:
                     </p>
-                    <ul className="list-disc list-inside text-slate-600 space-y-2 ml-4">
+                    <ul className="list-disc list-inside text-theme-muted space-y-2 ml-4">
                       <li>
                         Name and contact information (email, phone number)
                       </li>
@@ -100,14 +100,14 @@ export default function PrivacyPage() {
                   </div>
 
                   <div>
-                    <h3 className="text-xl font-semibold text-slate-900 mb-3">
+                    <h3 className="text-xl font-semibold text-theme-fg mb-3">
                       Automatically Collected Information
                     </h3>
-                    <p className="text-slate-600 mb-3">
+                    <p className="text-theme-muted mb-3">
                       When you visit our website, we automatically collect
                       certain information, including:
                     </p>
-                    <ul className="list-disc list-inside text-slate-600 space-y-2 ml-4">
+                    <ul className="list-disc list-inside text-theme-muted space-y-2 ml-4">
                       <li>IP address and browser type</li>
                       <li>Pages visited and time spent on our website</li>
                       <li>Referring website and search terms</li>
@@ -118,14 +118,14 @@ export default function PrivacyPage() {
               </div>
 
               <div className="mb-12">
-                <h2 className="text-2xl font-bold text-slate-900 mb-4">
+                <h2 className="text-2xl font-bold text-theme-fg mb-4">
                   How We Use Your Information
                 </h2>
-                <p className="text-slate-600 mb-4">
+                <p className="text-theme-muted mb-4">
                   We use the information we collect for various purposes,
                   including:
                 </p>
-                <ul className="list-disc list-inside text-slate-600 space-y-2 ml-4">
+                <ul className="list-disc list-inside text-theme-muted space-y-2 ml-4">
                   <li>Providing and improving our services</li>
                   <li>Responding to your inquiries and requests</li>
                   <li>Sending you relevant information about our services</li>
@@ -136,15 +136,15 @@ export default function PrivacyPage() {
               </div>
 
               <div className="mb-12">
-                <h2 className="text-2xl font-bold text-slate-900 mb-4">
+                <h2 className="text-2xl font-bold text-theme-fg mb-4">
                   Information Sharing and Disclosure
                 </h2>
-                <p className="text-slate-600 mb-4">
+                <p className="text-theme-muted mb-4">
                   We do not sell, trade, or otherwise transfer your personal
                   information to third parties without your consent, except in
                   the following circumstances:
                 </p>
-                <ul className="list-disc list-inside text-slate-600 space-y-2 ml-4">
+                <ul className="list-disc list-inside text-theme-muted space-y-2 ml-4">
                   <li>With your explicit consent</li>
                   <li>To comply with legal requirements or court orders</li>
                   <li>To protect our rights, property, or safety</li>
@@ -156,10 +156,10 @@ export default function PrivacyPage() {
               </div>
 
               <div className="mb-12">
-                <h2 className="text-2xl font-bold text-slate-900 mb-4">
+                <h2 className="text-2xl font-bold text-theme-fg mb-4">
                   Data Security
                 </h2>
-                <p className="text-slate-600 mb-4">
+                <p className="text-theme-muted mb-4">
                   We implement appropriate technical and organizational measures
                   to protect your personal information against unauthorized
                   access, alteration, disclosure, or destruction. However, no
@@ -168,11 +168,11 @@ export default function PrivacyPage() {
               </div>
 
               <div className="mb-12">
-                <h2 className="text-2xl font-bold text-slate-900 mb-4">
+                <h2 className="text-2xl font-bold text-theme-fg mb-4">
                   Your Rights and Choices
                 </h2>
-                <p className="text-slate-600 mb-4">You have the right to:</p>
-                <ul className="list-disc list-inside text-slate-600 space-y-2 ml-4">
+                <p className="text-theme-muted mb-4">You have the right to:</p>
+                <ul className="list-disc list-inside text-theme-muted space-y-2 ml-4">
                   <li>Access and review your personal information</li>
                   <li>Correct inaccurate or incomplete information</li>
                   <li>Request deletion of your personal information</li>
@@ -182,10 +182,10 @@ export default function PrivacyPage() {
               </div>
 
               <div className="mb-12">
-                <h2 className="text-2xl font-bold text-slate-900 mb-4">
+                <h2 className="text-2xl font-bold text-theme-fg mb-4">
                   Cookies and Tracking Technologies
                 </h2>
-                <p className="text-slate-600 mb-4">
+                <p className="text-theme-muted mb-4">
                   We use cookies and similar tracking technologies to enhance
                   your browsing experience, analyze website traffic, and
                   understand where our visitors are coming from. You can control
@@ -194,10 +194,10 @@ export default function PrivacyPage() {
               </div>
 
               <div className="mb-12">
-                <h2 className="text-2xl font-bold text-slate-900 mb-4">
+                <h2 className="text-2xl font-bold text-theme-fg mb-4">
                   Third-Party Links
                 </h2>
-                <p className="text-slate-600 mb-4">
+                <p className="text-theme-muted mb-4">
                   Our website may contain links to third-party websites. We are
                   not responsible for the privacy practices or content of these
                   external sites. We encourage you to review their privacy
@@ -206,10 +206,10 @@ export default function PrivacyPage() {
               </div>
 
               <div className="mb-12">
-                <h2 className="text-2xl font-bold text-slate-900 mb-4">
+                <h2 className="text-2xl font-bold text-theme-fg mb-4">
                   Children&apos;s Privacy
                 </h2>
-                <p className="text-slate-600 mb-4">
+                <p className="text-theme-muted mb-4">
                   Our services are not intended for children under the age of
                   13. We do not knowingly collect personal information from
                   children under 13. If you believe we have collected such
@@ -218,10 +218,10 @@ export default function PrivacyPage() {
               </div>
 
               <div className="mb-12">
-                <h2 className="text-2xl font-bold text-slate-900 mb-4">
+                <h2 className="text-2xl font-bold text-theme-fg mb-4">
                   Changes to This Privacy Policy
                 </h2>
-                <p className="text-slate-600 mb-4">
+                <p className="text-theme-muted mb-4">
                   We may update this Privacy Policy from time to time. We will
                   notify you of any changes by posting the new Privacy Policy on
                   this page and updating the &ldquo;Last Updated&rdquo; date.
@@ -229,30 +229,30 @@ export default function PrivacyPage() {
               </div>
 
               <div className="mb-12">
-                <h2 className="text-2xl font-bold text-slate-900 mb-4">
+                <h2 className="text-2xl font-bold text-theme-fg mb-4">
                   Contact Us
                 </h2>
-                <p className="text-slate-600 mb-4">
+                <p className="text-theme-muted mb-4">
                   If you have any questions about this Privacy Policy or our
                   data practices, please contact us:
                 </p>
-                <div className="bg-slate-50 border border-slate-200 rounded-xl p-6">
+                <div className="bg-theme-surface-muted border border-theme-border rounded-xl p-6">
                   <div className="space-y-3">
                     <div className="flex items-center flex-wrap gap-2">
-                      <Lock className="h-5 w-5 text-slate-600 mr-2 shrink-0" />
-                      <span className="text-slate-900 font-medium text-sm">
+                      <Lock className="h-5 w-5 text-theme-muted mr-2 shrink-0" />
+                      <span className="text-theme-fg font-medium text-sm">
                         Email:
                       </span>
-                      <span className="text-slate-600 text-sm">
+                      <span className="text-theme-muted text-sm">
                         connect@picoids.com
                       </span>
                     </div>
                     <div className="flex items-center flex-wrap gap-2">
-                      <Users className="h-5 w-5 text-slate-600 mr-2 shrink-0" />
-                      <span className="text-slate-900 font-medium text-sm">
+                      <Users className="h-5 w-5 text-theme-muted mr-2 shrink-0" />
+                      <span className="text-theme-fg font-medium text-sm">
                         Address:
                       </span>
-                      <span className="text-slate-600 text-sm">
+                      <span className="text-theme-muted text-sm">
                         Bikaner, Rajasthan, India
                       </span>
                     </div>

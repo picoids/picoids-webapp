@@ -140,13 +140,13 @@ export default function ServicesPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="bg-slate-50 border-b border-slate-200/80 section-padding">
+      <section className="theme-page-hero">
         <div className="container-custom">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-semibold text-slate-900 mb-6 tracking-tight">
+            <h1 className="text-4xl md:text-5xl font-semibold text-theme-fg mb-6 tracking-tight">
               Services
             </h1>
-            <p className="text-lg text-slate-600 leading-relaxed">
+            <p className="text-lg text-theme-muted leading-relaxed">
               Advisory and delivery across cloud, engineering, modernization,
               AI, and operations—structured for enterprise governance and clear
               outcomes.
@@ -156,35 +156,35 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Grid */}
-      <section className="section-padding bg-white border-b border-slate-100">
+      <section className="theme-page-section">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {services.map((service) => (
               <div
                 key={service.slug}
-                className="border border-slate-200 rounded-xl p-8 shadow-sm hover:shadow-md hover:border-slate-300 transition-all duration-200 bg-white"
+                className="border border-theme-border rounded-xl p-8 shadow-sm hover:shadow-md hover:border-theme-border-strong transition-all duration-200 bg-theme-surface"
               >
                 <div className="flex items-start space-x-4">
-                  <div className="w-16 h-16 bg-slate-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <service.icon className="h-8 w-8 text-slate-700" />
+                  <div className="w-16 h-16 bg-theme-surface-soft rounded-lg flex items-center justify-center flex-shrink-0">
+                    <service.icon className="h-8 w-8 text-theme-icon-strong" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-semibold text-slate-900 mb-2">
+                    <h3 className="text-xl font-semibold text-theme-fg mb-2">
                       {service.title}
                     </h3>
-                    <p className="text-slate-600 mb-4 text-sm leading-relaxed">
+                    <p className="text-theme-muted mb-4 text-sm leading-relaxed">
                       {service.intro}
                     </p>
 
                     <div className="mb-6">
-                      <h4 className="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-2">
+                      <h4 className="text-xs font-semibold uppercase tracking-wide text-theme-subtle mb-2">
                         Key areas
                       </h4>
                       <div className="flex flex-wrap gap-2">
                         {service.keyAreas.map((area) => (
                           <span
                             key={area}
-                            className="border border-slate-200 bg-slate-50 text-slate-700 px-2.5 py-1 rounded-md text-xs font-medium"
+                            className="border border-theme-border bg-theme-surface-muted text-theme-icon-strong px-2.5 py-1 rounded-md text-xs font-medium"
                           >
                             {area}
                           </span>
@@ -208,27 +208,27 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-slate-900 text-white border-t border-slate-800">
+      <section className="theme-band-cta">
         <div className="container-custom">
           <div className="max-w-3xl">
             <h2 className="text-3xl md:text-4xl font-semibold mb-4 tracking-tight">
               Scope your next engagement
             </h2>
-            <p className="text-lg text-slate-300 mb-10 leading-relaxed">
+            <p className="text-lg text-theme-on-inverse-muted mb-10 leading-relaxed">
               Tell us about priorities and constraints—we&apos;ll propose a
               practical path, whether advisory, delivery, or blended.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-md bg-white px-8 py-3.5 text-base font-medium text-slate-900 shadow-sm hover:bg-slate-100 transition-colors"
+                className="inline-flex items-center justify-center rounded-md bg-theme-surface px-8 py-3.5 text-base font-medium text-theme-fg shadow-sm hover:bg-theme-surface-soft transition-colors"
               >
                 Contact us
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
               <Link
                 href="/case-studies"
-                className="inline-flex items-center justify-center rounded-md border border-slate-600 px-8 py-3.5 text-base font-medium text-white hover:bg-slate-800 transition-colors"
+                className="inline-flex items-center justify-center rounded-md border border-theme-inverse-outline px-8 py-3.5 text-base font-medium text-white hover:bg-theme-inverse-hover transition-colors"
               >
                 Case studies
                 <ArrowRight className="ml-2 h-4 w-4" />

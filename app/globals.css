@@ -3,12 +3,36 @@
 @tailwind utilities;
 
 :root {
+  /* Legacy aliases — body copy & chrome */
   --primary: #1e3a5f;
   --primary-dark: #172554;
   --secondary: #64748b;
   --accent: #1d4ed8;
-  --background: #ffffff;
-  --foreground: #0f172a;
+  --background: rgb(var(--theme-surface) / 1);
+  --foreground: rgb(var(--theme-fg) / 1);
+
+  /* Semantic palette (space-separated RGB for Tailwind opacity modifiers) */
+  --theme-fg: 15 23 42;
+  --theme-fg-soft: 30 41 59;
+  --theme-muted: 71 85 105;
+  --theme-subtle: 100 116 139;
+  --theme-faint: 148 163 184;
+  --theme-surface: 255 255 255;
+  --theme-surface-muted: 248 250 252;
+  --theme-surface-soft: 241 245 249;
+  --theme-border: 226 232 240;
+  --theme-border-light: 241 245 249;
+  --theme-border-strong: 203 213 225;
+  --theme-icon-strong: 51 65 85;
+
+  --theme-inverse: 15 23 42;
+  --theme-inverse-deep: 2 6 23;
+  --theme-inverse-border: 30 41 59;
+  --theme-inverse-hover: 30 41 59;
+  --theme-inverse-outline: 71 85 105;
+  --theme-on-inverse-muted: 203 213 225;
+  --theme-on-inverse-subtle: 148 163 184;
+
   --muted: #f8fafc;
   --border: #e2e8f0;
 }
@@ -54,14 +78,71 @@ a {
   }
 
   .btn-primary {
-    @apply bg-slate-900 hover:bg-slate-800 text-white font-medium py-3 px-6 rounded-md transition-colors duration-200;
+    @apply bg-theme-inverse hover:bg-theme-inverse-hover text-white font-medium py-3 px-6 rounded-md transition-colors duration-200;
   }
 
   .btn-secondary {
-    @apply bg-white border border-slate-300 text-slate-900 font-medium py-3 px-6 rounded-md transition-colors duration-200 hover:bg-slate-50 hover:border-slate-400;
+    @apply bg-theme-surface border border-theme-border-strong text-theme-fg font-medium py-3 px-6 rounded-md transition-colors duration-200 hover:bg-theme-surface-muted hover:border-theme-border-strong;
   }
 
   .section-padding {
     @apply py-16 md:py-24;
+  }
+
+  /* Layout bands — use these on route pages instead of repeating slate utilities */
+  .theme-page-hero {
+    @apply bg-theme-surface-muted border-b border-theme-border/80 section-padding;
+  }
+
+  .theme-page-section {
+    @apply section-padding bg-theme-surface border-b border-theme-border-light;
+  }
+
+  .theme-page-section-muted {
+    @apply section-padding bg-theme-surface-muted border-t border-theme-border/80;
+  }
+
+  .theme-page-section-divider-top {
+    @apply section-padding bg-theme-surface border-t border-theme-border-light;
+  }
+
+  .theme-nav-shell {
+    @apply bg-theme-surface sticky top-0 z-50 border-b border-theme-border;
+  }
+
+  .theme-band-cta {
+    @apply section-padding bg-theme-inverse text-white border-t border-theme-inverse-border;
+  }
+
+  .theme-band-footer {
+    @apply bg-theme-inverse-deep text-white border-t border-theme-inverse-border;
+  }
+
+  .theme-card {
+    @apply border border-theme-border rounded-xl bg-theme-surface shadow-sm hover:shadow-md hover:border-theme-border-strong transition-all duration-200;
+  }
+
+  .theme-card-static {
+    @apply border border-theme-border rounded-xl bg-theme-surface p-8 shadow-sm;
+  }
+
+  .theme-chip {
+    @apply border border-theme-border bg-theme-surface-muted text-theme-icon-strong px-2.5 py-1 rounded-md text-xs font-medium;
+  }
+
+  .theme-chip-accent {
+    @apply border border-theme-border bg-theme-surface-muted text-theme-icon-strong px-2.5 py-1 rounded-md text-xs font-medium uppercase tracking-wide;
+  }
+
+  .theme-callout-box {
+    @apply bg-theme-surface-muted border border-theme-border rounded-xl p-6;
+  }
+
+  .theme-dropdown-panel {
+    @apply bg-theme-surface shadow-md rounded-lg border border-theme-border py-1;
+  }
+
+  .theme-link-back {
+    @apply inline-flex items-center text-sm font-medium text-theme-muted hover:text-theme-fg mb-6;
   }
 }

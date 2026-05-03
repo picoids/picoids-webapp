@@ -48,14 +48,14 @@ const Header = () => {
   const getLinkClasses = (href: string) => {
     const baseClasses = "transition-colors";
     const activeClasses =
-      "text-slate-900 font-medium border-b-2 border-slate-900";
-    const inactiveClasses = "text-slate-600 hover:text-slate-900";
+      "text-theme-fg font-medium border-b-2 border-theme-fg";
+    const inactiveClasses = "text-theme-muted hover:text-theme-fg";
 
     return `${baseClasses} ${isActive(href) ? activeClasses : inactiveClasses}`;
   };
 
   return (
-    <header className="bg-white sticky top-0 z-50 border-b border-slate-200">
+    <header className="theme-nav-shell">
       <div className="container-custom">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -94,9 +94,9 @@ const Header = () => {
             >
               <button
                 type="button"
-                className={`flex items-center text-slate-600 hover:text-slate-900 transition-colors ${
+                className={`flex items-center text-theme-muted hover:text-theme-fg transition-colors ${
                   isActive("/services")
-                    ? "text-slate-900 font-medium border-b-2 border-slate-900"
+                    ? "text-theme-fg font-medium border-b-2 border-theme-fg"
                     : ""
                 }`}
                 aria-expanded={isServicesOpen}
@@ -118,14 +118,14 @@ const Header = () => {
                   isServicesOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
                 }`}
               >
-                <div className="bg-white shadow-md rounded-lg border border-slate-200 py-1">
+                <div className="theme-dropdown-panel">
                   <div className="grid grid-cols-1 gap-1">
                     {services.map((service) => (
                       <Link
                         key={service.name}
                         href={service.href}
                         tabIndex={isServicesOpen ? undefined : -1}
-                        className={`px-4 py-2 hover:bg-slate-50 transition-colors duration-200 ${getLinkClasses(
+                        className={`px-4 py-2 hover:bg-theme-surface-muted transition-colors duration-200 ${getLinkClasses(
                           service.href
                         )}`}
                       >
@@ -162,7 +162,7 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             type="button"
-            className="md:hidden p-2 text-slate-700 hover:text-slate-900 transition-colors"
+            className="md:hidden p-2 text-theme-icon-strong hover:text-theme-fg transition-colors"
             aria-expanded={isMenuOpen}
             aria-controls="mobile-primary-nav"
             aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
@@ -180,7 +180,7 @@ const Header = () => {
         {isMenuOpen && (
           <div
             id="mobile-primary-nav"
-            className="md:hidden border-t border-slate-200 py-4 bg-white"
+            className="md:hidden border-t border-theme-border py-4 bg-theme-surface"
           >
             <nav className="flex flex-col space-y-4" aria-label="Mobile primary">
               <Link href="/" className={getLinkClasses("/")}>

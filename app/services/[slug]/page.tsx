@@ -601,13 +601,13 @@ export default async function ServicePage({ params }: ServicePageProps) {
       <Header />
 
       {/* Hero Section */}
-      <section className="bg-slate-50 border-b border-slate-200/80 section-padding">
+      <section className="theme-page-hero">
         <div className="container-custom">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-semibold text-slate-900 mb-6 tracking-tight leading-tight">
+            <h1 className="text-4xl md:text-5xl font-semibold text-theme-fg mb-6 tracking-tight leading-tight">
               {service.headline}
             </h1>
-            <p className="text-lg text-slate-600 mb-10 leading-relaxed max-w-2xl">
+            <p className="text-lg text-theme-muted mb-10 leading-relaxed max-w-2xl">
               {service.intro}
             </p>
             <Link href="/contact" className="btn-primary inline-flex items-center">
@@ -619,25 +619,25 @@ export default async function ServicePage({ params }: ServicePageProps) {
       </section>
 
       {/* Service Description */}
-      <section className="section-padding bg-white border-b border-slate-100">
+      <section className="theme-page-section">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div>
-              <h2 className="text-3xl font-semibold text-slate-900 mb-6 tracking-tight">
+              <h2 className="text-3xl font-semibold text-theme-fg mb-6 tracking-tight">
                 About {service.title}
               </h2>
-              <p className="text-lg text-slate-600 mb-6 leading-relaxed">
+              <p className="text-lg text-theme-muted mb-6 leading-relaxed">
                 {service.description}
               </p>
               <div className="mb-2">
-                <h3 className="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-3">
+                <h3 className="text-xs font-semibold uppercase tracking-wide text-theme-subtle mb-3">
                   Key areas
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {service.keyAreas.map((area) => (
                     <span
                       key={area}
-                      className="border border-slate-200 bg-slate-50 text-slate-700 px-2.5 py-1 rounded-md text-xs font-medium"
+                      className="border border-theme-border bg-theme-surface-muted text-theme-icon-strong px-2.5 py-1 rounded-md text-xs font-medium"
                     >
                       {area}
                     </span>
@@ -645,41 +645,41 @@ export default async function ServicePage({ params }: ServicePageProps) {
                 </div>
               </div>
             </div>
-            <div className="bg-slate-50 border border-slate-200 rounded-xl p-8">
-              <h3 className="text-xl font-semibold text-slate-900 mb-6">
+            <div className="bg-theme-surface-muted border border-theme-border rounded-xl p-8">
+              <h3 className="text-xl font-semibold text-theme-fg mb-6">
                 Why work with Picoids
               </h3>
               <div className="space-y-5">
                 <div className="flex items-start gap-3">
-                  <Award className="h-5 w-5 text-slate-600 mt-0.5 shrink-0" />
+                  <Award className="h-5 w-5 text-theme-muted mt-0.5 shrink-0" />
                   <div>
-                    <h4 className="font-medium text-slate-900 text-sm">
+                    <h4 className="font-medium text-theme-fg text-sm">
                       Expert team
                     </h4>
-                    <p className="text-slate-600 text-sm leading-relaxed">
+                    <p className="text-theme-muted text-sm leading-relaxed">
                       Practitioners with deep delivery experience across
                       enterprise environments.
                     </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <Clock className="h-5 w-5 text-slate-600 mt-0.5 shrink-0" />
+                  <Clock className="h-5 w-5 text-theme-muted mt-0.5 shrink-0" />
                   <div>
-                    <h4 className="font-medium text-slate-900 text-sm">
+                    <h4 className="font-medium text-theme-fg text-sm">
                       Predictable delivery
                     </h4>
-                    <p className="text-slate-600 text-sm leading-relaxed">
+                    <p className="text-theme-muted text-sm leading-relaxed">
                       Cadence and transparency aligned to your governance needs.
                     </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <Users className="h-5 w-5 text-slate-600 mt-0.5 shrink-0" />
+                  <Users className="h-5 w-5 text-theme-muted mt-0.5 shrink-0" />
                   <div>
-                    <h4 className="font-medium text-slate-900 text-sm">
+                    <h4 className="font-medium text-theme-fg text-sm">
                       Dedicated support
                     </h4>
-                    <p className="text-slate-600 text-sm leading-relaxed">
+                    <p className="text-theme-muted text-sm leading-relaxed">
                       Responsive engagement models from advisory through run.
                     </p>
                   </div>
@@ -691,13 +691,13 @@ export default async function ServicePage({ params }: ServicePageProps) {
       </section>
 
       {/* Benefits */}
-      <section className="section-padding bg-slate-50 border-b border-slate-200/80">
+      <section className="theme-page-hero">
         <div className="container-custom">
           <div className="max-w-2xl mb-12">
-            <h2 className="text-3xl md:text-4xl font-semibold text-slate-900 mb-4 tracking-tight">
+            <h2 className="text-3xl md:text-4xl font-semibold text-theme-fg mb-4 tracking-tight">
               Benefits
             </h2>
-            <p className="text-lg text-slate-600 leading-relaxed">
+            <p className="text-lg text-theme-muted leading-relaxed">
               Outcomes clients seek from strong {service.title.toLowerCase()}{" "}
               execution.
             </p>
@@ -707,12 +707,12 @@ export default async function ServicePage({ params }: ServicePageProps) {
             {service.benefits.map((benefit, index) => (
               <div
                 key={index}
-                className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm"
+                className="bg-theme-surface border border-theme-border rounded-xl p-6 shadow-sm"
               >
-                <div className="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center mb-4">
-                  <CheckCircle className="h-5 w-5 text-slate-700" />
+                <div className="w-10 h-10 bg-theme-surface-soft rounded-lg flex items-center justify-center mb-4">
+                  <CheckCircle className="h-5 w-5 text-theme-icon-strong" />
                 </div>
-                <p className="text-slate-700 text-sm leading-relaxed">
+                <p className="text-theme-icon-strong text-sm leading-relaxed">
                   {benefit}
                 </p>
               </div>
@@ -722,27 +722,27 @@ export default async function ServicePage({ params }: ServicePageProps) {
       </section>
 
       {/* Process */}
-      <section className="section-padding bg-white border-b border-slate-100">
+      <section className="theme-page-section">
         <div className="container-custom">
           <div className="max-w-2xl mb-12">
-            <h2 className="text-3xl md:text-4xl font-semibold text-slate-900 mb-4 tracking-tight">
+            <h2 className="text-3xl md:text-4xl font-semibold text-theme-fg mb-4 tracking-tight">
               Our process
             </h2>
-            <p className="text-lg text-slate-600 leading-relaxed">
+            <p className="text-lg text-theme-muted leading-relaxed">
               A structured approach from discovery through steady-state support.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {service.process.map((step, index) => (
-              <div key={index} className="border border-slate-200 rounded-xl p-6 bg-slate-50/50">
-                <div className="w-10 h-10 bg-slate-900 rounded-md flex items-center justify-center mb-4 text-white font-semibold text-sm tabular-nums">
+              <div key={index} className="border border-theme-border rounded-xl p-6 bg-theme-surface-muted/50">
+                <div className="w-10 h-10 bg-theme-inverse rounded-md flex items-center justify-center mb-4 text-white font-semibold text-sm tabular-nums">
                   {index + 1}
                 </div>
-                <h3 className="text-lg font-semibold text-slate-900 mb-2">
+                <h3 className="text-lg font-semibold text-theme-fg mb-2">
                   {step.step}
                 </h3>
-                <p className="text-slate-600 text-sm leading-relaxed">
+                <p className="text-theme-muted text-sm leading-relaxed">
                   {step.description}
                 </p>
               </div>
@@ -752,27 +752,27 @@ export default async function ServicePage({ params }: ServicePageProps) {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-slate-900 text-white border-t border-slate-800">
+      <section className="theme-band-cta">
         <div className="container-custom">
           <div className="max-w-3xl">
             <h2 className="text-3xl md:text-4xl font-semibold mb-4 tracking-tight">
               Discuss {service.title.toLowerCase()}
             </h2>
-            <p className="text-lg text-slate-300 mb-10 leading-relaxed">
+            <p className="text-lg text-theme-on-inverse-muted mb-10 leading-relaxed">
               Share context on priorities and timelines—we&apos;ll respond with
               a practical engagement outline.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-md bg-white px-8 py-3.5 text-base font-medium text-slate-900 shadow-sm hover:bg-slate-100 transition-colors"
+                className="inline-flex items-center justify-center rounded-md bg-theme-surface px-8 py-3.5 text-base font-medium text-theme-fg shadow-sm hover:bg-theme-surface-soft transition-colors"
               >
                 Contact us
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
               <Link
                 href="/case-studies"
-                className="inline-flex items-center justify-center rounded-md border border-slate-600 px-8 py-3.5 text-base font-medium text-white hover:bg-slate-800 transition-colors"
+                className="inline-flex items-center justify-center rounded-md border border-theme-inverse-outline px-8 py-3.5 text-base font-medium text-white hover:bg-theme-inverse-hover transition-colors"
               >
                 Case studies
                 <ArrowRight className="ml-2 h-4 w-4" />

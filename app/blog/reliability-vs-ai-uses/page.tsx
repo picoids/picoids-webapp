@@ -17,30 +17,30 @@ export default function ReliabilityVsAIUsesPage() {
       <Header />
 
       {/* Article Header */}
-      <section className="bg-slate-50 border-b border-slate-200/80 section-padding">
+      <section className="theme-page-hero">
         <div className="container-custom">
           <div className="max-w-3xl">
             <Link
               href="/blog"
-              className="inline-flex items-center text-sm font-medium text-slate-600 hover:text-slate-900 mb-8"
+              className="inline-flex items-center text-sm font-medium text-theme-muted hover:text-theme-fg mb-8"
             >
               <ArrowLeft className="h-4 w-4 mr-2" />
               Back to insights
             </Link>
 
-            <div className="border border-slate-200 rounded-xl bg-white p-8 shadow-sm">
+            <div className="border border-theme-border rounded-xl bg-theme-surface p-8 shadow-sm">
               <div className="flex items-center flex-wrap gap-3 mb-6">
-                <span className="border border-slate-200 bg-slate-50 text-slate-700 px-2.5 py-1 rounded-md text-xs font-medium uppercase tracking-wide">
+                <span className="border border-theme-border bg-theme-surface-muted text-theme-icon-strong px-2.5 py-1 rounded-md text-xs font-medium uppercase tracking-wide">
                   AI integration
                 </span>
-                <span className="text-slate-500 text-sm">15 min read</span>
+                <span className="text-theme-subtle text-sm">15 min read</span>
               </div>
 
-              <h1 className="text-3xl md:text-4xl font-semibold text-slate-900 mb-6 tracking-tight leading-tight">
+              <h1 className="text-3xl md:text-4xl font-semibold text-theme-fg mb-6 tracking-tight leading-tight">
                 Reliability vs AI Uses: When Innovation Out-Runs Trust
               </h1>
 
-              <p className="text-lg text-slate-600 mb-8 leading-relaxed">
+              <p className="text-lg text-theme-muted mb-8 leading-relaxed">
                 Artificial-intelligence systems promise speed, scale and
                 insight—but when we shortcut the engineering discipline that
                 underpins <strong>reliability</strong>, those same systems can
@@ -49,7 +49,7 @@ export default function ReliabilityVsAIUsesPage() {
                 marrying AI ambition with rock-solid dependability.
               </p>
 
-              <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-600">
+              <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-theme-muted">
                 <div className="flex items-center">
                   <User className="h-4 w-4 mr-2 shrink-0" />
                   Picoids Team
@@ -64,7 +64,7 @@ export default function ReliabilityVsAIUsesPage() {
                 </div>
                 <button
                   type="button"
-                  className="flex items-center text-slate-900 hover:text-slate-700 font-medium"
+                  className="flex items-center text-theme-fg hover:text-theme-icon-strong font-medium"
                 >
                   <Share2 className="h-4 w-4 mr-2" />
                   Share
@@ -76,7 +76,7 @@ export default function ReliabilityVsAIUsesPage() {
       </section>
 
       {/* Article Content */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-theme-surface">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
             <div className="prose prose-lg max-w-none">
@@ -284,7 +284,7 @@ export default function ReliabilityVsAIUsesPage() {
                   <li>
                     <a
                       href="https://www.cio.com/article/286790/software-testing-lessons-learned-from-knight-capital-fiasco.html"
-                      className="text-slate-900 hover:text-slate-700 underline"
+                      className="text-theme-fg hover:text-theme-icon-strong underline"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -295,7 +295,7 @@ export default function ReliabilityVsAIUsesPage() {
                   <li>
                     <a
                       href="https://blog.thinkreliability.com/four-lessons-from-the-boeing-737-max-8-crashes"
-                      className="text-slate-900 hover:text-slate-700 underline"
+                      className="text-theme-fg hover:text-theme-icon-strong underline"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -305,7 +305,7 @@ export default function ReliabilityVsAIUsesPage() {
                   <li>
                     <a
                       href="https://www.washingtonpost.com/business/2019/11/11/apple-card-algorithm-sparks-gender-bias-allegations-against-goldman-sachs/"
-                      className="text-slate-900 hover:text-slate-700 underline"
+                      className="text-theme-fg hover:text-theme-icon-strong underline"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -316,7 +316,7 @@ export default function ReliabilityVsAIUsesPage() {
                   <li>
                     <a
                       href="https://observer.com/2021/11/zillow-zestimate-predict-home-price-wrong-ibuying-shutdown/"
-                      className="text-slate-900 hover:text-slate-700 underline"
+                      className="text-theme-fg hover:text-theme-icon-strong underline"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -332,47 +332,47 @@ export default function ReliabilityVsAIUsesPage() {
       </section>
 
       {/* Related Articles */}
-      <section className="section-padding bg-slate-50 border-t border-slate-200/80">
+      <section className="theme-page-section-muted">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl font-semibold text-slate-900 mb-8 tracking-tight">
+            <h2 className="text-2xl font-semibold text-theme-fg mb-8 tracking-tight">
               Related articles
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
-                <span className="border border-slate-200 bg-slate-50 text-slate-700 px-2.5 py-1 rounded-md text-xs font-medium mb-4 inline-block">
+              <div className="bg-theme-surface border border-theme-border rounded-xl p-6 shadow-sm">
+                <span className="border border-theme-border bg-theme-surface-muted text-theme-icon-strong px-2.5 py-1 rounded-md text-xs font-medium mb-4 inline-block">
                   AI integration
                 </span>
-                <h3 className="text-lg font-semibold text-slate-900 mb-3 tracking-tight">
+                <h3 className="text-lg font-semibold text-theme-fg mb-3 tracking-tight">
                   AI-Powered Business Transformation: A Complete Guide
                 </h3>
-                <p className="text-slate-600 mb-4 text-sm leading-relaxed">
+                <p className="text-theme-muted mb-4 text-sm leading-relaxed">
                   How artificial intelligence is revolutionizing business
                   processes and decision-making across industries.
                 </p>
                 <Link
                   href="/blog/ai-business-transformation"
-                  className="text-sm font-medium text-slate-900 hover:text-slate-700 inline-flex items-center"
+                  className="text-sm font-medium text-theme-fg hover:text-theme-icon-strong inline-flex items-center"
                 >
                   Read article
                   <ArrowLeft className="ml-1 h-4 w-4 rotate-180" />
                 </Link>
               </div>
 
-              <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
-                <span className="border border-slate-200 bg-slate-50 text-slate-700 px-2.5 py-1 rounded-md text-xs font-medium mb-4 inline-block">
+              <div className="bg-theme-surface border border-theme-border rounded-xl p-6 shadow-sm">
+                <span className="border border-theme-border bg-theme-surface-muted text-theme-icon-strong px-2.5 py-1 rounded-md text-xs font-medium mb-4 inline-block">
                   Technology consulting
                 </span>
-                <h3 className="text-lg font-semibold text-slate-900 mb-3 tracking-tight">
+                <h3 className="text-lg font-semibold text-theme-fg mb-3 tracking-tight">
                   Essential Cybersecurity Best Practices for 2024
                 </h3>
-                <p className="text-slate-600 mb-4 text-sm leading-relaxed">
+                <p className="text-theme-muted mb-4 text-sm leading-relaxed">
                   Protect your business with these essential cybersecurity
                   practices and stay ahead of evolving threats.
                 </p>
                 <Link
                   href="/blog/cybersecurity-best-practices"
-                  className="text-sm font-medium text-slate-900 hover:text-slate-700 inline-flex items-center"
+                  className="text-sm font-medium text-theme-fg hover:text-theme-icon-strong inline-flex items-center"
                 >
                   Read article
                   <ArrowLeft className="ml-1 h-4 w-4 rotate-180" />

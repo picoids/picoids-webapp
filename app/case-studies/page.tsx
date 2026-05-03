@@ -138,13 +138,13 @@ export default function CaseStudiesPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="bg-slate-50 border-b border-slate-200/80 section-padding">
+      <section className="theme-page-hero">
         <div className="container-custom">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-semibold text-slate-900 mb-6 tracking-tight">
+            <h1 className="text-4xl md:text-5xl font-semibold text-theme-fg mb-6 tracking-tight">
               Case studies
             </h1>
-            <p className="text-lg text-slate-600 leading-relaxed">
+            <p className="text-lg text-theme-muted leading-relaxed">
               Representative engagements illustrating approach, stack choices,
               and measurable outcomes. Detail pages coming soon for full
               narratives.
@@ -154,20 +154,20 @@ export default function CaseStudiesPage() {
       </section>
 
       {/* Case Studies Grid */}
-      <section className="section-padding bg-white border-b border-slate-100">
+      <section className="theme-page-section">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {caseStudies.map((study) => (
               <div
                 key={study.id}
-                className="border border-slate-200 rounded-xl overflow-hidden hover:shadow-md hover:border-slate-300 transition-all bg-white shadow-sm"
+                className="border border-theme-border rounded-xl overflow-hidden hover:shadow-md hover:border-theme-border-strong transition-all bg-theme-surface shadow-sm"
               >
                 <div className="p-8">
                   <div className="flex items-center justify-between mb-4 gap-4 flex-wrap">
-                    <span className="border border-slate-200 bg-slate-50 text-slate-700 px-2.5 py-1 rounded-md text-xs font-medium uppercase tracking-wide">
+                    <span className="border border-theme-border bg-theme-surface-muted text-theme-icon-strong px-2.5 py-1 rounded-md text-xs font-medium uppercase tracking-wide">
                       {study.industry}
                     </span>
-                    <div className="flex items-center space-x-4 text-sm text-slate-500">
+                    <div className="flex items-center space-x-4 text-sm text-theme-subtle">
                       <div className="flex items-center">
                         <Clock className="h-4 w-4 mr-1" />
                         {study.duration}
@@ -179,39 +179,39 @@ export default function CaseStudiesPage() {
                     </div>
                   </div>
 
-                  <h3 className="text-xl font-semibold text-slate-900 mb-4 tracking-tight">
+                  <h3 className="text-xl font-semibold text-theme-fg mb-4 tracking-tight">
                     {study.title}
                   </h3>
 
                   <div className="space-y-4 mb-6">
                     <div>
-                      <h4 className="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-2">
+                      <h4 className="text-xs font-semibold uppercase tracking-wide text-theme-subtle mb-2">
                         Challenge
                       </h4>
-                      <p className="text-slate-600 text-sm leading-relaxed">
+                      <p className="text-theme-muted text-sm leading-relaxed">
                         {study.challenge}
                       </p>
                     </div>
 
                     <div>
-                      <h4 className="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-2">
+                      <h4 className="text-xs font-semibold uppercase tracking-wide text-theme-subtle mb-2">
                         Solution
                       </h4>
-                      <p className="text-slate-600 text-sm leading-relaxed">
+                      <p className="text-theme-muted text-sm leading-relaxed">
                         {study.solution}
                       </p>
                     </div>
                   </div>
 
                   <div className="mb-6">
-                    <h4 className="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-3">
+                    <h4 className="text-xs font-semibold uppercase tracking-wide text-theme-subtle mb-3">
                       Key results
                     </h4>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                       {study.results.map((result, index) => (
                         <div key={index} className="flex items-start text-sm gap-2">
-                          <TrendingUp className="h-4 w-4 text-slate-500 mt-0.5 shrink-0" />
-                          <span className="text-slate-700 leading-snug">
+                          <TrendingUp className="h-4 w-4 text-theme-subtle mt-0.5 shrink-0" />
+                          <span className="text-theme-icon-strong leading-snug">
                             {result}
                           </span>
                         </div>
@@ -220,14 +220,14 @@ export default function CaseStudiesPage() {
                   </div>
 
                   <div className="mb-6">
-                    <h4 className="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-2">
+                    <h4 className="text-xs font-semibold uppercase tracking-wide text-theme-subtle mb-2">
                       Technologies
                     </h4>
                     <div className="flex flex-wrap gap-2">
                       {study.technologies.map((tech) => (
                         <span
                           key={tech}
-                          className="border border-slate-200 bg-slate-50 text-slate-700 px-2 py-1 rounded-md text-xs font-medium"
+                          className="border border-theme-border bg-theme-surface-muted text-theme-icon-strong px-2 py-1 rounded-md text-xs font-medium"
                         >
                           {tech}
                         </span>
@@ -250,45 +250,45 @@ export default function CaseStudiesPage() {
       </section>
 
       {/* Stats Section */}
-      <section className="section-padding bg-slate-900 text-white border-y border-slate-800">
+      <section className="section-padding bg-theme-inverse text-white border-y border-theme-inverse-border">
         <div className="container-custom">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center md:text-left">
               <div className="text-3xl md:text-4xl font-semibold text-white mb-2 tabular-nums tracking-tight">
                 150+
               </div>
-              <div className="text-slate-400 text-sm">Projects delivered</div>
+              <div className="text-theme-faint text-sm">Projects delivered</div>
             </div>
             <div className="text-center md:text-left">
               <div className="text-3xl md:text-4xl font-semibold text-white mb-2 tabular-nums tracking-tight">
                 50+
               </div>
-              <div className="text-slate-400 text-sm">Client relationships</div>
+              <div className="text-theme-faint text-sm">Client relationships</div>
             </div>
             <div className="text-center md:text-left">
               <div className="text-3xl md:text-4xl font-semibold text-white mb-2 tabular-nums tracking-tight">
                 99.9%
               </div>
-              <div className="text-slate-400 text-sm">Target availability</div>
+              <div className="text-theme-faint text-sm">Target availability</div>
             </div>
             <div className="text-center md:text-left">
               <div className="text-3xl md:text-4xl font-semibold text-white mb-2 tabular-nums tracking-tight">
                 24/7
               </div>
-              <div className="text-slate-400 text-sm">Support posture</div>
+              <div className="text-theme-faint text-sm">Support posture</div>
             </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-slate-50 border-b border-slate-200/80">
+      <section className="theme-page-hero">
         <div className="container-custom">
           <div className="max-w-2xl">
-            <h2 className="text-3xl md:text-4xl font-semibold text-slate-900 mb-4 tracking-tight">
+            <h2 className="text-3xl md:text-4xl font-semibold text-theme-fg mb-4 tracking-tight">
               Explore a similar engagement
             </h2>
-            <p className="text-lg text-slate-600 mb-8 leading-relaxed">
+            <p className="text-lg text-theme-muted mb-8 leading-relaxed">
               Share industry, constraints, and success metrics—we&apos;ll map
               where Picoids can add leverage.
             </p>

@@ -204,7 +204,7 @@ function ContactForm() {
       <Header />
 
       {/* Contact Form & Info */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-theme-surface">
         <div className="container-custom">
           <header className="max-w-3xl mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
@@ -224,12 +224,12 @@ function ContactForm() {
               </h2>
 
               {isSubmitted ? (
-                <div className="bg-slate-50 border border-slate-200 rounded-lg p-6 text-center">
-                  <CheckCircle className="h-12 w-12 text-slate-700 mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold text-slate-900 mb-2">
+                <div className="bg-theme-surface-muted border border-theme-border rounded-lg p-6 text-center">
+                  <CheckCircle className="h-12 w-12 text-theme-icon-strong mx-auto mb-4" />
+                  <h3 className="text-xl font-semibold text-theme-fg mb-2">
                     Message sent
                   </h3>
-                  <p className="text-slate-600">
+                  <p className="text-theme-muted">
                     Thank you for reaching out. We&apos;ll get back to you
                     within 24 hours.
                   </p>
@@ -259,7 +259,7 @@ function ContactForm() {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-900 focus:border-transparent"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-theme-inverse focus:border-transparent"
                         placeholder="Your full name"
                       />
                     </div>
@@ -278,7 +278,7 @@ function ContactForm() {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-900 focus:border-transparent"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-theme-inverse focus:border-transparent"
                         placeholder="your.email@company.com"
                       />
                     </div>
@@ -298,7 +298,7 @@ function ContactForm() {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-900 focus:border-transparent"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-theme-inverse focus:border-transparent"
                         placeholder="+1 (555) 123-4567"
                       />
                     </div>
@@ -316,7 +316,7 @@ function ContactForm() {
                         name="company"
                         value={formData.company}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-900 focus:border-transparent"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-theme-inverse focus:border-transparent"
                         placeholder="Your company name"
                       />
                     </div>
@@ -334,7 +334,7 @@ function ContactForm() {
                       name="service"
                       value={formData.service}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-900 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-theme-inverse focus:border-transparent"
                     >
                       <option value="">Select a service</option>
                       {services.map((service) => (
@@ -359,7 +359,7 @@ function ContactForm() {
                       onChange={handleChange}
                       required
                       rows={6}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-900 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-theme-inverse focus:border-transparent"
                       placeholder="Tell us about your project or how we can help..."
                     />
                   </div>
@@ -393,8 +393,8 @@ function ContactForm() {
 
               <div className="space-y-8">
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Mail className="h-6 w-6 text-slate-700" />
+                  <div className="w-12 h-12 bg-theme-surface-soft rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Mail className="h-6 w-6 text-theme-icon-strong" />
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-1">
@@ -405,23 +405,23 @@ function ContactForm() {
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Phone className="h-6 w-6 text-slate-700" />
+                  <div className="w-12 h-12 bg-theme-surface-soft rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Phone className="h-6 w-6 text-theme-icon-strong" />
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-1">
                       Phone & WhatsApp
                     </h3>
                     <p className="text-gray-600">+91 8955225869</p>
-                    <p className="text-sm text-slate-600 font-medium mt-1">
+                    <p className="text-sm text-theme-muted font-medium mt-1">
                       Feel free to call directly or WhatsApp us anytime!
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <MapPin className="h-6 w-6 text-slate-700" />
+                  <div className="w-12 h-12 bg-theme-surface-soft rounded-lg flex items-center justify-center flex-shrink-0">
+                    <MapPin className="h-6 w-6 text-theme-icon-strong" />
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-1">
@@ -440,7 +440,7 @@ function ContactForm() {
               <div className="mt-8 p-6 bg-gray-50 rounded-lg">
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center">
-                    <Clock className="h-6 w-6 text-slate-700 mr-3" />
+                    <Clock className="h-6 w-6 text-theme-icon-strong mr-3" />
                     <h3 className="text-lg font-semibold text-gray-900">
                       Best Business Enquiry Hours
                     </h3>
@@ -460,7 +460,7 @@ function ContactForm() {
                     id="timezone"
                     value={selectedTimezone}
                     onChange={(e) => setSelectedTimezone(e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-900 focus:border-transparent text-sm"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-theme-inverse focus:border-transparent text-sm"
                   >
                     <option value="Asia/Kolkata">
                       IST (India Standard Time)

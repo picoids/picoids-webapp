@@ -117,13 +117,13 @@ export default function BlogPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="bg-slate-50 border-b border-slate-200/80 section-padding">
+      <section className="theme-page-hero">
         <div className="container-custom">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-semibold text-slate-900 mb-6 tracking-tight">
+            <h1 className="text-4xl md:text-5xl font-semibold text-theme-fg mb-6 tracking-tight">
               Insights
             </h1>
-            <p className="text-lg text-slate-600 leading-relaxed">
+            <p className="text-lg text-theme-muted leading-relaxed">
               Notes on engineering discipline, cloud, AI, and delivery—from the
               Picoids team.
             </p>
@@ -132,10 +132,10 @@ export default function BlogPage() {
       </section>
 
       {/* Featured Article */}
-      <section className="section-padding bg-white border-b border-slate-100">
+      <section className="theme-page-section">
         <div className="container-custom">
           <div className="mb-12">
-            <h2 className="text-2xl font-semibold text-slate-900 mb-8 tracking-tight">
+            <h2 className="text-2xl font-semibold text-theme-fg mb-8 tracking-tight">
               Featured
             </h2>
             {articles
@@ -143,24 +143,24 @@ export default function BlogPage() {
               .map((article) => (
                 <div
                   key={article.id}
-                  className="border border-slate-200 rounded-xl p-8 bg-slate-50/50 shadow-sm"
+                  className="border border-theme-border rounded-xl p-8 bg-theme-surface-muted/50 shadow-sm"
                 >
                   <div className="flex items-center flex-wrap gap-3 mb-4">
-                    <span className="border border-slate-200 bg-white text-slate-700 px-2.5 py-1 rounded-md text-xs font-medium uppercase tracking-wide">
+                    <span className="border border-theme-border bg-theme-surface text-theme-icon-strong px-2.5 py-1 rounded-md text-xs font-medium uppercase tracking-wide">
                       {article.category}
                     </span>
-                    <span className="text-slate-500 text-sm">
+                    <span className="text-theme-subtle text-sm">
                       {article.readTime}
                     </span>
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-semibold text-slate-900 mb-4 tracking-tight">
+                  <h3 className="text-2xl md:text-3xl font-semibold text-theme-fg mb-4 tracking-tight">
                     {article.title}
                   </h3>
-                  <p className="text-lg text-slate-600 mb-6 leading-relaxed">
+                  <p className="text-lg text-theme-muted mb-6 leading-relaxed">
                     {article.excerpt}
                   </p>
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-                    <div className="flex items-center flex-wrap gap-x-6 gap-y-2 text-sm text-slate-500">
+                    <div className="flex items-center flex-wrap gap-x-6 gap-y-2 text-sm text-theme-subtle">
                       <div className="flex items-center">
                         <User className="h-4 w-4 mr-1" />
                         {article.author}
@@ -185,7 +185,7 @@ export default function BlogPage() {
       </section>
 
       {/* Articles Grid */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-theme-surface">
         <div className="container-custom">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {articles
@@ -193,27 +193,27 @@ export default function BlogPage() {
               .map((article) => (
                 <div
                   key={article.id}
-                  className="border border-slate-200 rounded-xl overflow-hidden hover:shadow-md hover:border-slate-300 transition-all bg-white shadow-sm flex flex-col"
+                  className="border border-theme-border rounded-xl overflow-hidden hover:shadow-md hover:border-theme-border-strong transition-all bg-theme-surface shadow-sm flex flex-col"
                 >
                   <div className="p-6 flex flex-col flex-1">
                     <div className="flex items-center justify-between gap-3 mb-4">
-                      <span className="border border-slate-200 bg-slate-50 text-slate-700 px-2.5 py-1 rounded-md text-xs font-medium">
+                      <span className="border border-theme-border bg-theme-surface-muted text-theme-icon-strong px-2.5 py-1 rounded-md text-xs font-medium">
                         {article.category}
                       </span>
-                      <span className="text-slate-500 text-sm shrink-0">
+                      <span className="text-theme-subtle text-sm shrink-0">
                         {article.readTime}
                       </span>
                     </div>
 
-                    <h3 className="text-lg font-semibold text-slate-900 mb-3 tracking-tight">
+                    <h3 className="text-lg font-semibold text-theme-fg mb-3 tracking-tight">
                       {article.title}
                     </h3>
-                    <p className="text-slate-600 mb-4 text-sm leading-relaxed flex-1">
+                    <p className="text-theme-muted mb-4 text-sm leading-relaxed flex-1">
                       {article.excerpt}
                     </p>
 
                     <div className="flex flex-col gap-3 mt-auto pt-2">
-                      <div className="flex items-center flex-wrap gap-x-4 gap-y-1 text-sm text-slate-500">
+                      <div className="flex items-center flex-wrap gap-x-4 gap-y-1 text-sm text-theme-subtle">
                         <div className="flex items-center">
                           <User className="h-4 w-4 mr-1" />
                           {article.author}
@@ -225,7 +225,7 @@ export default function BlogPage() {
                       </div>
                       <Link
                         href={`/blog/${article.id}`}
-                        className="text-sm font-medium text-slate-900 hover:text-slate-700 inline-flex items-center"
+                        className="text-sm font-medium text-theme-fg hover:text-theme-icon-strong inline-flex items-center"
                       >
                         Read article
                         <ArrowRight className="ml-1 h-4 w-4" />
@@ -239,36 +239,36 @@ export default function BlogPage() {
           {/* Pagination */}
           <div className="mt-12 flex justify-center">
             <nav
-              className="flex items-center gap-1 border border-slate-200 rounded-lg p-1 bg-slate-50"
+              className="flex items-center gap-1 border border-theme-border rounded-lg p-1 bg-theme-surface-muted"
               aria-label="Pagination"
             >
               <button
                 type="button"
-                className="px-3 py-2 text-sm text-slate-500 hover:text-slate-900 rounded-md"
+                className="px-3 py-2 text-sm text-theme-subtle hover:text-theme-fg rounded-md"
               >
                 Previous
               </button>
               <button
                 type="button"
-                className="px-3 py-2 text-sm bg-slate-900 text-white rounded-md font-medium"
+                className="px-3 py-2 text-sm bg-theme-inverse text-white rounded-md font-medium"
               >
                 1
               </button>
               <button
                 type="button"
-                className="px-3 py-2 text-sm text-slate-700 hover:bg-white rounded-md"
+                className="px-3 py-2 text-sm text-theme-icon-strong hover:bg-theme-surface rounded-md"
               >
                 2
               </button>
               <button
                 type="button"
-                className="px-3 py-2 text-sm text-slate-700 hover:bg-white rounded-md"
+                className="px-3 py-2 text-sm text-theme-icon-strong hover:bg-theme-surface rounded-md"
               >
                 3
               </button>
               <button
                 type="button"
-                className="px-3 py-2 text-sm text-slate-500 hover:text-slate-900 rounded-md"
+                className="px-3 py-2 text-sm text-theme-subtle hover:text-theme-fg rounded-md"
               >
                 Next
               </button>
@@ -278,13 +278,13 @@ export default function BlogPage() {
       </section>
 
       {/* Newsletter Signup */}
-      <section className="section-padding bg-slate-900 text-white border-t border-slate-800">
+      <section className="theme-band-cta">
         <div className="container-custom">
           <div className="max-w-xl">
             <h2 className="text-2xl md:text-3xl font-semibold mb-4 tracking-tight">
               Stay informed
             </h2>
-            <p className="text-slate-300 mb-8 leading-relaxed text-sm md:text-base">
+            <p className="text-theme-on-inverse-muted mb-8 leading-relaxed text-sm md:text-base">
               Occasional updates on engineering practice and delivery—no spam.
               (Newsletter wiring can connect to your provider when ready.)
             </p>
@@ -292,11 +292,11 @@ export default function BlogPage() {
               <input
                 type="email"
                 placeholder="Work email"
-                className="flex-1 px-4 py-3 rounded-md border border-slate-600 bg-slate-800 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-white/20 text-sm"
+                className="flex-1 px-4 py-3 rounded-md border border-theme-inverse-outline bg-theme-inverse-hover text-white placeholder:text-theme-subtle focus:outline-none focus:ring-2 focus:ring-white/20 text-sm"
               />
               <button
                 type="button"
-                className="px-6 py-3 rounded-md bg-white text-slate-900 text-sm font-medium hover:bg-slate-100 transition-colors"
+                className="px-6 py-3 rounded-md bg-theme-surface text-theme-fg text-sm font-medium hover:bg-theme-surface-soft transition-colors"
               >
                 Subscribe
               </button>

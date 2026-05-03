@@ -58,13 +58,13 @@ export default function AboutPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="bg-slate-50 border-b border-slate-200/80 section-padding">
+      <section className="theme-page-hero">
         <div className="container-custom">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-semibold text-slate-900 mb-6 tracking-tight">
+            <h1 className="text-4xl md:text-5xl font-semibold text-theme-fg mb-6 tracking-tight">
               About Picoids
             </h1>
-            <p className="text-lg text-slate-600 leading-relaxed">
+            <p className="text-lg text-theme-muted leading-relaxed">
               A focused technology consultancy helping organizations execute on
               cloud, applications, and AI—with clarity and measurable outcomes.
             </p>
@@ -73,26 +73,26 @@ export default function AboutPage() {
       </section>
 
       {/* Our Story */}
-      <section className="section-padding bg-white border-b border-slate-100">
+      <section className="theme-page-section">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-semibold text-slate-900 mb-6 tracking-tight">
+              <h2 className="text-3xl md:text-4xl font-semibold text-theme-fg mb-6 tracking-tight">
                 Our story
               </h2>
-              <p className="text-lg text-slate-600 mb-6 leading-relaxed">
+              <p className="text-lg text-theme-muted mb-6 leading-relaxed">
                 Incorporated in 2025, Picoids Technology and Consulting Pvt.
                 Ltd. was born from a vision to bridge the gap between
                 traditional business practices and cutting-edge technology
                 solutions.
               </p>
-              <p className="text-lg text-slate-600 mb-6 leading-relaxed">
+              <p className="text-lg text-theme-muted mb-6 leading-relaxed">
                 As a focused firm incorporated in 2025, we bring
                 together passionate technologists who believe that every
                 business, regardless of size, deserves access to world-class
                 technology solutions that drive growth and innovation.
               </p>
-              <p className="text-lg text-slate-600 leading-relaxed">
+              <p className="text-lg text-theme-muted leading-relaxed">
                 Though we&apos;re early in our journey, our team brings
                 years of combined experience and expertise, ready to become a
                 trusted partner for enterprises and startups alike, delivering
@@ -100,15 +100,15 @@ export default function AboutPage() {
                 increasingly digital world.
               </p>
             </div>
-            <div className="bg-slate-50 border border-slate-200 rounded-xl p-8">
+            <div className="bg-theme-surface-muted border border-theme-border rounded-xl p-8">
               <div className="text-center">
-                <div className="w-14 h-14 bg-slate-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <Target className="h-7 w-7 text-slate-700" />
+                <div className="w-14 h-14 bg-theme-surface-soft rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <Target className="h-7 w-7 text-theme-icon-strong" />
                 </div>
-                <h3 className="text-xl font-semibold text-slate-900 mb-4">
+                <h3 className="text-xl font-semibold text-theme-fg mb-4">
                   Our mission
                 </h3>
-                <p className="text-slate-600 text-sm leading-relaxed">
+                <p className="text-theme-muted text-sm leading-relaxed">
                   To empower businesses with innovative technology solutions
                   that drive growth, efficiency, and competitive advantage in
                   the digital age.
@@ -120,13 +120,13 @@ export default function AboutPage() {
       </section>
 
       {/* Our Values */}
-      <section className="section-padding bg-slate-50 border-b border-slate-200/80">
+      <section className="theme-page-hero">
         <div className="container-custom">
           <div className="max-w-2xl mb-14">
-            <h2 className="text-3xl md:text-4xl font-semibold text-slate-900 mb-4 tracking-tight">
+            <h2 className="text-3xl md:text-4xl font-semibold text-theme-fg mb-4 tracking-tight">
               Our values
             </h2>
-            <p className="text-lg text-slate-600 leading-relaxed">
+            <p className="text-lg text-theme-muted leading-relaxed">
               The principles that guide everything we do and every solution we
               deliver.
             </p>
@@ -136,15 +136,15 @@ export default function AboutPage() {
             {values.map((value) => (
               <div
                 key={value.title}
-                className="bg-white border border-slate-200 rounded-xl p-6 text-left shadow-sm"
+                className="bg-theme-surface border border-theme-border rounded-xl p-6 text-left shadow-sm"
               >
-                <div className="w-11 h-11 bg-slate-100 rounded-lg flex items-center justify-center mb-4">
-                  <value.icon className="h-5 w-5 text-slate-700" />
+                <div className="w-11 h-11 bg-theme-surface-soft rounded-lg flex items-center justify-center mb-4">
+                  <value.icon className="h-5 w-5 text-theme-icon-strong" />
                 </div>
-                <h3 className="text-lg font-semibold text-slate-900 mb-2">
+                <h3 className="text-lg font-semibold text-theme-fg mb-2">
                   {value.title}
                 </h3>
-                <p className="text-slate-600 text-sm leading-relaxed">
+                <p className="text-theme-muted text-sm leading-relaxed">
                   {value.description}
                 </p>
               </div>
@@ -154,7 +154,7 @@ export default function AboutPage() {
       </section>
 
       {/* Stats */}
-      <section className="section-padding bg-slate-900 text-white border-y border-slate-800">
+      <section className="section-padding bg-theme-inverse text-white border-y border-theme-inverse-border">
         <div className="container-custom">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat) => (
@@ -162,7 +162,7 @@ export default function AboutPage() {
                 <div className="text-3xl md:text-4xl font-semibold text-white mb-2 tabular-nums tracking-tight">
                   {stat.number}
                 </div>
-                <div className="text-slate-400 text-sm leading-snug">
+                <div className="text-theme-faint text-sm leading-snug">
                   {stat.label}
                 </div>
               </div>
@@ -172,54 +172,54 @@ export default function AboutPage() {
       </section>
 
       {/* Our Approach */}
-      <section className="section-padding bg-white border-b border-slate-100">
+      <section className="theme-page-section">
         <div className="container-custom">
           <div className="max-w-2xl mb-14">
-            <h2 className="text-3xl md:text-4xl font-semibold text-slate-900 mb-4 tracking-tight">
+            <h2 className="text-3xl md:text-4xl font-semibold text-theme-fg mb-4 tracking-tight">
               Our approach
             </h2>
-            <p className="text-lg text-slate-600 leading-relaxed">
+            <p className="text-lg text-theme-muted leading-relaxed">
               We follow a proven methodology that ensures successful project
               delivery and client satisfaction.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="border border-slate-200 rounded-xl p-8 bg-slate-50/50">
-              <div className="w-11 h-11 bg-slate-100 rounded-lg flex items-center justify-center mb-4">
-                <TrendingUp className="h-5 w-5 text-slate-700" />
+            <div className="border border-theme-border rounded-xl p-8 bg-theme-surface-muted/50">
+              <div className="w-11 h-11 bg-theme-surface-soft rounded-lg flex items-center justify-center mb-4">
+                <TrendingUp className="h-5 w-5 text-theme-icon-strong" />
               </div>
-              <h3 className="text-lg font-semibold text-slate-900 mb-2">
+              <h3 className="text-lg font-semibold text-theme-fg mb-2">
                 Strategic planning
               </h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
+              <p className="text-theme-muted text-sm leading-relaxed">
                 We begin by understanding your business goals and developing a
                 comprehensive strategy that aligns technology with your
                 objectives.
               </p>
             </div>
 
-            <div className="border border-slate-200 rounded-xl p-8 bg-slate-50/50">
-              <div className="w-11 h-11 bg-slate-100 rounded-lg flex items-center justify-center mb-4">
-                <Award className="h-5 w-5 text-slate-700" />
+            <div className="border border-theme-border rounded-xl p-8 bg-theme-surface-muted/50">
+              <div className="w-11 h-11 bg-theme-surface-soft rounded-lg flex items-center justify-center mb-4">
+                <Award className="h-5 w-5 text-theme-icon-strong" />
               </div>
-              <h3 className="text-lg font-semibold text-slate-900 mb-2">
+              <h3 className="text-lg font-semibold text-theme-fg mb-2">
                 Expert execution
               </h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
+              <p className="text-theme-muted text-sm leading-relaxed">
                 Our experienced team delivers solutions using best practices and
                 cutting-edge technologies, ensuring quality and performance.
               </p>
             </div>
 
-            <div className="border border-slate-200 rounded-xl p-8 bg-slate-50/50">
-              <div className="w-11 h-11 bg-slate-100 rounded-lg flex items-center justify-center mb-4">
-                <Users className="h-5 w-5 text-slate-700" />
+            <div className="border border-theme-border rounded-xl p-8 bg-theme-surface-muted/50">
+              <div className="w-11 h-11 bg-theme-surface-soft rounded-lg flex items-center justify-center mb-4">
+                <Users className="h-5 w-5 text-theme-icon-strong" />
               </div>
-              <h3 className="text-lg font-semibold text-slate-900 mb-2">
+              <h3 className="text-lg font-semibold text-theme-fg mb-2">
                 Ongoing support
               </h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
+              <p className="text-theme-muted text-sm leading-relaxed">
                 We provide continuous support and maintenance to ensure your
                 solutions remain optimal and continue to drive value.
               </p>
@@ -229,19 +229,19 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-slate-900 text-white border-t border-slate-800">
+      <section className="theme-band-cta">
         <div className="container-custom">
           <div className="max-w-2xl">
             <h2 className="text-3xl md:text-4xl font-semibold mb-4 tracking-tight">
               Work with Picoids
             </h2>
-            <p className="text-lg text-slate-300 mb-8 leading-relaxed">
+            <p className="text-lg text-theme-on-inverse-muted mb-8 leading-relaxed">
               Share your objectives—we&apos;ll respond with a concise view of
               how we can support delivery and advisory needs.
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center rounded-md bg-white px-8 py-3.5 text-base font-medium text-slate-900 shadow-sm hover:bg-slate-100 transition-colors"
+              className="inline-flex items-center rounded-md bg-theme-surface px-8 py-3.5 text-base font-medium text-theme-fg shadow-sm hover:bg-theme-surface-soft transition-colors"
             >
               Contact us
               <ArrowRight className="ml-2 h-4 w-4" />
