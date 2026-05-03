@@ -24,7 +24,7 @@ export default function BlogPage() {
     },
     {
       id: "cloud-computing-2024",
-      title: "The Future of Cloud Computing in 2024: Trends and Predictions",
+      title: "The Future of Cloud Computing: Trends and Predictions",
       excerpt:
         "Explore the latest trends and technologies shaping the cloud computing landscape, from edge computing to serverless architectures.",
       author: "Picoids Team",

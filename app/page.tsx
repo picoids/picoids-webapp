@@ -1,6 +1,18 @@
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Picoids Technology and Consulting | Your Digital Transformation Partner",
+  description:
+    "Fresh technology consulting for cloud, applications, AI integration, and digital transformation. Incorporated in 2025—we combine proven delivery with modern methodologies.",
+  openGraph: {
+    title: "Picoids — Your Digital Transformation Partner",
+    description:
+      "Technology consulting, cloud services, application development, and AI integration for modern businesses.",
+  },
+};
 import {
   ArrowRight,
   Cloud,
