@@ -108,28 +108,31 @@ const Header = () => {
                 <ChevronDown className="ml-1 h-4 w-4" aria-hidden />
               </button>
 
+              {/* pt-2 bridges the gap below the trigger so hover stays inside this subtree (margin would not). */}
               <div
                 id="desktop-services-menu"
                 role="region"
                 aria-label="Service offerings"
                 aria-hidden={!isServicesOpen}
-                className={`absolute top-full left-0 mt-2 w-80 bg-white/95 backdrop-blur-md shadow-xl rounded-xl border border-slate-200 py-2 transition-all duration-200 ${
+                className={`absolute top-full left-0 w-80 pt-2 transition-all duration-200 ${
                   isServicesOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
                 }`}
               >
-                <div className="grid grid-cols-1 gap-1">
-                  {services.map((service) => (
-                    <Link
-                      key={service.name}
-                      href={service.href}
-                      tabIndex={isServicesOpen ? undefined : -1}
-                      className={`px-4 py-2 hover:bg-slate-50 transition-colors duration-200 ${getLinkClasses(
-                        service.href
-                      )}`}
-                    >
-                      {service.name}
-                    </Link>
-                  ))}
+                <div className="bg-white/95 backdrop-blur-md shadow-xl rounded-xl border border-slate-200 py-2">
+                  <div className="grid grid-cols-1 gap-1">
+                    {services.map((service) => (
+                      <Link
+                        key={service.name}
+                        href={service.href}
+                        tabIndex={isServicesOpen ? undefined : -1}
+                        className={`px-4 py-2 hover:bg-slate-50 transition-colors duration-200 ${getLinkClasses(
+                          service.href
+                        )}`}
+                      >
+                        {service.name}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
