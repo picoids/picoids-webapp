@@ -2,17 +2,6 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Link from "next/link";
 import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Picoids Technology and Consulting | Your Digital Transformation Partner",
-  description:
-    "Fresh technology consulting for cloud, applications, AI integration, and digital transformation. Incorporated in 2025—we combine proven delivery with modern methodologies.",
-  openGraph: {
-    title: "Picoids — Your Digital Transformation Partner",
-    description:
-      "Technology consulting, cloud services, application development, and AI integration for modern businesses.",
-  },
-};
 import {
   ArrowRight,
   Cloud,
@@ -25,108 +14,112 @@ import {
   Settings,
 } from "lucide-react";
 
+export const metadata: Metadata = {
+  title: "Picoids Technology and Consulting | Your Digital Transformation Partner",
+  description:
+    "Fresh technology consulting for cloud, applications, AI integration, and digital transformation. Incorporated in 2025—we combine proven delivery with modern methodologies.",
+  openGraph: {
+    title: "Picoids — Your Digital Transformation Partner",
+    description:
+      "Technology consulting, cloud services, application development, and AI integration for modern businesses.",
+  },
+};
+
 export default function Home() {
   return (
     <div className="min-h-screen">
       <Header />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 section-padding relative overflow-hidden">
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 left-10 w-20 h-20 bg-blue-200 rounded-full opacity-20 motion-safe:animate-pulse"></div>
-          <div className="absolute top-40 right-20 w-16 h-16 bg-indigo-200 rounded-full opacity-30 motion-safe:animate-bounce"></div>
-          <div className="absolute bottom-20 left-1/4 w-12 h-12 bg-purple-200 rounded-full opacity-25 motion-safe:animate-ping"></div>
-        </div>
-
-        <div className="container-custom relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <section className="bg-slate-50 border-b border-slate-200/80 section-padding">
+        <div className="container-custom">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             {/* Left Column - Content */}
             <div className="text-left">
-              <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-6 animate-fade-in">
-                <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 motion-safe:animate-pulse"></span>
-                Fresh Perspective • 2025 Incorporated
-              </div>
+              <p className="inline-block text-xs font-medium uppercase tracking-widest text-slate-500 mb-6 border border-slate-200 rounded-md px-3 py-1.5 bg-white">
+                Est. 2025 · Technology consulting
+              </p>
 
-              <h1 className="text-5xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-slate-800 via-blue-700 to-indigo-600 mb-6 drop-shadow-sm">
-                Your Digital Transformation Partner
+              <h1 className="text-4xl md:text-5xl font-semibold text-slate-900 mb-6 tracking-tight text-balance leading-tight">
+                Your digital transformation partner
               </h1>
 
-              <p className="text-xl md:text-2xl font-semibold text-slate-700 mb-6 leading-relaxed">
-                We bridge the gap between traditional business practices and
-                cutting-edge technology solutions
+              <p className="text-lg md:text-xl text-slate-600 mb-5 leading-relaxed max-w-xl font-normal">
+                We bridge traditional operations and modern engineering—cloud,
+                applications, and AI—with disciplined delivery.
               </p>
 
-              <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-                Incorporated in 2025, we bring a fresh, dynamic approach to
-                technology consulting. Our team combines years of industry
-                experience with modern methodologies to deliver innovative
-                solutions that drive real business transformation.
+              <p className="text-base text-slate-600 mb-10 leading-relaxed max-w-xl">
+                Incorporated in 2025, Picoids combines senior practitioner
+                experience with a focused, client-direct model built for
+                outcomes—not overhead.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-6 mb-8">
+              <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   href="/services"
-                  className="btn-primary inline-flex items-center text-lg px-8 py-4 shadow-lg hover:shadow-xl transition-all duration-300 motion-safe:transform motion-safe:hover:scale-105"
+                  className="btn-primary inline-flex items-center justify-center text-base px-8 py-3.5 shadow-sm"
                 >
-                  Explore Services
-                  <ArrowRight className="ml-3 h-5 w-5" />
+                  Explore services
+                  <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
                 <Link
                   href="/contact"
-                  className="btn-secondary inline-flex items-center text-lg px-8 py-4 border-2 hover:bg-slate-50 transition-all duration-300 motion-safe:transform motion-safe:hover:scale-105"
+                  className="btn-secondary inline-flex items-center justify-center text-base px-8 py-3.5"
                 >
-                  Get a Consultation
-                  <ArrowRight className="ml-3 h-5 w-5" />
+                  Request a consultation
+                  <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </div>
             </div>
 
             {/* Right Column - Key Benefits */}
-            <div className="space-y-6">
-              <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 motion-safe:transform motion-safe:hover:scale-105">
-                <div className="flex items-center space-x-4">
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-3">
-                    <Brain className="h-8 w-8 text-blue-600" />
+            <div className="space-y-4">
+              <div className="bg-white rounded-xl border border-slate-200 p-6 shadow-sm hover:border-slate-300 transition-colors">
+                <div className="flex items-center gap-4">
+                  <div className="bg-slate-100 rounded-lg p-3 shrink-0">
+                    <Brain className="h-7 w-7 text-slate-700" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-slate-800 mb-1">
-                      Vision & Innovation
+                    <h3 className="text-lg font-semibold text-slate-900 mb-1">
+                      Vision & innovation
                     </h3>
-                    <p className="text-slate-600 text-sm">
-                      Stay ahead with future-ready solutions
+                    <p className="text-slate-600 text-sm leading-relaxed">
+                      Future-ready architecture and roadmaps aligned to your
+                      business.
                     </p>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 motion-safe:transform motion-safe:hover:scale-105">
-                <div className="flex items-center space-x-4">
-                  <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-3">
-                    <Zap className="h-8 w-8 text-green-600" />
+              <div className="bg-white rounded-xl border border-slate-200 p-6 shadow-sm hover:border-slate-300 transition-colors">
+                <div className="flex items-center gap-4">
+                  <div className="bg-slate-100 rounded-lg p-3 shrink-0">
+                    <Zap className="h-7 w-7 text-slate-700" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-slate-800 mb-1">
-                      Agility & Speed
+                    <h3 className="text-lg font-semibold text-slate-900 mb-1">
+                      Agility & speed
                     </h3>
-                    <p className="text-slate-600 text-sm">
-                      Accelerate your time to market
+                    <p className="text-slate-600 text-sm leading-relaxed">
+                      Iterative delivery without compromising governance or
+                      quality.
                     </p>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 motion-safe:transform motion-safe:hover:scale-105">
-                <div className="flex items-center space-x-4">
-                  <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-3">
-                    <Shield className="h-8 w-8 text-purple-600" />
+              <div className="bg-white rounded-xl border border-slate-200 p-6 shadow-sm hover:border-slate-300 transition-colors">
+                <div className="flex items-center gap-4">
+                  <div className="bg-slate-100 rounded-lg p-3 shrink-0">
+                    <Shield className="h-7 w-7 text-slate-700" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-slate-800 mb-1">
-                      Trust & Reliability
+                    <h3 className="text-lg font-semibold text-slate-900 mb-1">
+                      Trust & reliability
                     </h3>
-                    <p className="text-slate-600 text-sm">
-                      Dependable, secure, and scalable
+                    <p className="text-slate-600 text-sm leading-relaxed">
+                      Security-minded engineering and operational resilience.
                     </p>
                   </div>
                 </div>
@@ -139,26 +132,26 @@ export default function Home() {
       {/* Why Choose Us */}
       <section className="section-padding bg-white">
         <div className="container-custom">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-              Why Choose Us
+          <div className="max-w-2xl mb-16">
+            <h2 className="text-3xl md:text-4xl font-semibold text-slate-900 mb-4 tracking-tight">
+              Why Picoids
             </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              We combine fresh perspectives with proven expertise to deliver
-              exceptional results
+            <p className="text-lg text-slate-600 leading-relaxed">
+              A focused consultancy model: senior expertise, direct access, and
+              delivery discipline across cloud, applications, and AI.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             {/* Left Column - Content */}
-            <div className="space-y-8">
-              <div className="flex items-start space-x-4 group">
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl flex items-center justify-center flex-shrink-0 motion-safe:group-hover:scale-110 transition-transform motion-reduce:transition-none duration-300">
-                  <Brain className="h-6 w-6 text-blue-600" />
+            <div className="space-y-10">
+              <div className="flex items-start gap-4">
+                <div className="w-11 h-11 bg-slate-100 rounded-lg flex items-center justify-center shrink-0">
+                  <Brain className="h-5 w-5 text-slate-700" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-2">
-                    Fresh Perspective, Proven Expertise
+                  <h3 className="text-lg font-semibold text-slate-900 mb-2">
+                    Fresh perspective, proven expertise
                   </h3>
                   <p className="text-slate-600 leading-relaxed">
                     While we&apos;re a 2025 startup, our team brings over 10+
@@ -169,13 +162,13 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="flex items-start space-x-4 group">
-                <div className="w-12 h-12 bg-gradient-to-br from-green-50 to-green-100 rounded-xl flex items-center justify-center flex-shrink-0 motion-safe:group-hover:scale-110 transition-transform motion-reduce:transition-none duration-300">
-                  <Zap className="h-6 w-6 text-green-600" />
+              <div className="flex items-start gap-4">
+                <div className="w-11 h-11 bg-slate-100 rounded-lg flex items-center justify-center shrink-0">
+                  <Zap className="h-5 w-5 text-slate-700" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-2">
-                    Modern Approach with Traditional Reliability
+                  <h3 className="text-lg font-semibold text-slate-900 mb-2">
+                    Modern methods, traditional reliability
                   </h3>
                   <p className="text-slate-600 leading-relaxed">
                     We combine the speed and innovation of modern methodologies
@@ -186,13 +179,13 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="flex items-start space-x-4 group">
-                <div className="w-12 h-12 bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl flex items-center justify-center flex-shrink-0 motion-safe:group-hover:scale-110 transition-transform motion-reduce:transition-none duration-300">
-                  <Shield className="h-6 w-6 text-purple-600" />
+              <div className="flex items-start gap-4">
+                <div className="w-11 h-11 bg-slate-100 rounded-lg flex items-center justify-center shrink-0">
+                  <Shield className="h-5 w-5 text-slate-700" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-2">
-                    Reliable Delivery with Agile Speed
+                  <h3 className="text-lg font-semibold text-slate-900 mb-2">
+                    Reliable delivery at agile pace
                   </h3>
                   <p className="text-slate-600 leading-relaxed">
                     Our proven agile methodology delivers faster time-to-market
@@ -204,13 +197,13 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="flex items-start space-x-4 group">
-                <div className="w-12 h-12 bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl flex items-center justify-center flex-shrink-0 motion-safe:group-hover:scale-110 transition-transform motion-reduce:transition-none duration-300">
-                  <Users className="h-6 w-6 text-orange-600" />
+              <div className="flex items-start gap-4">
+                <div className="w-11 h-11 bg-slate-100 rounded-lg flex items-center justify-center shrink-0">
+                  <Users className="h-5 w-5 text-slate-700" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-2">
-                    Personalized Partnership
+                  <h3 className="text-lg font-semibold text-slate-900 mb-2">
+                    Direct access to practitioners
                   </h3>
                   <p className="text-slate-600 leading-relaxed">
                     As a smaller, focused team, we provide direct access to our
@@ -222,253 +215,227 @@ export default function Home() {
             </div>
 
             {/* Right Column - Visual */}
-            <div className="relative">
-              <div className="bg-gradient-to-br from-slate-50 to-blue-50 rounded-3xl p-8 shadow-xl">
+            <div>
+              <div className="rounded-xl border border-slate-200 bg-slate-50/80 p-8 shadow-sm">
                 <div className="space-y-6">
-                  <div className="grid grid-cols-3 gap-4">
-                    <div className="bg-white rounded-xl p-4 text-center shadow-sm">
-                      <div className="text-2xl font-bold text-green-600 mb-1">
-                        2-4
+                  <div className="grid grid-cols-3 gap-3">
+                    <div className="bg-white rounded-lg border border-slate-200 p-4 text-center">
+                      <div className="text-xl font-semibold text-slate-900 mb-1 tabular-nums">
+                        2–4
                       </div>
-                      <div className="text-sm text-slate-600">Week Sprints</div>
+                      <div className="text-xs text-slate-600 uppercase tracking-wide">
+                        Week sprints
+                      </div>
                     </div>
-                    <div className="bg-white rounded-xl p-4 text-center shadow-sm">
-                      <div className="text-2xl font-bold text-blue-600 mb-1">
+                    <div className="bg-white rounded-lg border border-slate-200 p-4 text-center">
+                      <div className="text-xl font-semibold text-slate-900 mb-1 tabular-nums">
                         8+
                       </div>
-                      <div className="text-sm text-slate-600">Industries</div>
+                      <div className="text-xs text-slate-600 uppercase tracking-wide">
+                        Industries
+                      </div>
                     </div>
-                    <div className="bg-white rounded-xl p-4 text-center shadow-sm">
-                      <div className="text-2xl font-bold text-purple-600 mb-1">
+                    <div className="bg-white rounded-lg border border-slate-200 p-4 text-center">
+                      <div className="text-xl font-semibold text-slate-900 mb-1 tabular-nums">
                         10+
                       </div>
-                      <div className="text-sm text-slate-600">
-                        Years Experience
+                      <div className="text-xs text-slate-600 uppercase tracking-wide">
+                        Yrs experience
                       </div>
                     </div>
                   </div>
 
-                  <div className="bg-white rounded-xl p-4">
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="text-sm font-medium text-slate-600">
-                        Enterprise Security
-                      </span>
-                      <span className="text-sm font-bold text-blue-600">✓</span>
-                    </div>
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="text-sm font-medium text-slate-600">
-                        Agile Methodology
-                      </span>
-                      <span className="text-sm font-bold text-blue-600">✓</span>
-                    </div>
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="text-sm font-medium text-slate-600">
-                        Modern Tech Stack
-                      </span>
-                      <span className="text-sm font-bold text-blue-600">✓</span>
-                    </div>
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="text-sm font-medium text-slate-600">
-                        Direct Expert Access
-                      </span>
-                      <span className="text-sm font-bold text-blue-600">✓</span>
-                    </div>
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="text-sm font-medium text-slate-600">
-                        Quality Assurance
-                      </span>
-                      <span className="text-sm font-bold text-blue-600">✓</span>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm font-medium text-slate-600">
-                        24/7 Support
-                      </span>
-                      <span className="text-sm font-bold text-blue-600">✓</span>
-                    </div>
+                  <div className="bg-white rounded-lg border border-slate-200 p-5">
+                    <p className="text-xs font-medium uppercase tracking-wide text-slate-500 mb-4">
+                      Delivery standards
+                    </p>
+                    <ul className="space-y-3 text-sm">
+                      {[
+                        "Enterprise security posture",
+                        "Agile governance",
+                        "Modern tech stack",
+                        "Direct expert access",
+                        "Quality assurance",
+                        "Operational support",
+                      ].map((label) => (
+                        <li
+                          key={label}
+                          className="flex items-center justify-between text-slate-700"
+                        >
+                          <span>{label}</span>
+                          <span className="text-slate-400" aria-hidden>
+                            ✓
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
 
-                  <div className="bg-white rounded-xl p-4 mt-4">
-                    <div className="text-sm font-medium text-slate-600 mb-3 text-center">
-                      Industry Experience
-                    </div>
-                    <div className="grid grid-cols-2 gap-2 text-xs">
-                      <div className="flex items-center justify-between">
-                        <span className="text-slate-600">Insurance</span>
-                        <span className="text-blue-600">✓</span>
-                      </div>
-                      <div className="flex items-center justify-between">
-                        <span className="text-slate-600">E-commerce</span>
-                        <span className="text-blue-600">✓</span>
-                      </div>
-                      <div className="flex items-center justify-between">
-                        <span className="text-slate-600">Hospitality</span>
-                        <span className="text-blue-600">✓</span>
-                      </div>
-                      <div className="flex items-center justify-between">
-                        <span className="text-slate-600">Education</span>
-                        <span className="text-blue-600">✓</span>
-                      </div>
-                      <div className="flex items-center justify-between">
-                        <span className="text-slate-600">Law Enforcement</span>
-                        <span className="text-blue-600">✓</span>
-                      </div>
-                      <div className="flex items-center justify-between">
-                        <span className="text-slate-600">Telecom</span>
-                        <span className="text-blue-600">✓</span>
-                      </div>
-                      <div className="flex items-center justify-between">
-                        <span className="text-slate-600">Banks & Finance</span>
-                        <span className="text-blue-600">✓</span>
-                      </div>
-                      <div className="flex items-center justify-between">
-                        <span className="text-slate-600">ERPs</span>
-                        <span className="text-blue-600">✓</span>
-                      </div>
+                  <div className="bg-white rounded-lg border border-slate-200 p-5">
+                    <p className="text-xs font-medium uppercase tracking-wide text-slate-500 mb-4">
+                      Industry exposure
+                    </p>
+                    <div className="grid grid-cols-2 gap-x-4 gap-y-2 text-xs text-slate-700">
+                      {[
+                        "Insurance",
+                        "E-commerce",
+                        "Hospitality",
+                        "Education",
+                        "Law enforcement",
+                        "Telecom",
+                        "Banks & finance",
+                        "ERPs",
+                      ].map((label) => (
+                        <div
+                          key={label}
+                          className="flex items-center justify-between border-b border-slate-100 pb-2"
+                        >
+                          <span>{label}</span>
+                          <span className="text-slate-400" aria-hidden>
+                            ✓
+                          </span>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </div>
               </div>
-
-              {/* Decorative Elements */}
-              <div className="absolute -top-4 -right-4 w-8 h-8 bg-yellow-400 rounded-full opacity-60 motion-safe:animate-bounce"></div>
-              <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-pink-400 rounded-full opacity-60 motion-safe:animate-pulse"></div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Services */}
-      <section className="section-padding bg-slate-50">
+      <section className="section-padding bg-slate-50 border-t border-slate-200/80">
         <div className="container-custom">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-              Our Services
+          <div className="max-w-2xl mb-14">
+            <h2 className="text-3xl md:text-4xl font-semibold text-slate-900 mb-4 tracking-tight">
+              Capabilities
             </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Comprehensive technology solutions tailored to your business
-              needs.
+            <p className="text-lg text-slate-600 leading-relaxed">
+              End-to-end technology services—from strategy and architecture to
+              build, modernization, and operational support.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <Link
               href="/services/web-development"
-              className="group block bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 hover:border-slate-200"
+              className="group flex flex-col bg-white rounded-xl border border-slate-200 p-8 shadow-sm hover:shadow-md hover:border-slate-300 transition-all duration-200"
             >
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl flex items-center justify-center mb-6 motion-safe:group-hover:scale-110 transition-transform motion-reduce:transition-none duration-300">
-                <Globe className="h-8 w-8 text-blue-600" />
+              <div className="w-14 h-14 bg-slate-100 rounded-lg flex items-center justify-center mb-6">
+                <Globe className="h-7 w-7 text-slate-700" />
               </div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-blue-600 transition-colors duration-300">
-                Web Development
+              <h3 className="text-xl font-semibold text-slate-900 mb-3 group-hover:text-slate-700">
+                Web development
               </h3>
-              <p className="text-slate-600 leading-relaxed mb-6">
-                Modern, responsive websites and web applications built with
-                cutting-edge technologies.
+              <p className="text-slate-600 text-sm leading-relaxed mb-8 flex-1">
+                Responsive web applications engineered for performance,
+                accessibility, and maintainability.
               </p>
-              <div className="flex items-center text-blue-600 font-semibold group-hover:translate-x-2 transition-transform duration-300">
-                Learn More
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </div>
+              <span className="inline-flex items-center text-sm font-medium text-slate-900">
+                View capability
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+              </span>
             </Link>
 
             <Link
               href="/services/mobile-development"
-              className="group block bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 hover:border-slate-200"
+              className="group flex flex-col bg-white rounded-xl border border-slate-200 p-8 shadow-sm hover:shadow-md hover:border-slate-300 transition-all duration-200"
             >
-              <div className="w-16 h-16 bg-gradient-to-br from-green-50 to-green-100 rounded-2xl flex items-center justify-center mb-6 motion-safe:group-hover:scale-110 transition-transform motion-reduce:transition-none duration-300">
-                <Smartphone className="h-8 w-8 text-green-600" />
+              <div className="w-14 h-14 bg-slate-100 rounded-lg flex items-center justify-center mb-6">
+                <Smartphone className="h-7 w-7 text-slate-700" />
               </div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-green-600 transition-colors duration-300">
-                Mobile Development
+              <h3 className="text-xl font-semibold text-slate-900 mb-3 group-hover:text-slate-700">
+                Mobile development
               </h3>
-              <p className="text-slate-600 leading-relaxed mb-6">
-                Native and cross-platform mobile applications for iOS and
-                Android platforms.
+              <p className="text-slate-600 text-sm leading-relaxed mb-8 flex-1">
+                Native and cross-platform mobile solutions for iOS and Android.
               </p>
-              <div className="flex items-center text-green-600 font-semibold group-hover:translate-x-2 transition-transform duration-300">
-                Learn More
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </div>
+              <span className="inline-flex items-center text-sm font-medium text-slate-900">
+                View capability
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+              </span>
             </Link>
 
             <Link
               href="/services/cloud-solutions"
-              className="group block bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 hover:border-slate-200"
+              className="group flex flex-col bg-white rounded-xl border border-slate-200 p-8 shadow-sm hover:shadow-md hover:border-slate-300 transition-all duration-200"
             >
-              <div className="w-16 h-16 bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl flex items-center justify-center mb-6 motion-safe:group-hover:scale-110 transition-transform motion-reduce:transition-none duration-300">
-                <Cloud className="h-8 w-8 text-purple-600" />
+              <div className="w-14 h-14 bg-slate-100 rounded-lg flex items-center justify-center mb-6">
+                <Cloud className="h-7 w-7 text-slate-700" />
               </div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-purple-600 transition-colors duration-300">
-                Cloud Solutions
+              <h3 className="text-xl font-semibold text-slate-900 mb-3 group-hover:text-slate-700">
+                Cloud solutions
               </h3>
-              <p className="text-slate-600 leading-relaxed mb-6">
-                Scalable cloud infrastructure and migration services for modern
-                businesses.
+              <p className="text-slate-600 text-sm leading-relaxed mb-8 flex-1">
+                Migration, platform engineering, and cost-aware operations on
+                major cloud providers.
               </p>
-              <div className="flex items-center text-purple-600 font-semibold group-hover:translate-x-2 transition-transform duration-300">
-                Learn More
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </div>
+              <span className="inline-flex items-center text-sm font-medium text-slate-900">
+                View capability
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+              </span>
             </Link>
 
             <Link
-              href="/services/consulting"
-              className="group block bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 hover:border-slate-200"
+              href="/services/technology-consulting"
+              className="group flex flex-col bg-white rounded-xl border border-slate-200 p-8 shadow-sm hover:shadow-md hover:border-slate-300 transition-all duration-200"
             >
-              <div className="w-16 h-16 bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl flex items-center justify-center mb-6 motion-safe:group-hover:scale-110 transition-transform motion-reduce:transition-none duration-300">
-                <Users className="h-8 w-8 text-orange-600" />
+              <div className="w-14 h-14 bg-slate-100 rounded-lg flex items-center justify-center mb-6">
+                <Users className="h-7 w-7 text-slate-700" />
               </div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-orange-600 transition-colors duration-300">
-                Technology Consulting
+              <h3 className="text-xl font-semibold text-slate-900 mb-3 group-hover:text-slate-700">
+                Technology consulting
               </h3>
-              <p className="text-slate-600 leading-relaxed mb-6">
-                Strategic technology guidance to optimize your digital
-                transformation journey.
+              <p className="text-slate-600 text-sm leading-relaxed mb-8 flex-1">
+                Architecture, vendor alignment, and transformation planning with
+                measurable outcomes.
               </p>
-              <div className="flex items-center text-orange-600 font-semibold group-hover:translate-x-2 transition-transform duration-300">
-                Learn More
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </div>
+              <span className="inline-flex items-center text-sm font-medium text-slate-900">
+                View capability
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+              </span>
             </Link>
 
             <Link
               href="/services/going-mobile"
-              className="group block bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 hover:border-slate-200"
+              className="group flex flex-col bg-white rounded-xl border border-slate-200 p-8 shadow-sm hover:shadow-md hover:border-slate-300 transition-all duration-200"
             >
-              <div className="w-16 h-16 bg-gradient-to-br from-teal-50 to-teal-100 rounded-2xl flex items-center justify-center mb-6 motion-safe:group-hover:scale-110 transition-transform motion-reduce:transition-none duration-300">
-                <Smartphone className="h-8 w-8 text-teal-600" />
+              <div className="w-14 h-14 bg-slate-100 rounded-lg flex items-center justify-center mb-6">
+                <Smartphone className="h-7 w-7 text-slate-700" />
               </div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-teal-600 transition-colors duration-300">
-                Going Mobile
+              <h3 className="text-xl font-semibold text-slate-900 mb-3 group-hover:text-slate-700">
+                Going mobile
               </h3>
-              <p className="text-slate-600 leading-relaxed mb-6">
-                Transform your business with mobile-first strategies and
-                solutions.
+              <p className="text-slate-600 text-sm leading-relaxed mb-8 flex-1">
+                Mobile-first strategy, product design, and rollout support for
+                field and customer channels.
               </p>
-              <div className="flex items-center text-teal-600 font-semibold group-hover:translate-x-2 transition-transform duration-300">
-                Learn More
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </div>
+              <span className="inline-flex items-center text-sm font-medium text-slate-900">
+                View capability
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+              </span>
             </Link>
 
             <Link
               href="/services/custom-solutions"
-              className="group block bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 hover:border-slate-200"
+              className="group flex flex-col bg-white rounded-xl border border-slate-200 p-8 shadow-sm hover:shadow-md hover:border-slate-300 transition-all duration-200"
             >
-              <div className="w-16 h-16 bg-gradient-to-br from-indigo-50 to-indigo-100 rounded-2xl flex items-center justify-center mb-6 motion-safe:group-hover:scale-110 transition-transform motion-reduce:transition-none duration-300">
-                <Settings className="h-8 w-8 text-indigo-600" />
+              <div className="w-14 h-14 bg-slate-100 rounded-lg flex items-center justify-center mb-6">
+                <Settings className="h-7 w-7 text-slate-700" />
               </div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-indigo-600 transition-colors duration-300">
-                Custom Solutions
+              <h3 className="text-xl font-semibold text-slate-900 mb-3 group-hover:text-slate-700">
+                Custom solutions
               </h3>
-              <p className="text-slate-600 leading-relaxed mb-6">
-                Tailored software solutions designed to meet your specific
-                business requirements.
+              <p className="text-slate-600 text-sm leading-relaxed mb-8 flex-1">
+                Bespoke software and integrations tailored to regulated and
+                complex environments.
               </p>
-              <div className="flex items-center text-indigo-600 font-semibold group-hover:translate-x-2 transition-transform duration-300">
-                Learn More
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </div>
+              <span className="inline-flex items-center text-sm font-medium text-slate-900">
+                View capability
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+              </span>
             </Link>
           </div>
         </div>
@@ -534,31 +501,31 @@ export default function Home() {
       */}
 
       {/* CTA Section */}
-      <section className="section-padding bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-700">
+      <section className="section-padding bg-slate-900 text-white border-t border-slate-800">
         <div className="container-custom">
-          <div className="text-center max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Ready to Transform Your Business?
+          <div className="max-w-3xl">
+            <h2 className="text-3xl md:text-4xl font-semibold mb-5 tracking-tight text-balance">
+              Discuss your next initiative
             </h2>
-            <p className="text-xl text-blue-100 mb-10 max-w-3xl mx-auto leading-relaxed">
-              Let&apos;s discuss how our technology solutions can drive your
-              business forward and accelerate your digital transformation
-              journey.
+            <p className="text-lg text-slate-300 mb-10 leading-relaxed">
+              Share objectives, constraints, and timelines—we&apos;ll respond
+              with a concise view of how we can help, without a lengthy sales
+              process.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/contact"
-                className="bg-white text-blue-600 hover:bg-slate-50 font-bold py-4 px-8 rounded-xl transition-all duration-300 inline-flex items-center text-lg shadow-lg hover:shadow-xl"
+                className="inline-flex items-center justify-center rounded-md bg-white px-8 py-3.5 text-base font-medium text-slate-900 shadow-sm hover:bg-slate-100 transition-colors"
               >
-                Get a Consultation
-                <ArrowRight className="ml-3 h-5 w-5" />
+                Contact us
+                <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
               <Link
                 href="/services"
-                className="border-2 border-white text-white hover:bg-white hover:text-blue-600 font-bold py-4 px-8 rounded-xl transition-all duration-300 inline-flex items-center text-lg"
+                className="inline-flex items-center justify-center rounded-md border border-slate-600 px-8 py-3.5 text-base font-medium text-white hover:bg-slate-800 transition-colors"
               >
-                Explore Services
-                <ArrowRight className="ml-3 h-5 w-5" />
+                All services
+                <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </div>
           </div>
