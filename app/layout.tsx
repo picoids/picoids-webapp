@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { getSiteUrl } from "@/lib/site";
 
 const inter = Inter({ subsets: ["latin"] });
 
+const siteUrl = getSiteUrl();
+
 export const metadata: Metadata = {
+  metadataBase: new URL(`${siteUrl}/`),
   title: "Picoids Technology and Consulting Pvt. Ltd. - Technology Solutions",
   description:
     "Leading technology consulting firm offering cloud services, application development, AI integration, and digital transformation solutions for modern businesses.",
@@ -15,6 +19,23 @@ export const metadata: Metadata = {
     title: "Picoids Technology and Consulting Pvt. Ltd.",
     description: "Technology solutions for modern businesses",
     type: "website",
+    url: siteUrl,
+    siteName: "Picoids Technology and Consulting",
+    locale: "en_IN",
+    images: [
+      {
+        url: "/picoids-logo-with-name.svg",
+        width: 1200,
+        height: 630,
+        alt: "Picoids Technology and Consulting",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Picoids Technology and Consulting Pvt. Ltd.",
+    description: "Technology solutions for modern businesses",
+    images: ["/picoids-logo-with-name.svg"],
   },
   icons: {
     icon: "/favicon.svg",
@@ -30,10 +51,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml" />
-      </head>
       <body className={inter.className}>{children}</body>
     </html>
   );
