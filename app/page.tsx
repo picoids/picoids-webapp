@@ -462,10 +462,10 @@ export default function Home() {
                 className="bg-slate-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 hover:border-slate-200 group"
               >
                 <div className="p-8">
-                  <span className="text-sm text-blue-600 font-semibold uppercase tracking-wide">
+                  <span className="text-sm text-slate-600 font-semibold uppercase tracking-wide">
                     {insight.category}
                   </span>
-                  <h3 className="text-xl font-bold text-slate-900 mt-3 mb-4 group-hover:text-blue-600 transition-colors duration-300">
+                  <h3 className="text-xl font-bold text-slate-900 mt-3 mb-4 group-hover:text-slate-700 transition-colors duration-300">
                     {insight.title}
                   </h3>
                   <p className="text-slate-600 mb-6 leading-relaxed">
@@ -477,7 +477,7 @@ export default function Home() {
                     </span>
                     <Link
                       href="/blog"
-                      className="text-blue-600 hover:text-blue-700 font-semibold inline-flex items-center group-hover:translate-x-1 transition-transform duration-300"
+                      className="text-slate-900 hover:text-slate-700 font-semibold inline-flex items-center group-hover:translate-x-1 transition-transform duration-300"
                     >
                       Read More
                       <ArrowRight className="ml-2 h-4 w-4" />

@@ -38,7 +38,6 @@ export default function ServicesPage() {
         "Cost Optimization",
       ],
       cta: "Discuss your cloud journey",
-      color: "bg-blue-100 text-blue-600",
     },
     {
       icon: Code,
@@ -49,7 +48,6 @@ export default function ServicesPage() {
       intro: "Build robust web and mobile apps using modern tech stacks",
       keyAreas: ["Web", "Mobile", "Enterprise Apps", "API Integration"],
       cta: "Bring your app idea to life",
-      color: "bg-green-100 text-green-600",
     },
     {
       icon: Shield,
@@ -65,7 +63,6 @@ export default function ServicesPage() {
         "Security Patching",
       ],
       cta: "Secure your applications' future",
-      color: "bg-purple-100 text-purple-600",
     },
     {
       icon: Zap,
@@ -77,7 +74,6 @@ export default function ServicesPage() {
         "Improve performance, cost-efficiency, and scalability through modernization",
       keyAreas: ["Legacy Migration", "Microservices", "Containers", "DevOps"],
       cta: "Modernize your apps for performance",
-      color: "bg-orange-100 text-orange-600",
     },
     {
       icon: Smartphone,
@@ -89,7 +85,6 @@ export default function ServicesPage() {
         "Reach users everywhere with responsive native or cross-platform mobile experiences",
       keyAreas: ["Mobile Strategy", "Dev", "UI/UX", "Enterprise Mobility"],
       cta: "Unlock the power of mobile",
-      color: "bg-pink-100 text-pink-600",
     },
     {
       icon: Brain,
@@ -100,7 +95,6 @@ export default function ServicesPage() {
       intro: "Leverage AI/ML to automate, predict, and optimize workflows",
       keyAreas: ["Predictive Analytics", "NLP", "Vision", "Generative AI"],
       cta: "Infuse intelligence into your operations",
-      color: "bg-indigo-100 text-indigo-600",
     },
     {
       icon: Users,
@@ -117,7 +111,6 @@ export default function ServicesPage() {
         "Transformation",
       ],
       cta: "Gain a strategic edge",
-      color: "bg-teal-100 text-teal-600",
     },
     {
       icon: BarChart3,
@@ -129,7 +122,6 @@ export default function ServicesPage() {
         "Fill critical gaps with vetted developers, architects, and consultants",
       keyAreas: ["Contract", "Contract-to-Hire", "Direct Hire"],
       cta: "Find the right tech talent",
-      color: "bg-yellow-100 text-yellow-600",
     },
     {
       icon: CheckCircle,
@@ -140,7 +132,6 @@ export default function ServicesPage() {
       intro: "Evaluate and optimize your systems, code, and infrastructure",
       keyAreas: ["IT", "Security", "Performance", "Cost", "Compliance Audits"],
       cta: "Optimize your tech investment",
-      color: "bg-red-100 text-red-600",
     },
   ];
 
@@ -149,51 +140,51 @@ export default function ServicesPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-indigo-100 section-padding">
+      <section className="bg-slate-50 border-b border-slate-200/80 section-padding">
         <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              Our <span className="text-blue-600">Services</span>
+          <div className="max-w-3xl">
+            <h1 className="text-4xl md:text-5xl font-semibold text-slate-900 mb-6 tracking-tight">
+              Services
             </h1>
-            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-              Comprehensive technology solutions designed to drive your business
-              forward. From cloud migration to AI integration, we have the
-              expertise to transform your digital landscape.
+            <p className="text-lg text-slate-600 leading-relaxed">
+              Advisory and delivery across cloud, engineering, modernization,
+              AI, and operations—structured for enterprise governance and clear
+              outcomes.
             </p>
           </div>
         </div>
       </section>
 
       {/* Services Grid */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-white border-b border-slate-100">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {services.map((service) => (
               <div
                 key={service.slug}
-                className="border border-gray-200 rounded-lg p-8 hover:shadow-lg transition-shadow"
+                className="border border-slate-200 rounded-xl p-8 shadow-sm hover:shadow-md hover:border-slate-300 transition-all duration-200 bg-white"
               >
                 <div className="flex items-start space-x-4">
-                  <div
-                    className={`w-16 h-16 ${service.color} rounded-lg flex items-center justify-center flex-shrink-0`}
-                  >
-                    <service.icon className="h-8 w-8" />
+                  <div className="w-16 h-16 bg-slate-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <service.icon className="h-8 w-8 text-slate-700" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                    <h3 className="text-xl font-semibold text-slate-900 mb-2">
                       {service.title}
                     </h3>
-                    <p className="text-gray-600 mb-4">{service.intro}</p>
+                    <p className="text-slate-600 mb-4 text-sm leading-relaxed">
+                      {service.intro}
+                    </p>
 
                     <div className="mb-6">
-                      <h4 className="font-semibold text-gray-900 mb-2">
-                        Key Areas:
+                      <h4 className="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-2">
+                        Key areas
                       </h4>
                       <div className="flex flex-wrap gap-2">
                         {service.keyAreas.map((area) => (
                           <span
                             key={area}
-                            className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm"
+                            className="border border-slate-200 bg-slate-50 text-slate-700 px-2.5 py-1 rounded-md text-xs font-medium"
                           >
                             {area}
                           </span>
@@ -217,29 +208,29 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-blue-600">
+      <section className="section-padding bg-slate-900 text-white border-t border-slate-800">
         <div className="container-custom">
-          <div className="text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Ready to Get Started?
+          <div className="max-w-3xl">
+            <h2 className="text-3xl md:text-4xl font-semibold mb-4 tracking-tight">
+              Scope your next engagement
             </h2>
-            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-              Let&apos;s discuss your specific needs and find the perfect
-              solution for your business.
+            <p className="text-lg text-slate-300 mb-10 leading-relaxed">
+              Tell us about priorities and constraints—we&apos;ll propose a
+              practical path, whether advisory, delivery, or blended.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/contact"
-                className="bg-white text-blue-600 hover:bg-gray-100 font-semibold py-3 px-8 rounded-lg transition-colors duration-200 inline-flex items-center"
+                className="inline-flex items-center justify-center rounded-md bg-white px-8 py-3.5 text-base font-medium text-slate-900 shadow-sm hover:bg-slate-100 transition-colors"
               >
-                Get a Consultation
+                Contact us
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
               <Link
                 href="/case-studies"
-                className="border-2 border-white text-white hover:bg-white hover:text-blue-600 font-semibold py-3 px-8 rounded-lg transition-colors duration-200 inline-flex items-center"
+                className="inline-flex items-center justify-center rounded-md border border-slate-600 px-8 py-3.5 text-base font-medium text-white hover:bg-slate-800 transition-colors"
               >
-                View Case Studies
+                Case studies
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </div>

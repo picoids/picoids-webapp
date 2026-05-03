@@ -601,19 +601,16 @@ export default async function ServicePage({ params }: ServicePageProps) {
       <Header />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-indigo-100 section-padding">
+      <section className="bg-slate-50 border-b border-slate-200/80 section-padding">
         <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+          <div className="max-w-3xl">
+            <h1 className="text-4xl md:text-5xl font-semibold text-slate-900 mb-6 tracking-tight leading-tight">
               {service.headline}
             </h1>
-            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-slate-600 mb-10 leading-relaxed max-w-2xl">
               {service.intro}
             </p>
-            <Link
-              href="/contact"
-              className="btn-primary inline-flex items-center"
-            >
+            <Link href="/contact" className="btn-primary inline-flex items-center">
               {service.cta}
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
@@ -622,25 +619,25 @@ export default async function ServicePage({ params }: ServicePageProps) {
       </section>
 
       {/* Service Description */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-white border-b border-slate-100">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
+              <h2 className="text-3xl font-semibold text-slate-900 mb-6 tracking-tight">
                 About {service.title}
               </h2>
-              <p className="text-lg text-gray-600 mb-6">
+              <p className="text-lg text-slate-600 mb-6 leading-relaxed">
                 {service.description}
               </p>
-              <div className="mb-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                  Key Areas
+              <div className="mb-2">
+                <h3 className="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-3">
+                  Key areas
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {service.keyAreas.map((area) => (
                     <span
                       key={area}
-                      className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium"
+                      className="border border-slate-200 bg-slate-50 text-slate-700 px-2.5 py-1 rounded-md text-xs font-medium"
                     >
                       {area}
                     </span>
@@ -648,39 +645,42 @@ export default async function ServicePage({ params }: ServicePageProps) {
                 </div>
               </div>
             </div>
-            <div className="bg-gray-50 rounded-lg p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                Why Choose Us
+            <div className="bg-slate-50 border border-slate-200 rounded-xl p-8">
+              <h3 className="text-xl font-semibold text-slate-900 mb-6">
+                Why work with Picoids
               </h3>
-              <div className="space-y-4">
-                <div className="flex items-start space-x-3">
-                  <Award className="h-6 w-6 text-blue-600 mt-0.5" />
+              <div className="space-y-5">
+                <div className="flex items-start gap-3">
+                  <Award className="h-5 w-5 text-slate-600 mt-0.5 shrink-0" />
                   <div>
-                    <h4 className="font-semibold text-gray-900">Expert Team</h4>
-                    <p className="text-gray-600 text-sm">
-                      Certified professionals with years of experience
+                    <h4 className="font-medium text-slate-900 text-sm">
+                      Expert team
+                    </h4>
+                    <p className="text-slate-600 text-sm leading-relaxed">
+                      Practitioners with deep delivery experience across
+                      enterprise environments.
                     </p>
                   </div>
                 </div>
-                <div className="flex items-start space-x-3">
-                  <Clock className="h-6 w-6 text-blue-600 mt-0.5" />
+                <div className="flex items-start gap-3">
+                  <Clock className="h-5 w-5 text-slate-600 mt-0.5 shrink-0" />
                   <div>
-                    <h4 className="font-semibold text-gray-900">
-                      Fast Delivery
+                    <h4 className="font-medium text-slate-900 text-sm">
+                      Predictable delivery
                     </h4>
-                    <p className="text-gray-600 text-sm">
-                      Quick turnaround times without compromising quality
+                    <p className="text-slate-600 text-sm leading-relaxed">
+                      Cadence and transparency aligned to your governance needs.
                     </p>
                   </div>
                 </div>
-                <div className="flex items-start space-x-3">
-                  <Users className="h-6 w-6 text-blue-600 mt-0.5" />
+                <div className="flex items-start gap-3">
+                  <Users className="h-5 w-5 text-slate-600 mt-0.5 shrink-0" />
                   <div>
-                    <h4 className="font-semibold text-gray-900">
-                      24/7 Support
+                    <h4 className="font-medium text-slate-900 text-sm">
+                      Dedicated support
                     </h4>
-                    <p className="text-gray-600 text-sm">
-                      Round-the-clock support for your peace of mind
+                    <p className="text-slate-600 text-sm leading-relaxed">
+                      Responsive engagement models from advisory through run.
                     </p>
                   </div>
                 </div>
@@ -691,25 +691,30 @@ export default async function ServicePage({ params }: ServicePageProps) {
       </section>
 
       {/* Benefits */}
-      <section className="section-padding bg-gray-50">
+      <section className="section-padding bg-slate-50 border-b border-slate-200/80">
         <div className="container-custom">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <div className="max-w-2xl mb-12">
+            <h2 className="text-3xl md:text-4xl font-semibold text-slate-900 mb-4 tracking-tight">
               Benefits
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Discover how our {service.title.toLowerCase()} can transform your
-              business.
+            <p className="text-lg text-slate-600 leading-relaxed">
+              Outcomes clients seek from strong {service.title.toLowerCase()}{" "}
+              execution.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {service.benefits.map((benefit, index) => (
-              <div key={index} className="bg-white rounded-lg p-6 shadow-sm">
-                <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
-                  <CheckCircle className="h-6 w-6 text-green-600" />
+              <div
+                key={index}
+                className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm"
+              >
+                <div className="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center mb-4">
+                  <CheckCircle className="h-5 w-5 text-slate-700" />
                 </div>
-                <p className="text-gray-700">{benefit}</p>
+                <p className="text-slate-700 text-sm leading-relaxed">
+                  {benefit}
+                </p>
               </div>
             ))}
           </div>
@@ -717,27 +722,29 @@ export default async function ServicePage({ params }: ServicePageProps) {
       </section>
 
       {/* Process */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-white border-b border-slate-100">
         <div className="container-custom">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Our Process
+          <div className="max-w-2xl mb-12">
+            <h2 className="text-3xl md:text-4xl font-semibold text-slate-900 mb-4 tracking-tight">
+              Our process
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              A proven methodology that ensures successful project delivery.
+            <p className="text-lg text-slate-600 leading-relaxed">
+              A structured approach from discovery through steady-state support.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {service.process.map((step, index) => (
-              <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl">
+              <div key={index} className="border border-slate-200 rounded-xl p-6 bg-slate-50/50">
+                <div className="w-10 h-10 bg-slate-900 rounded-md flex items-center justify-center mb-4 text-white font-semibold text-sm tabular-nums">
                   {index + 1}
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                <h3 className="text-lg font-semibold text-slate-900 mb-2">
                   {step.step}
                 </h3>
-                <p className="text-gray-600">{step.description}</p>
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  {step.description}
+                </p>
               </div>
             ))}
           </div>
@@ -745,29 +752,29 @@ export default async function ServicePage({ params }: ServicePageProps) {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-blue-600">
+      <section className="section-padding bg-slate-900 text-white border-t border-slate-800">
         <div className="container-custom">
-          <div className="text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Ready to Get Started?
+          <div className="max-w-3xl">
+            <h2 className="text-3xl md:text-4xl font-semibold mb-4 tracking-tight">
+              Discuss {service.title.toLowerCase()}
             </h2>
-            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-              Let&apos;s discuss how our {service.title.toLowerCase()} can help
-              transform your business.
+            <p className="text-lg text-slate-300 mb-10 leading-relaxed">
+              Share context on priorities and timelines—we&apos;ll respond with
+              a practical engagement outline.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/contact"
-                className="bg-white text-blue-600 hover:bg-gray-100 font-semibold py-3 px-8 rounded-lg transition-colors duration-200 inline-flex items-center"
+                className="inline-flex items-center justify-center rounded-md bg-white px-8 py-3.5 text-base font-medium text-slate-900 shadow-sm hover:bg-slate-100 transition-colors"
               >
-                Get a Free Consultation
+                Contact us
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
               <Link
                 href="/case-studies"
-                className="border-2 border-white text-white hover:bg-white hover:text-blue-600 font-semibold py-3 px-8 rounded-lg transition-colors duration-200 inline-flex items-center"
+                className="inline-flex items-center justify-center rounded-md border border-slate-600 px-8 py-3.5 text-base font-medium text-white hover:bg-slate-800 transition-colors"
               >
-                View Case Studies
+                Case studies
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </div>

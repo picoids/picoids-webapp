@@ -29,7 +29,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-slate-950 text-white border-t border-slate-800">
       <div className="container-custom py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
@@ -54,14 +54,14 @@ const Footer = () => {
                 />
               </div>
             </div>
-            <p className="text-gray-300 mb-6">
-              Leading technology consulting firm delivering innovative solutions
-              for modern businesses.
+            <p className="text-slate-400 mb-6 text-sm leading-relaxed">
+              Technology consulting for cloud, applications, and AI—with
+              disciplined delivery and direct practitioner access.
             </p>
             <div className="flex space-x-4">
               <a
                 href="https://www.linkedin.com/company/picoids/"
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-slate-500 hover:text-white transition-colors"
                 aria-label="Picoids on LinkedIn"
               >
                 <Linkedin className="h-5 w-5" aria-hidden />
@@ -71,13 +71,15 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Services</h3>
+            <h3 className="text-sm font-semibold mb-4 uppercase tracking-wide text-slate-400">
+              Services
+            </h3>
             <ul className="space-y-2">
               {services.slice(0, 6).map((service) => (
                 <li key={service.name}>
                   <Link
                     href={service.href}
-                    className="text-gray-300 hover:text-white transition-colors"
+                    className="text-slate-400 hover:text-white transition-colors text-sm"
                   >
                     {service.name}
                   </Link>
@@ -88,13 +90,15 @@ const Footer = () => {
 
           {/* Company */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Company</h3>
+            <h3 className="text-sm font-semibold mb-4 uppercase tracking-wide text-slate-400">
+              Company
+            </h3>
             <ul className="space-y-2">
               {company.map((item) => (
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="text-gray-300 hover:text-white transition-colors"
+                    className="text-slate-400 hover:text-white transition-colors text-sm"
                   >
                     {item.name}
                   </Link>
@@ -105,24 +109,26 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Contact</h3>
+            <h3 className="text-sm font-semibold mb-4 uppercase tracking-wide text-slate-400">
+              Contact
+            </h3>
             <div className="space-y-3">
               <div className="flex items-start space-x-3">
-                <Mail className="h-5 w-5 text-blue-400 mt-0.5" />
+                <Mail className="h-5 w-5 text-slate-500 mt-0.5 shrink-0" />
                 <div>
-                  <p className="text-gray-300">connect@picoids.com</p>
+                  <p className="text-slate-400 text-sm">connect@picoids.com</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
-                <Phone className="h-5 w-5 text-blue-400 mt-0.5" />
+                <Phone className="h-5 w-5 text-slate-500 mt-0.5 shrink-0" />
                 <div>
-                  <p className="text-gray-300">+91 8955225869</p>
+                  <p className="text-slate-400 text-sm">+91 8955225869</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
-                <MapPin className="h-5 w-5 text-blue-400 mt-0.5" />
+                <MapPin className="h-5 w-5 text-slate-500 mt-0.5 shrink-0" />
                 <div>
-                  <p className="text-gray-300">
+                  <p className="text-slate-400 text-sm">
                     Hanuman street, Jailwell
                     <br />
                     Bikaner, Rajasthan, India - 334001
@@ -134,22 +140,22 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-800 mt-12 pt-8">
+        <div className="border-t border-slate-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm">
+            <p className="text-slate-500 text-sm">
               © {currentYear} Picoids Technology and Consulting Pvt. Ltd. All
               rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <Link
                 href="/privacy"
-                className="text-gray-400 hover:text-white text-sm transition-colors"
+                className="text-slate-500 hover:text-white text-sm transition-colors"
               >
                 Privacy Policy
               </Link>
               <Link
                 href="/terms"
-                className="text-gray-400 hover:text-white text-sm transition-colors"
+                className="text-slate-500 hover:text-white text-sm transition-colors"
               >
                 Terms of Service
               </Link>

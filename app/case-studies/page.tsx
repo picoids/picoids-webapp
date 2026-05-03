@@ -138,35 +138,36 @@ export default function CaseStudiesPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-indigo-100 section-padding">
+      <section className="bg-slate-50 border-b border-slate-200/80 section-padding">
         <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              Case <span className="text-blue-600">Studies</span>
+          <div className="max-w-3xl">
+            <h1 className="text-4xl md:text-5xl font-semibold text-slate-900 mb-6 tracking-tight">
+              Case studies
             </h1>
-            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-              Explore our successful projects and see how we&apos;ve helped
-              businesses achieve digital transformation and drive growth.
+            <p className="text-lg text-slate-600 leading-relaxed">
+              Representative engagements illustrating approach, stack choices,
+              and measurable outcomes. Detail pages coming soon for full
+              narratives.
             </p>
           </div>
         </div>
       </section>
 
       {/* Case Studies Grid */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-white border-b border-slate-100">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {caseStudies.map((study) => (
               <div
                 key={study.id}
-                className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
+                className="border border-slate-200 rounded-xl overflow-hidden hover:shadow-md hover:border-slate-300 transition-all bg-white shadow-sm"
               >
                 <div className="p-8">
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                  <div className="flex items-center justify-between mb-4 gap-4 flex-wrap">
+                    <span className="border border-slate-200 bg-slate-50 text-slate-700 px-2.5 py-1 rounded-md text-xs font-medium uppercase tracking-wide">
                       {study.industry}
                     </span>
-                    <div className="flex items-center space-x-4 text-sm text-gray-500">
+                    <div className="flex items-center space-x-4 text-sm text-slate-500">
                       <div className="flex items-center">
                         <Clock className="h-4 w-4 mr-1" />
                         {study.duration}
@@ -178,49 +179,55 @@ export default function CaseStudiesPage() {
                     </div>
                   </div>
 
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  <h3 className="text-xl font-semibold text-slate-900 mb-4 tracking-tight">
                     {study.title}
                   </h3>
 
                   <div className="space-y-4 mb-6">
                     <div>
-                      <h4 className="font-semibold text-gray-900 mb-2">
+                      <h4 className="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-2">
                         Challenge
                       </h4>
-                      <p className="text-gray-600 text-sm">{study.challenge}</p>
+                      <p className="text-slate-600 text-sm leading-relaxed">
+                        {study.challenge}
+                      </p>
                     </div>
 
                     <div>
-                      <h4 className="font-semibold text-gray-900 mb-2">
+                      <h4 className="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-2">
                         Solution
                       </h4>
-                      <p className="text-gray-600 text-sm">{study.solution}</p>
+                      <p className="text-slate-600 text-sm leading-relaxed">
+                        {study.solution}
+                      </p>
                     </div>
                   </div>
 
                   <div className="mb-6">
-                    <h4 className="font-semibold text-gray-900 mb-3">
-                      Key Results
+                    <h4 className="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-3">
+                      Key results
                     </h4>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                       {study.results.map((result, index) => (
-                        <div key={index} className="flex items-center text-sm">
-                          <TrendingUp className="h-4 w-4 text-green-600 mr-2 flex-shrink-0" />
-                          <span className="text-gray-700">{result}</span>
+                        <div key={index} className="flex items-start text-sm gap-2">
+                          <TrendingUp className="h-4 w-4 text-slate-500 mt-0.5 shrink-0" />
+                          <span className="text-slate-700 leading-snug">
+                            {result}
+                          </span>
                         </div>
                       ))}
                     </div>
                   </div>
 
                   <div className="mb-6">
-                    <h4 className="font-semibold text-gray-900 mb-2">
-                      Technologies Used
+                    <h4 className="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-2">
+                      Technologies
                     </h4>
                     <div className="flex flex-wrap gap-2">
                       {study.technologies.map((tech) => (
                         <span
                           key={tech}
-                          className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs"
+                          className="border border-slate-200 bg-slate-50 text-slate-700 px-2 py-1 rounded-md text-xs font-medium"
                         >
                           {tech}
                         </span>
@@ -243,61 +250,55 @@ export default function CaseStudiesPage() {
       </section>
 
       {/* Stats Section */}
-      <section className="section-padding bg-blue-600">
+      <section className="section-padding bg-slate-900 text-white border-y border-slate-800">
         <div className="container-custom">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-white mb-2">
+            <div className="text-center md:text-left">
+              <div className="text-3xl md:text-4xl font-semibold text-white mb-2 tabular-nums tracking-tight">
                 150+
               </div>
-              <div className="text-blue-100">Projects Completed</div>
+              <div className="text-slate-400 text-sm">Projects delivered</div>
             </div>
-            <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-white mb-2">
+            <div className="text-center md:text-left">
+              <div className="text-3xl md:text-4xl font-semibold text-white mb-2 tabular-nums tracking-tight">
                 50+
               </div>
-              <div className="text-blue-100">Happy Clients</div>
+              <div className="text-slate-400 text-sm">Client relationships</div>
             </div>
-            <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-white mb-2">
+            <div className="text-center md:text-left">
+              <div className="text-3xl md:text-4xl font-semibold text-white mb-2 tabular-nums tracking-tight">
                 99.9%
               </div>
-              <div className="text-blue-100">Success Rate</div>
+              <div className="text-slate-400 text-sm">Target availability</div>
             </div>
-            <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-white mb-2">
+            <div className="text-center md:text-left">
+              <div className="text-3xl md:text-4xl font-semibold text-white mb-2 tabular-nums tracking-tight">
                 24/7
               </div>
-              <div className="text-blue-100">Support Available</div>
+              <div className="text-slate-400 text-sm">Support posture</div>
             </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-gray-50">
+      <section className="section-padding bg-slate-50 border-b border-slate-200/80">
         <div className="container-custom">
-          <div className="text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Ready to Start Your Success Story?
+          <div className="max-w-2xl">
+            <h2 className="text-3xl md:text-4xl font-semibold text-slate-900 mb-4 tracking-tight">
+              Explore a similar engagement
             </h2>
-            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-              Let&apos;s discuss how we can help transform your business and
-              achieve similar results.
+            <p className="text-lg text-slate-600 mb-8 leading-relaxed">
+              Share industry, constraints, and success metrics—we&apos;ll map
+              where Picoids can add leverage.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/contact"
-                className="btn-primary inline-flex items-center"
-              >
-                Get Started Today
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link href="/contact" className="btn-primary inline-flex items-center">
+                Contact us
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
-              <Link
-                href="/services"
-                className="btn-secondary inline-flex items-center"
-              >
-                Explore Our Services
+              <Link href="/services" className="btn-secondary inline-flex items-center">
+                Services overview
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </div>

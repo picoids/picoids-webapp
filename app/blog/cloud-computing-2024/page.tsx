@@ -16,48 +16,52 @@ export default function CloudComputing2024Page() {
       <Header />
 
       {/* Article Header */}
-      <section className="bg-gradient-to-br from-blue-50 to-indigo-100 section-padding">
+      <section className="bg-slate-50 border-b border-slate-200/80 section-padding">
         <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-3xl">
             <Link
               href="/blog"
-              className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-6"
+              className="inline-flex items-center text-sm font-medium text-slate-600 hover:text-slate-900 mb-8"
             >
               <ArrowLeft className="h-4 w-4 mr-2" />
-              Back to Blog
+              Back to insights
             </Link>
 
-            <div className="bg-white rounded-lg p-8 shadow-sm">
-              <div className="flex items-center space-x-4 mb-6">
-                <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
-                  Cloud Services
+            <div className="border border-slate-200 rounded-xl bg-white p-8 shadow-sm">
+              <div className="flex items-center flex-wrap gap-3 mb-6">
+                <span className="border border-slate-200 bg-slate-50 text-slate-700 px-2.5 py-1 rounded-md text-xs font-medium uppercase tracking-wide">
+                  Cloud services
                 </span>
-                <span className="text-gray-500 text-sm">8 min read</span>
+                <span className="text-slate-500 text-sm">8 min read</span>
               </div>
 
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              <h1 className="text-3xl md:text-4xl font-semibold text-slate-900 mb-6 tracking-tight leading-tight">
                 The Future of Cloud Computing in 2024: Trends and Predictions
               </h1>
 
-              <p className="text-xl text-gray-600 mb-8">
+              <p className="text-lg text-slate-600 mb-8 leading-relaxed">
                 Explore the latest trends and technologies shaping the cloud
                 computing landscape, from edge computing to serverless
                 architectures.
               </p>
 
-              <div className="flex items-center space-x-6 text-sm text-gray-600">
+              <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-600">
                 <div className="flex items-center">
-                  <User className="h-4 w-4 mr-2" />
+                  <User className="h-4 w-4 mr-2 shrink-0" />
                   Picoids Team
                 </div>
                 <div className="flex items-center">
-                  <Calendar className="h-4 w-4 mr-2" />
+                  <Calendar className="h-4 w-4 mr-2 shrink-0" />
                   Jun 15, 2025
                 </div>
                 <div className="flex items-center">
-                  <Clock className="h-4 w-4 mr-2" />8 min read
+                  <Clock className="h-4 w-4 mr-2 shrink-0" />
+                  8 min read
                 </div>
-                <button className="flex items-center text-blue-600 hover:text-blue-700">
+                <button
+                  type="button"
+                  className="flex items-center text-slate-900 hover:text-slate-700 font-medium"
+                >
                   <Share2 className="h-4 w-4 mr-2" />
                   Share
                 </button>
@@ -169,11 +173,11 @@ export default function CloudComputing2024Page() {
                 transformation initiatives.
               </p>
 
-              <div className="bg-blue-50 rounded-lg p-6 mt-8">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">
-                  Key Takeaways
+              <div className="border border-slate-200 bg-slate-50 rounded-xl p-6 mt-8">
+                <h3 className="text-lg font-semibold text-slate-900 mb-4">
+                  Key takeaways
                 </h3>
-                <ul className="space-y-2 text-gray-700">
+                <ul className="space-y-2 text-slate-700 text-sm leading-relaxed">
                   <li>
                     • Edge computing is becoming essential for real-time
                     applications
@@ -190,49 +194,49 @@ export default function CloudComputing2024Page() {
       </section>
 
       {/* Related Articles */}
-      <section className="section-padding bg-gray-50">
+      <section className="section-padding bg-slate-50 border-t border-slate-200/80">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8">
-              Related Articles
+            <h2 className="text-2xl font-semibold text-slate-900 mb-8 tracking-tight">
+              Related articles
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="bg-white rounded-lg p-6 shadow-sm">
-                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium mb-4 inline-block">
-                  AI Integration
+              <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
+                <span className="border border-slate-200 bg-slate-50 text-slate-700 px-2.5 py-1 rounded-md text-xs font-medium mb-4 inline-block">
+                  AI integration
                 </span>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                <h3 className="text-lg font-semibold text-slate-900 mb-3 tracking-tight">
                   Reliability vs AI Uses: When Innovation Out-Runs Trust
                 </h3>
-                <p className="text-gray-600 mb-4">
+                <p className="text-slate-600 mb-4 text-sm leading-relaxed">
                   Learn from real-world cautionary tales about AI reliability
                   and how to marry AI ambition with rock-solid dependability.
                 </p>
                 <Link
                   href="/blog/reliability-vs-ai-uses"
-                  className="text-blue-600 hover:text-blue-700 font-medium inline-flex items-center"
+                  className="text-sm font-medium text-slate-900 hover:text-slate-700 inline-flex items-center"
                 >
-                  Read More
+                  Read article
                   <ArrowLeft className="ml-1 h-4 w-4 rotate-180" />
                 </Link>
               </div>
 
-              <div className="bg-white rounded-lg p-6 shadow-sm">
-                <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium mb-4 inline-block">
-                  Application Development
+              <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
+                <span className="border border-slate-200 bg-slate-50 text-slate-700 px-2.5 py-1 rounded-md text-xs font-medium mb-4 inline-block">
+                  Application development
                 </span>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                <h3 className="text-lg font-semibold text-slate-900 mb-3 tracking-tight">
                   Building Scalable Microservices Architecture: Best Practices
                 </h3>
-                <p className="text-gray-600 mb-4">
+                <p className="text-slate-600 mb-4 text-sm leading-relaxed">
                   Learn best practices for designing and implementing
                   microservices for modern applications.
                 </p>
                 <Link
                   href="/blog/microservices-architecture"
-                  className="text-blue-600 hover:text-blue-700 font-medium inline-flex items-center"
+                  className="text-sm font-medium text-slate-900 hover:text-slate-700 inline-flex items-center"
                 >
-                  Read More
+                  Read article
                   <ArrowLeft className="ml-1 h-4 w-4 rotate-180" />
                 </Link>
               </div>

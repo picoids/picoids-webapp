@@ -58,56 +58,57 @@ export default function AboutPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-indigo-100 section-padding">
+      <section className="bg-slate-50 border-b border-slate-200/80 section-padding">
         <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              About <span className="text-blue-600">Picoids</span>
+          <div className="max-w-3xl">
+            <h1 className="text-4xl md:text-5xl font-semibold text-slate-900 mb-6 tracking-tight">
+              About Picoids
             </h1>
-            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-              We are a forward-thinking technology consulting firm dedicated to
-              helping businesses achieve digital transformation through
-              innovative solutions.
+            <p className="text-lg text-slate-600 leading-relaxed">
+              A focused technology consultancy helping organizations execute on
+              cloud, applications, and AI—with clarity and measurable outcomes.
             </p>
           </div>
         </div>
       </section>
 
       {/* Our Story */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-white border-b border-slate-100">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Our Story
+              <h2 className="text-3xl md:text-4xl font-semibold text-slate-900 mb-6 tracking-tight">
+                Our story
               </h2>
-              <p className="text-lg text-gray-600 mb-6">
+              <p className="text-lg text-slate-600 mb-6 leading-relaxed">
                 Incorporated in 2025, Picoids Technology and Consulting Pvt.
                 Ltd. was born from a vision to bridge the gap between
                 traditional business practices and cutting-edge technology
                 solutions.
               </p>
-              <p className="text-lg text-gray-600 mb-6">
-                As a fresh, dynamic startup less than a year old, we bring
+              <p className="text-lg text-slate-600 mb-6 leading-relaxed">
+                As a focused firm incorporated in 2025, we bring
                 together passionate technologists who believe that every
                 business, regardless of size, deserves access to world-class
                 technology solutions that drive growth and innovation.
               </p>
-              <p className="text-lg text-gray-600">
-                Though we&apos;re just beginning our journey, our team brings
+              <p className="text-lg text-slate-600 leading-relaxed">
+                Though we&apos;re early in our journey, our team brings
                 years of combined experience and expertise, ready to become a
                 trusted partner for enterprises and startups alike, delivering
                 transformative solutions that help our clients stay ahead in an
                 increasingly digital world.
               </p>
             </div>
-            <div className="bg-gray-100 rounded-lg p-8">
+            <div className="bg-slate-50 border border-slate-200 rounded-xl p-8">
               <div className="text-center">
-                <Target className="h-16 w-16 text-blue-600 mx-auto mb-4" />
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  Our Mission
+                <div className="w-14 h-14 bg-slate-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <Target className="h-7 w-7 text-slate-700" />
+                </div>
+                <h3 className="text-xl font-semibold text-slate-900 mb-4">
+                  Our mission
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-slate-600 text-sm leading-relaxed">
                   To empower businesses with innovative technology solutions
                   that drive growth, efficiency, and competitive advantage in
                   the digital age.
@@ -119,13 +120,13 @@ export default function AboutPage() {
       </section>
 
       {/* Our Values */}
-      <section className="section-padding bg-gray-50">
+      <section className="section-padding bg-slate-50 border-b border-slate-200/80">
         <div className="container-custom">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Our Values
+          <div className="max-w-2xl mb-14">
+            <h2 className="text-3xl md:text-4xl font-semibold text-slate-900 mb-4 tracking-tight">
+              Our values
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-slate-600 leading-relaxed">
               The principles that guide everything we do and every solution we
               deliver.
             </p>
@@ -133,14 +134,19 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value) => (
-              <div key={value.title} className="text-center">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <value.icon className="h-8 w-8 text-blue-600" />
+              <div
+                key={value.title}
+                className="bg-white border border-slate-200 rounded-xl p-6 text-left shadow-sm"
+              >
+                <div className="w-11 h-11 bg-slate-100 rounded-lg flex items-center justify-center mb-4">
+                  <value.icon className="h-5 w-5 text-slate-700" />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                <h3 className="text-lg font-semibold text-slate-900 mb-2">
                   {value.title}
                 </h3>
-                <p className="text-gray-600">{value.description}</p>
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  {value.description}
+                </p>
               </div>
             ))}
           </div>
@@ -148,15 +154,17 @@ export default function AboutPage() {
       </section>
 
       {/* Stats */}
-      <section className="section-padding bg-blue-600">
+      <section className="section-padding bg-slate-900 text-white border-y border-slate-800">
         <div className="container-custom">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat) => (
-              <div key={stat.label} className="text-center">
-                <div className="text-4xl md:text-5xl font-bold text-white mb-2">
+              <div key={stat.label} className="text-center md:text-left">
+                <div className="text-3xl md:text-4xl font-semibold text-white mb-2 tabular-nums tracking-tight">
                   {stat.number}
                 </div>
-                <div className="text-blue-100">{stat.label}</div>
+                <div className="text-slate-400 text-sm leading-snug">
+                  {stat.label}
+                </div>
               </div>
             ))}
           </div>
@@ -164,54 +172,54 @@ export default function AboutPage() {
       </section>
 
       {/* Our Approach */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-white border-b border-slate-100">
         <div className="container-custom">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Our Approach
+          <div className="max-w-2xl mb-14">
+            <h2 className="text-3xl md:text-4xl font-semibold text-slate-900 mb-4 tracking-tight">
+              Our approach
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-slate-600 leading-relaxed">
               We follow a proven methodology that ensures successful project
               delivery and client satisfaction.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <TrendingUp className="h-8 w-8 text-green-600" />
+            <div className="border border-slate-200 rounded-xl p-8 bg-slate-50/50">
+              <div className="w-11 h-11 bg-slate-100 rounded-lg flex items-center justify-center mb-4">
+                <TrendingUp className="h-5 w-5 text-slate-700" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                Strategic Planning
+              <h3 className="text-lg font-semibold text-slate-900 mb-2">
+                Strategic planning
               </h3>
-              <p className="text-gray-600">
+              <p className="text-slate-600 text-sm leading-relaxed">
                 We begin by understanding your business goals and developing a
                 comprehensive strategy that aligns technology with your
                 objectives.
               </p>
             </div>
 
-            <div className="text-center">
-              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Award className="h-8 w-8 text-purple-600" />
+            <div className="border border-slate-200 rounded-xl p-8 bg-slate-50/50">
+              <div className="w-11 h-11 bg-slate-100 rounded-lg flex items-center justify-center mb-4">
+                <Award className="h-5 w-5 text-slate-700" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                Expert Execution
+              <h3 className="text-lg font-semibold text-slate-900 mb-2">
+                Expert execution
               </h3>
-              <p className="text-gray-600">
+              <p className="text-slate-600 text-sm leading-relaxed">
                 Our experienced team delivers solutions using best practices and
                 cutting-edge technologies, ensuring quality and performance.
               </p>
             </div>
 
-            <div className="text-center">
-              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Users className="h-8 w-8 text-orange-600" />
+            <div className="border border-slate-200 rounded-xl p-8 bg-slate-50/50">
+              <div className="w-11 h-11 bg-slate-100 rounded-lg flex items-center justify-center mb-4">
+                <Users className="h-5 w-5 text-slate-700" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                Ongoing Support
+              <h3 className="text-lg font-semibold text-slate-900 mb-2">
+                Ongoing support
               </h3>
-              <p className="text-gray-600">
+              <p className="text-slate-600 text-sm leading-relaxed">
                 We provide continuous support and maintenance to ensure your
                 solutions remain optimal and continue to drive value.
               </p>
@@ -221,21 +229,21 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-blue-600">
+      <section className="section-padding bg-slate-900 text-white border-t border-slate-800">
         <div className="container-custom">
-          <div className="text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Ready to Work With Us?
+          <div className="max-w-2xl">
+            <h2 className="text-3xl md:text-4xl font-semibold mb-4 tracking-tight">
+              Work with Picoids
             </h2>
-            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-              Let&apos;s discuss how our expertise can help transform your
-              business and drive success.
+            <p className="text-lg text-slate-300 mb-8 leading-relaxed">
+              Share your objectives—we&apos;ll respond with a concise view of
+              how we can support delivery and advisory needs.
             </p>
             <Link
               href="/contact"
-              className="bg-white text-blue-600 hover:bg-gray-100 font-semibold py-3 px-8 rounded-lg transition-colors duration-200 inline-flex items-center"
+              className="inline-flex items-center rounded-md bg-white px-8 py-3.5 text-base font-medium text-slate-900 shadow-sm hover:bg-slate-100 transition-colors"
             >
-              Get Started Today
+              Contact us
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </div>

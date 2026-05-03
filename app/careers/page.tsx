@@ -17,30 +17,30 @@ export default function CareersPage() {
       <Header />
 
       {/* Job Listings */}
-      <section className="section-padding bg-gray-50">
+      <section className="section-padding bg-slate-50 border-b border-slate-200/80">
         <div className="container-custom">
-          <div className="text-center mb-16">
-            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <div className="max-w-3xl mb-14">
+            <h1 className="text-4xl md:text-5xl font-semibold text-slate-900 mb-4 tracking-tight">
               Careers at Picoids
             </h1>
-            <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-4">
-              Open Positions
+            <h2 className="text-xl font-semibold text-slate-800 mb-4">
+              Open positions
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Join our team and grow with us in a dynamic technology
-              environment.
+            <p className="text-lg text-slate-600 leading-relaxed">
+              Join a focused consultancy building serious systems—mentorship,
+              modern tooling, and growth without unnecessary hierarchy.
             </p>
           </div>
 
           {/* Jobs Grid */}
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-lg p-8 shadow-sm hover:shadow-md transition-shadow">
+          <div className="max-w-4xl">
+            <div className="bg-white rounded-xl border border-slate-200 p-8 shadow-sm hover:border-slate-300 transition-colors">
               <div className="flex justify-between items-start mb-6">
                 <div>
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-3">
+                  <h3 className="text-2xl font-semibold text-slate-900 mb-3">
                     Assistant Engineer
                   </h3>
-                  <div className="flex items-center space-x-6 text-sm text-gray-600">
+                  <div className="flex items-center flex-wrap gap-x-6 gap-y-2 text-sm text-slate-600">
                     <div className="flex items-center">
                       <MapPin className="h-4 w-4 mr-2" />
                       Bikaner, Rajasthan, India
@@ -55,16 +55,16 @@ export default function CareersPage() {
                     </div>
                   </div>
                 </div>
-                <span className="text-sm text-gray-500 bg-green-100 text-green-800 px-3 py-1 rounded-full">
-                  New Position
+                <span className="text-xs font-medium uppercase tracking-wide border border-slate-200 bg-slate-50 text-slate-700 px-2.5 py-1 rounded-md">
+                  New role
                 </span>
               </div>
 
               <div className="mb-6">
-                <h4 className="text-lg font-semibold text-gray-900 mb-3">
-                  Job Description
+                <h4 className="text-lg font-semibold text-slate-900 mb-3">
+                  Job description
                 </h4>
-                <p className="text-gray-600 mb-4">
+                <p className="text-slate-600 mb-4 leading-relaxed">
                   We are looking for passionate Assistant Engineers who are
                   eager to learn and grow in a fast-paced technology
                   environment. This is an excellent opportunity for recent
@@ -74,42 +74,42 @@ export default function CareersPage() {
               </div>
 
               <div className="mb-6">
-                <h4 className="text-lg font-semibold text-gray-900 mb-3">
+                <h4 className="text-lg font-semibold text-slate-900 mb-3">
                   Requirements
                 </h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-3">
                     <div className="flex items-start space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="h-5 w-5 text-slate-600 mt-0.5 flex-shrink-0" />
                       <div>
-                        <h5 className="font-medium text-gray-900">
+                        <h5 className="font-medium text-slate-900">
                           Programming Knowledge
                         </h5>
-                        <p className="text-sm text-gray-600">
+                        <p className="text-sm text-slate-600 leading-relaxed">
                           Knowledge of any programming language (Java, Python,
                           JavaScript, C++, etc.)
                         </p>
                       </div>
                     </div>
                     <div className="flex items-start space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="h-5 w-5 text-slate-600 mt-0.5 flex-shrink-0" />
                       <div>
-                        <h5 className="font-medium text-gray-900">
+                        <h5 className="font-medium text-slate-900">
                           Learning Attitude
                         </h5>
-                        <p className="text-sm text-gray-600">
+                        <p className="text-sm text-slate-600 leading-relaxed">
                           Ready to work hard and learn any technology as
                           required
                         </p>
                       </div>
                     </div>
                     <div className="flex items-start space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="h-5 w-5 text-slate-600 mt-0.5 flex-shrink-0" />
                       <div>
-                        <h5 className="font-medium text-gray-900">
+                        <h5 className="font-medium text-slate-900">
                           Office Location
                         </h5>
-                        <p className="text-sm text-gray-600">
+                        <p className="text-sm text-slate-600 leading-relaxed">
                           Must be willing to work from office in Bikaner,
                           Rajasthan
                         </p>
@@ -118,34 +118,34 @@ export default function CareersPage() {
                   </div>
                   <div className="space-y-3">
                     <div className="flex items-start space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="h-5 w-5 text-slate-600 mt-0.5 flex-shrink-0" />
                       <div>
-                        <h5 className="font-medium text-gray-900">
+                        <h5 className="font-medium text-slate-900">
                           Communication Skills
                         </h5>
-                        <p className="text-sm text-gray-600">
+                        <p className="text-sm text-slate-600 leading-relaxed">
                           Excellent verbal and written communication skills
                         </p>
                       </div>
                     </div>
                     <div className="flex items-start space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="h-5 w-5 text-slate-600 mt-0.5 flex-shrink-0" />
                       <div>
-                        <h5 className="font-medium text-gray-900">
+                        <h5 className="font-medium text-slate-900">
                           Academic Record
                         </h5>
-                        <p className="text-sm text-gray-600">
+                        <p className="text-sm text-slate-600 leading-relaxed">
                           Good academic track record throughout education
                         </p>
                       </div>
                     </div>
                     <div className="flex items-start space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="h-5 w-5 text-slate-600 mt-0.5 flex-shrink-0" />
                       <div>
-                        <h5 className="font-medium text-gray-900">
+                        <h5 className="font-medium text-slate-900">
                           Team Player
                         </h5>
-                        <p className="text-sm text-gray-600">
+                        <p className="text-sm text-slate-600 leading-relaxed">
                           Ability to work collaboratively in a team environment
                         </p>
                       </div>
@@ -155,25 +155,24 @@ export default function CareersPage() {
               </div>
 
               <div className="mb-6">
-                <h4 className="text-lg font-semibold text-gray-900 mb-3">
-                  What We Offer
+                <h4 className="text-lg font-semibold text-slate-900 mb-3">
+                  What we offer
                 </h4>
                 <div className="flex flex-wrap gap-2">
-                  <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">
-                    Mentorship & Training
-                  </span>
-                  <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">
-                    Career Growth
-                  </span>
-                  <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">
-                    Modern Tech Stack
-                  </span>
-                  <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">
-                    Competitive Salary
-                  </span>
-                  <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">
-                    Work-Life Balance
-                  </span>
+                  {[
+                    "Mentorship & training",
+                    "Career growth",
+                    "Modern tech stack",
+                    "Competitive salary",
+                    "Work-life balance",
+                  ].map((label) => (
+                    <span
+                      key={label}
+                      className="border border-slate-200 bg-slate-50 text-slate-700 px-2.5 py-1 rounded-md text-xs font-medium"
+                    >
+                      {label}
+                    </span>
+                  ))}
                 </div>
               </div>
 
@@ -199,14 +198,14 @@ export default function CareersPage() {
       </section>
 
       {/* Culture Section */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-white border-t border-slate-100">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                Our Culture
+              <h2 className="text-3xl font-semibold text-slate-900 mb-6 tracking-tight">
+                Our culture
               </h2>
-              <p className="text-lg text-gray-600 mb-6">
+              <p className="text-lg text-slate-600 mb-6 leading-relaxed">
                 At Picoids, we foster a culture of innovation, collaboration,
                 and continuous learning. We believe in empowering our team
                 members to take ownership of their work and make meaningful
@@ -214,46 +213,46 @@ export default function CareersPage() {
               </p>
               <div className="space-y-4">
                 <div className="flex items-start space-x-3">
-                  <CheckCircle className="h-6 w-6 text-green-600 mt-0.5" />
+                  <CheckCircle className="h-6 w-6 text-slate-600 mt-0.5 shrink-0" />
                   <div>
-                    <h3 className="font-semibold text-gray-900">
+                    <h3 className="font-semibold text-slate-900">
                       Innovation-Driven
                     </h3>
-                    <p className="text-gray-600 text-sm">
+                    <p className="text-slate-600 text-sm leading-relaxed">
                       We encourage creative thinking and experimentation
                     </p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <CheckCircle className="h-6 w-6 text-green-600 mt-0.5" />
+                  <CheckCircle className="h-6 w-6 text-slate-600 mt-0.5 shrink-0" />
                   <div>
-                    <h3 className="font-semibold text-gray-900">
+                    <h3 className="font-semibold text-slate-900">
                       Collaborative Environment
                     </h3>
-                    <p className="text-gray-600 text-sm">
+                    <p className="text-slate-600 text-sm leading-relaxed">
                       Work with talented individuals across different
                       disciplines
                     </p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <CheckCircle className="h-6 w-6 text-green-600 mt-0.5" />
+                  <CheckCircle className="h-6 w-6 text-slate-600 mt-0.5 shrink-0" />
                   <div>
-                    <h3 className="font-semibold text-gray-900">
+                    <h3 className="font-semibold text-slate-900">
                       Growth Opportunities
                     </h3>
-                    <p className="text-gray-600 text-sm">
+                    <p className="text-slate-600 text-sm leading-relaxed">
                       Continuous learning and career development support
                     </p>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="bg-gray-50 rounded-lg p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                Don&apos;t See Your Role?
+            <div className="bg-slate-50 border border-slate-200 rounded-xl p-8">
+              <h3 className="text-xl font-semibold text-slate-900 mb-4">
+                Don&apos;t see your role?
               </h3>
-              <p className="text-gray-600 mb-6">
+              <p className="text-slate-600 mb-6 text-sm leading-relaxed">
                 We&apos;re always looking for talented individuals to join our
                 team. Send us your resume and let us know how you can
                 contribute.
