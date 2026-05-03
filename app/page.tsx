@@ -22,9 +22,9 @@ export default function Home() {
       <section className="bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 section-padding relative overflow-hidden">
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 left-10 w-20 h-20 bg-blue-200 rounded-full opacity-20 animate-pulse"></div>
-          <div className="absolute top-40 right-20 w-16 h-16 bg-indigo-200 rounded-full opacity-30 animate-bounce"></div>
-          <div className="absolute bottom-20 left-1/4 w-12 h-12 bg-purple-200 rounded-full opacity-25 animate-ping"></div>
+          <div className="absolute top-20 left-10 w-20 h-20 bg-blue-200 rounded-full opacity-20 motion-safe:animate-pulse"></div>
+          <div className="absolute top-40 right-20 w-16 h-16 bg-indigo-200 rounded-full opacity-30 motion-safe:animate-bounce"></div>
+          <div className="absolute bottom-20 left-1/4 w-12 h-12 bg-purple-200 rounded-full opacity-25 motion-safe:animate-ping"></div>
         </div>
 
         <div className="container-custom relative z-10">
@@ -32,7 +32,7 @@ export default function Home() {
             {/* Left Column - Content */}
             <div className="text-left">
               <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-6 animate-fade-in">
-                <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse"></span>
+                <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 motion-safe:animate-pulse"></span>
                 Fresh Perspective • 2025 Incorporated
               </div>
 
@@ -55,14 +55,14 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-6 mb-8">
                 <Link
                   href="/services"
-                  className="btn-primary inline-flex items-center text-lg px-8 py-4 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                  className="btn-primary inline-flex items-center text-lg px-8 py-4 shadow-lg hover:shadow-xl transition-all duration-300 motion-safe:transform motion-safe:hover:scale-105"
                 >
                   Explore Services
                   <ArrowRight className="ml-3 h-5 w-5" />
                 </Link>
                 <Link
                   href="/contact"
-                  className="btn-secondary inline-flex items-center text-lg px-8 py-4 border-2 hover:bg-slate-50 transition-all duration-300 transform hover:scale-105"
+                  className="btn-secondary inline-flex items-center text-lg px-8 py-4 border-2 hover:bg-slate-50 transition-all duration-300 motion-safe:transform motion-safe:hover:scale-105"
                 >
                   Get a Consultation
                   <ArrowRight className="ml-3 h-5 w-5" />
@@ -72,7 +72,7 @@ export default function Home() {
 
             {/* Right Column - Key Benefits */}
             <div className="space-y-6">
-              <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+              <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 motion-safe:transform motion-safe:hover:scale-105">
                 <div className="flex items-center space-x-4">
                   <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-3">
                     <Brain className="h-8 w-8 text-blue-600" />
@@ -88,7 +88,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+              <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 motion-safe:transform motion-safe:hover:scale-105">
                 <div className="flex items-center space-x-4">
                   <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-3">
                     <Zap className="h-8 w-8 text-green-600" />
@@ -104,7 +104,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+              <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 motion-safe:transform motion-safe:hover:scale-105">
                 <div className="flex items-center space-x-4">
                   <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-3">
                     <Shield className="h-8 w-8 text-purple-600" />
@@ -141,7 +141,7 @@ export default function Home() {
             {/* Left Column - Content */}
             <div className="space-y-8">
               <div className="flex items-start space-x-4 group">
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl flex items-center justify-center flex-shrink-0 motion-safe:group-hover:scale-110 transition-transform motion-reduce:transition-none duration-300">
                   <Brain className="h-6 w-6 text-blue-600" />
                 </div>
                 <div>
@@ -158,7 +158,7 @@ export default function Home() {
               </div>
 
               <div className="flex items-start space-x-4 group">
-                <div className="w-12 h-12 bg-gradient-to-br from-green-50 to-green-100 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-12 h-12 bg-gradient-to-br from-green-50 to-green-100 rounded-xl flex items-center justify-center flex-shrink-0 motion-safe:group-hover:scale-110 transition-transform motion-reduce:transition-none duration-300">
                   <Zap className="h-6 w-6 text-green-600" />
                 </div>
                 <div>
@@ -175,7 +175,7 @@ export default function Home() {
               </div>
 
               <div className="flex items-start space-x-4 group">
-                <div className="w-12 h-12 bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-12 h-12 bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl flex items-center justify-center flex-shrink-0 motion-safe:group-hover:scale-110 transition-transform motion-reduce:transition-none duration-300">
                   <Shield className="h-6 w-6 text-purple-600" />
                 </div>
                 <div>
@@ -193,7 +193,7 @@ export default function Home() {
               </div>
 
               <div className="flex items-start space-x-4 group">
-                <div className="w-12 h-12 bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-12 h-12 bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl flex items-center justify-center flex-shrink-0 motion-safe:group-hover:scale-110 transition-transform motion-reduce:transition-none duration-300">
                   <Users className="h-6 w-6 text-orange-600" />
                 </div>
                 <div>
@@ -318,8 +318,8 @@ export default function Home() {
               </div>
 
               {/* Decorative Elements */}
-              <div className="absolute -top-4 -right-4 w-8 h-8 bg-yellow-400 rounded-full opacity-60 animate-bounce"></div>
-              <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-pink-400 rounded-full opacity-60 animate-pulse"></div>
+              <div className="absolute -top-4 -right-4 w-8 h-8 bg-yellow-400 rounded-full opacity-60 motion-safe:animate-bounce"></div>
+              <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-pink-400 rounded-full opacity-60 motion-safe:animate-pulse"></div>
             </div>
           </div>
         </div>
@@ -343,7 +343,7 @@ export default function Home() {
               href="/services/web-development"
               className="group block bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 hover:border-slate-200"
             >
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl flex items-center justify-center mb-6 motion-safe:group-hover:scale-110 transition-transform motion-reduce:transition-none duration-300">
                 <Globe className="h-8 w-8 text-blue-600" />
               </div>
               <h3 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-blue-600 transition-colors duration-300">
@@ -363,7 +363,7 @@ export default function Home() {
               href="/services/mobile-development"
               className="group block bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 hover:border-slate-200"
             >
-              <div className="w-16 h-16 bg-gradient-to-br from-green-50 to-green-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-16 h-16 bg-gradient-to-br from-green-50 to-green-100 rounded-2xl flex items-center justify-center mb-6 motion-safe:group-hover:scale-110 transition-transform motion-reduce:transition-none duration-300">
                 <Smartphone className="h-8 w-8 text-green-600" />
               </div>
               <h3 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-green-600 transition-colors duration-300">
@@ -383,7 +383,7 @@ export default function Home() {
               href="/services/cloud-solutions"
               className="group block bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 hover:border-slate-200"
             >
-              <div className="w-16 h-16 bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-16 h-16 bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl flex items-center justify-center mb-6 motion-safe:group-hover:scale-110 transition-transform motion-reduce:transition-none duration-300">
                 <Cloud className="h-8 w-8 text-purple-600" />
               </div>
               <h3 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-purple-600 transition-colors duration-300">
@@ -403,7 +403,7 @@ export default function Home() {
               href="/services/consulting"
               className="group block bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 hover:border-slate-200"
             >
-              <div className="w-16 h-16 bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-16 h-16 bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl flex items-center justify-center mb-6 motion-safe:group-hover:scale-110 transition-transform motion-reduce:transition-none duration-300">
                 <Users className="h-8 w-8 text-orange-600" />
               </div>
               <h3 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-orange-600 transition-colors duration-300">
@@ -423,7 +423,7 @@ export default function Home() {
               href="/services/going-mobile"
               className="group block bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 hover:border-slate-200"
             >
-              <div className="w-16 h-16 bg-gradient-to-br from-teal-50 to-teal-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-16 h-16 bg-gradient-to-br from-teal-50 to-teal-100 rounded-2xl flex items-center justify-center mb-6 motion-safe:group-hover:scale-110 transition-transform motion-reduce:transition-none duration-300">
                 <Smartphone className="h-8 w-8 text-teal-600" />
               </div>
               <h3 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-teal-600 transition-colors duration-300">
@@ -443,7 +443,7 @@ export default function Home() {
               href="/services/custom-solutions"
               className="group block bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 hover:border-slate-200"
             >
-              <div className="w-16 h-16 bg-gradient-to-br from-indigo-50 to-indigo-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-16 h-16 bg-gradient-to-br from-indigo-50 to-indigo-100 rounded-2xl flex items-center justify-center mb-6 motion-safe:group-hover:scale-110 transition-transform motion-reduce:transition-none duration-300">
                 <Settings className="h-8 w-8 text-indigo-600" />
               </div>
               <h3 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-indigo-600 transition-colors duration-300">
