@@ -12,6 +12,7 @@ import {
   Users,
   BarChart3,
   CheckCircle,
+  Layers,
 } from "lucide-react";
 
 export const metadata = {
@@ -74,6 +75,23 @@ export default function ServicesPage() {
         "Improve performance, cost-efficiency, and scalability through modernization",
       keyAreas: ["Legacy Migration", "Microservices", "Containers", "DevOps"],
       cta: "Modernize your apps for performance",
+    },
+    {
+      icon: Layers,
+      title: "Enterprise Business Platforms",
+      slug: "enterprise-platforms",
+      description:
+        "SAP, Salesforce, ServiceNow, and similar platforms—integrations, migrations, and governed delivery.",
+      intro:
+        "Connect ERP, CRM, and enterprise workflow platforms with integrations and delivery discipline",
+      keyAreas: [
+        "SAP",
+        "Salesforce",
+        "ServiceNow",
+        "Integrations",
+        "Governance",
+      ],
+      cta: "Explore enterprise platforms",
     },
     {
       icon: Smartphone,

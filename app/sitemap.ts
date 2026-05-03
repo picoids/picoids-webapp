@@ -9,6 +9,7 @@ const SERVICE_SLUGS = [
   "application-development",
   "app-maintenance",
   "app-modernization",
+  "enterprise-platforms",
   "going-mobile",
   "ai-integration",
   "technology-consulting",

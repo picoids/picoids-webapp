@@ -12,6 +12,7 @@ import {
   Users,
   Globe,
   Settings,
+  Layers,
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -340,25 +341,6 @@ export default function Home() {
             </Link>
 
             <Link
-              href="/services/mobile-development"
-              className="group flex flex-col bg-theme-surface rounded-xl border border-theme-border p-8 shadow-sm hover:shadow-md hover:border-theme-border-strong transition-all duration-200"
-            >
-              <div className="w-14 h-14 bg-theme-surface-soft rounded-lg flex items-center justify-center mb-6">
-                <Smartphone className="h-7 w-7 text-theme-icon-strong" />
-              </div>
-              <h3 className="text-xl font-semibold text-theme-fg mb-3 group-hover:text-theme-icon-strong">
-                Mobile development
-              </h3>
-              <p className="text-theme-muted text-sm leading-relaxed mb-8 flex-1">
-                Native and cross-platform mobile solutions for iOS and Android.
-              </p>
-              <span className="inline-flex items-center text-sm font-medium text-theme-fg">
-                View capability
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-              </span>
-            </Link>
-
-            <Link
               href="/services/cloud-solutions"
               className="group flex flex-col bg-theme-surface rounded-xl border border-theme-border p-8 shadow-sm hover:shadow-md hover:border-theme-border-strong transition-all duration-200"
             >
@@ -371,6 +353,26 @@ export default function Home() {
               <p className="text-theme-muted text-sm leading-relaxed mb-8 flex-1">
                 Migration, platform engineering, and cost-aware operations on
                 major cloud providers.
+              </p>
+              <span className="inline-flex items-center text-sm font-medium text-theme-fg">
+                View capability
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+              </span>
+            </Link>
+
+            <Link
+              href="/services/enterprise-platforms"
+              className="group flex flex-col bg-theme-surface rounded-xl border border-theme-border p-8 shadow-sm hover:shadow-md hover:border-theme-border-strong transition-all duration-200"
+            >
+              <div className="w-14 h-14 bg-theme-surface-soft rounded-lg flex items-center justify-center mb-6">
+                <Layers className="h-7 w-7 text-theme-icon-strong" />
+              </div>
+              <h3 className="text-xl font-semibold text-theme-fg mb-3 group-hover:text-theme-icon-strong">
+                Enterprise platforms
+              </h3>
+              <p className="text-theme-muted text-sm leading-relaxed mb-8 flex-1">
+                SAP, Salesforce, ServiceNow, and similar stacks—integrations,
+                migrations, and governed delivery.
               </p>
               <span className="inline-flex items-center text-sm font-medium text-theme-fg">
                 View capability

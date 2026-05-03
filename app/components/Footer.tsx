@@ -13,6 +13,10 @@ const Footer = () => {
     },
     { name: "App Maintenance & Support", href: "/services/app-maintenance" },
     { name: "App Modernization", href: "/services/app-modernization" },
+    {
+      name: "Enterprise Platforms",
+      href: "/services/enterprise-platforms",
+    },
     { name: "Going Mobile", href: "/services/going-mobile" },
     { name: "AI Integration", href: "/services/ai-integration" },
     { name: "Technology Consulting", href: "/services/technology-consulting" },

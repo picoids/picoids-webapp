@@ -531,6 +531,51 @@ const services = {
       },
     ],
   },
+  "enterprise-platforms": {
+    title: "Enterprise Business Platforms",
+    headline: "SAP, Salesforce & ServiceNow — Implemented Right",
+    intro:
+      "Implementation, integration, and optimization across ERP, CRM, and enterprise workflow platforms your business already runs on.",
+    description:
+      "Whether you are extending SAP landscapes, scaling Salesforce for revenue and service teams, or maturing ServiceNow for ITSM, HR, customer service, and automation, we help you connect systems cleanly, reduce manual work, and ship changes with governance. Our focus is practical delivery: clear interfaces, reliable integrations, documented processes, and roadmaps that balance quick wins with platform standards.",
+    keyAreas: [
+      "SAP",
+      "Salesforce",
+      "ServiceNow",
+      "Integrations & APIs",
+      "Governance & delivery",
+    ],
+    cta: "Plan your platform roadmap",
+    benefits: [
+      "Fewer brittle point-to-point integrations and clearer ownership",
+      "Faster, safer releases aligned to enterprise change controls",
+      "Cleaner handoffs and shared truth across ERP, CRM, and ServiceNow workflows",
+      "Roadmaps that respect licensing, security, and operational reality",
+      "Hands-on practitioners—not slide-only recommendations",
+    ],
+    process: [
+      {
+        step: "Discovery",
+        description:
+          "Map current systems, pain points, and constraints across SAP, Salesforce, ServiceNow, and adjacent apps.",
+      },
+      {
+        step: "Architecture",
+        description:
+          "Define integration patterns, data flows, environments, and guardrails with your teams.",
+      },
+      {
+        step: "Implementation",
+        description:
+          "Deliver integrations, configurations, migrations, and automation in phased milestones.",
+      },
+      {
+        step: "Operate & improve",
+        description:
+          "Stabilize runbooks, monitoring, and backlog hygiene for steady-state improvement.",
+      },
+    ],
+  },
   "custom-solutions": {
     title: "Custom Solutions",
     headline: "Tailored Software Solutions for Your Business",
