@@ -2,6 +2,14 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Link from "next/link";
 import { ArrowLeft, FileText, Calendar, Scale, Users } from "lucide-react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Terms of Service | Picoids Technology and Consulting",
+  description:
+    "Terms governing use of the Picoids website and services. Please read before engaging our consulting offerings.",
+  robots: { index: true, follow: true },
+};
 
 export default function TermsPage() {
   return (

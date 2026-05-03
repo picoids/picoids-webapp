@@ -20,7 +20,10 @@ export default function CareersPage() {
       <section className="section-padding bg-gray-50">
         <div className="container-custom">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Careers at Picoids
+            </h1>
+            <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-4">
               Open Positions
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">

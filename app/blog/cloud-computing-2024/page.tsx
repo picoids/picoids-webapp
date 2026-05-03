@@ -5,7 +5,7 @@ import { ArrowLeft, Calendar, User, Clock, Share2 } from "lucide-react";
 
 export const metadata = {
   title:
-    "The Future of Cloud Computing in 2024: Trends and Predictions - Picoids Technology and Consulting",
+    "The Future of Cloud Computing: Trends and Predictions | Picoids Technology and Consulting",
   description:
     "Explore the latest trends and technologies shaping the cloud computing landscape, from edge computing to serverless architectures.",
 };

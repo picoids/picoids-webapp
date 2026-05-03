@@ -2,6 +2,14 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Link from "next/link";
 import { ArrowLeft, Shield, Eye, Lock, Users } from "lucide-react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy | Picoids Technology and Consulting",
+  description:
+    "How Picoids collects, uses, and protects personal information when you use our website and services.",
+  robots: { index: true, follow: true },
+};
 
 export default function PrivacyPage() {
   return (
