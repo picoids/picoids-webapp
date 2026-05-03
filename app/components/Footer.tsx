@@ -62,8 +62,9 @@ const Footer = () => {
               <a
                 href="https://www.linkedin.com/company/picoids/"
                 className="text-gray-400 hover:text-white transition-colors"
+                aria-label="Picoids on LinkedIn"
               >
-                <Linkedin className="h-5 w-5" />
+                <Linkedin className="h-5 w-5" aria-hidden />
               </a>
             </div>
           </div>

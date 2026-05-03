@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -33,6 +33,17 @@ const Header = () => {
     }
     return pathname.startsWith(href);
   };
+
+  useEffect(() => {
+    if (!isServicesOpen && !isMenuOpen) return;
+    const closeOnEscape = (e: KeyboardEvent) => {
+      if (e.key !== "Escape") return;
+      setIsServicesOpen(false);
+      setIsMenuOpen(false);
+    };
+    document.addEventListener("keydown", closeOnEscape);
+    return () => document.removeEventListener("keydown", closeOnEscape);
+  }, [isServicesOpen, isMenuOpen]);
 
   const getLinkClasses = (href: string) => {
     const baseClasses = "transition-colors";
@@ -76,31 +87,42 @@ const Header = () => {
             </Link>
 
             {/* Services Dropdown */}
-            <div className="relative group">
+            <div
+              className="relative group"
+              onMouseEnter={() => setIsServicesOpen(true)}
+              onMouseLeave={() => setIsServicesOpen(false)}
+            >
               <button
+                type="button"
                 className={`flex items-center text-slate-700 hover:text-blue-600 transition-colors ${
                   isActive("/services")
                     ? "text-blue-600 font-semibold border-b-2 border-blue-600"
                     : ""
                 }`}
-                onMouseEnter={() => setIsServicesOpen(true)}
+                aria-expanded={isServicesOpen}
+                aria-haspopup="true"
+                aria-controls="desktop-services-menu"
+                onClick={() => setIsServicesOpen((open) => !open)}
               >
                 Services
-                <ChevronDown className="ml-1 h-4 w-4" />
+                <ChevronDown className="ml-1 h-4 w-4" aria-hidden />
               </button>
 
               <div
+                id="desktop-services-menu"
+                role="region"
+                aria-label="Service offerings"
+                aria-hidden={!isServicesOpen}
                 className={`absolute top-full left-0 mt-2 w-80 bg-white/95 backdrop-blur-md shadow-xl rounded-xl border border-slate-200 py-2 transition-all duration-200 ${
-                  isServicesOpen ? "opacity-100 visible" : "opacity-0 invisible"
+                  isServicesOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
                 }`}
-                onMouseEnter={() => setIsServicesOpen(true)}
-                onMouseLeave={() => setIsServicesOpen(false)}
               >
                 <div className="grid grid-cols-1 gap-1">
                   {services.map((service) => (
                     <Link
                       key={service.name}
                       href={service.href}
+                      tabIndex={isServicesOpen ? undefined : -1}
                       className={`px-4 py-2 hover:bg-slate-50 transition-colors duration-200 ${getLinkClasses(
                         service.href
                       )}`}
@@ -136,7 +158,11 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
+            type="button"
             className="md:hidden p-2 text-slate-700 hover:text-blue-600 transition-colors"
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-primary-nav"
+            aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? (
@@ -149,8 +175,11 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden border-t border-slate-200 py-4 bg-white/95 backdrop-blur-md">
-            <nav className="flex flex-col space-y-4">
+          <div
+            id="mobile-primary-nav"
+            className="md:hidden border-t border-slate-200 py-4 bg-white/95 backdrop-blur-md"
+          >
+            <nav className="flex flex-col space-y-4" aria-label="Mobile primary">
               <Link href="/" className={getLinkClasses("/")}>
                 Home
               </Link>
