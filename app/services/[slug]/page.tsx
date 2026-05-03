@@ -3,6 +3,7 @@ import Footer from "../../components/Footer";
 import Link from "next/link";
 import { ArrowRight, CheckCircle, Users, Clock, Award } from "lucide-react";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 
 interface ServicePageProps {
   params: Promise<{
@@ -566,6 +567,26 @@ const services = {
     ],
   },
 };
+
+export async function generateMetadata({
+  params,
+}: ServicePageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const service = services[slug as keyof typeof services];
+  if (!service) {
+    return {
+      title: "Service | Picoids Technology and Consulting",
+    };
+  }
+  return {
+    title: `${service.title} | Picoids Technology and Consulting`,
+    description: service.description,
+    openGraph: {
+      title: service.headline,
+      description: service.intro,
+    },
+  };
+}
 
 export default async function ServicePage({ params }: ServicePageProps) {
   const { slug } = await params;
