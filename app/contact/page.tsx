@@ -25,6 +25,7 @@ function ContactForm() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [formError, setFormError] = useState<string | null>(null);
   const [selectedTimezone, setSelectedTimezone] = useState("");
   const [convertedHours, setConvertedHours] = useState({
     morning: "",
@@ -122,6 +123,7 @@ function ContactForm() {
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
     >
   ) => {
+    setFormError(null);
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -130,19 +132,19 @@ function ContactForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Verify reCAPTCHA is loaded
+    setFormError(null);
+
     if (!executeRecaptcha) {
-      alert("reCAPTCHA is not loaded. Please refresh the page and try again.");
+      setFormError(
+        "Verification could not load. Please refresh the page and try again."
+      );
       return;
     }
 
     setIsSubmitting(true);
 
     try {
-      // Execute reCAPTCHA v3
       const token = await executeRecaptcha("contact_form");
-      console.log("reCAPTCHA token generated:", token ? "✓ Token received" : "✗ No token");
 
       const response = await fetch("/api/contact", {
         method: "POST",
@@ -175,9 +177,10 @@ function ContactForm() {
           message: "",
         });
       }, 3000);
-    } catch (error) {
-      console.error("Error sending message:", error);
-      alert("Failed to send message. Please try again or contact us directly.");
+    } catch {
+      setFormError(
+        "We couldn’t send your message. Try again or email us at connect@picoids.com."
+      );
     } finally {
       setIsSubmitting(false);
     }
@@ -203,6 +206,16 @@ function ContactForm() {
       {/* Contact Form & Info */}
       <section className="section-padding bg-white">
         <div className="container-custom">
+          <header className="max-w-3xl mb-12">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              Contact us
+            </h1>
+            <p className="text-lg text-gray-600">
+              Tell us about your goals—we typically respond within one business
+              day. For urgent matters, call or email using the details alongside.
+            </p>
+          </header>
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
             <div>
@@ -223,6 +236,14 @@ function ContactForm() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
+                  {formError ? (
+                    <div
+                      role="alert"
+                      className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800"
+                    >
+                      {formError}
+                    </div>
+                  ) : null}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label
@@ -528,7 +549,6 @@ export default function ContactPage() {
 
   // If no site key, render form without reCAPTCHA protection
   if (!reCaptchaSiteKey) {
-    console.warn("reCAPTCHA site key is not configured. CAPTCHA protection is disabled.");
     return <ContactForm />;
   }
 
