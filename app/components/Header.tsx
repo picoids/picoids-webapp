@@ -9,7 +9,14 @@ import { Menu, X, ChevronDown } from "lucide-react";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isInitiativeOpen, setIsInitiativeOpen] = useState(false);
+  const [isMobileInitiativeOpen, setIsMobileInitiativeOpen] = useState(false);
   const pathname = usePathname();
+
+  const initiatives = [
+    { name: "Picoids Labs", href: "/picoids-labs" },
+    { name: "Employee portal", href: "/employee-portal" },
+  ];
 
   const services = [
     { name: "Cloud Services", href: "/services/cloud-services" },
@@ -38,16 +45,22 @@ const Header = () => {
     return pathname.startsWith(href);
   };
 
+  const isInitiativePathActive = initiatives.some((item) =>
+    isActive(item.href)
+  );
+
   useEffect(() => {
-    if (!isServicesOpen && !isMenuOpen) return;
+    if (!isServicesOpen && !isInitiativeOpen && !isMenuOpen) return;
     const closeOnEscape = (e: KeyboardEvent) => {
       if (e.key !== "Escape") return;
       setIsServicesOpen(false);
+      setIsInitiativeOpen(false);
+      setIsMobileInitiativeOpen(false);
       setIsMenuOpen(false);
     };
     document.addEventListener("keydown", closeOnEscape);
     return () => document.removeEventListener("keydown", closeOnEscape);
-  }, [isServicesOpen, isMenuOpen]);
+  }, [isServicesOpen, isInitiativeOpen, isMenuOpen]);
 
   const getLinkClasses = (href: string) => {
     const baseClasses = "transition-colors";
@@ -93,7 +106,10 @@ const Header = () => {
             {/* Services Dropdown */}
             <div
               className="relative group"
-              onMouseEnter={() => setIsServicesOpen(true)}
+              onMouseEnter={() => {
+                setIsServicesOpen(true);
+                setIsInitiativeOpen(false);
+              }}
               onMouseLeave={() => setIsServicesOpen(false)}
             >
               <button
@@ -106,7 +122,10 @@ const Header = () => {
                 aria-expanded={isServicesOpen}
                 aria-haspopup="true"
                 aria-controls="desktop-services-menu"
-                onClick={() => setIsServicesOpen((open) => !open)}
+                onClick={() => {
+                  setIsServicesOpen((open) => !open);
+                  setIsInitiativeOpen(false);
+                }}
               >
                 Services
                 <ChevronDown className="ml-1 h-4 w-4" aria-hidden />
@@ -148,9 +167,62 @@ const Header = () => {
             <Link href="/blog" className={getLinkClasses("/blog")}>
               Insights
             </Link>
-            <Link href="/contact" className={getLinkClasses("/contact")}>
-              Contact
-            </Link>
+
+            {/* Initiative Dropdown */}
+            <div
+              className="relative group"
+              onMouseEnter={() => {
+                setIsInitiativeOpen(true);
+                setIsServicesOpen(false);
+              }}
+              onMouseLeave={() => setIsInitiativeOpen(false)}
+            >
+              <button
+                type="button"
+                className={`flex items-center text-theme-muted hover:text-theme-fg transition-colors ${
+                  isInitiativePathActive
+                    ? "text-theme-fg font-medium border-b-2 border-theme-fg"
+                    : ""
+                }`}
+                aria-expanded={isInitiativeOpen}
+                aria-haspopup="true"
+                aria-controls="desktop-initiative-menu"
+                onClick={() => {
+                  setIsInitiativeOpen((open) => !open);
+                  setIsServicesOpen(false);
+                }}
+              >
+                Initiative
+                <ChevronDown className="ml-1 h-4 w-4" aria-hidden />
+              </button>
+
+              <div
+                id="desktop-initiative-menu"
+                role="region"
+                aria-label="Picoids initiatives"
+                aria-hidden={!isInitiativeOpen}
+                className={`absolute top-full right-0 w-72 pt-2 transition-all duration-200 ${
+                  isInitiativeOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
+                }`}
+              >
+                <div className="theme-dropdown-panel">
+                  <div className="grid grid-cols-1 gap-1">
+                    {initiatives.map((item) => (
+                      <Link
+                        key={item.name}
+                        href={item.href}
+                        tabIndex={isInitiativeOpen ? undefined : -1}
+                        className={`px-4 py-2 hover:bg-theme-surface-muted transition-colors duration-200 ${getLinkClasses(
+                          item.href
+                        )}`}
+                      >
+                        {item.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
           </nav>
 
           {/* CTA Button */}
@@ -170,7 +242,12 @@ const Header = () => {
             aria-expanded={isMenuOpen}
             aria-controls="mobile-primary-nav"
             aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            onClick={() => {
+              setIsMenuOpen((open) => {
+                if (open) setIsMobileInitiativeOpen(false);
+                return !open;
+              });
+            }}
           >
             {isMenuOpen ? (
               <X className="h-6 w-6" />
@@ -200,9 +277,51 @@ const Header = () => {
               <Link href="/blog" className={getLinkClasses("/blog")}>
                 Insights
               </Link>
-              <Link href="/contact" className={getLinkClasses("/contact")}>
-                Contact
-              </Link>
+
+              <div className="flex flex-col gap-2">
+                <button
+                  type="button"
+                  className={`flex items-center justify-between text-left w-full transition-colors ${
+                    isInitiativePathActive
+                      ? "text-theme-fg font-medium border-b-2 border-theme-fg"
+                      : isMobileInitiativeOpen
+                        ? "text-theme-fg font-medium"
+                        : "text-theme-muted hover:text-theme-fg"
+                  }`}
+                  aria-expanded={isMobileInitiativeOpen}
+                  aria-controls="mobile-initiative-submenu"
+                  onClick={() =>
+                    setIsMobileInitiativeOpen((open) => !open)
+                  }
+                >
+                  Initiative
+                  <ChevronDown
+                    className={`h-4 w-4 shrink-0 transition-transform ${isMobileInitiativeOpen ? "rotate-180" : ""}`}
+                    aria-hidden
+                  />
+                </button>
+                {isMobileInitiativeOpen && (
+                  <div
+                    id="mobile-initiative-submenu"
+                    className="flex flex-col gap-2 pl-4 border-l border-theme-border ml-1"
+                  >
+                    {initiatives.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        className={getLinkClasses(item.href)}
+                        onClick={() => {
+                          setIsMenuOpen(false);
+                          setIsMobileInitiativeOpen(false);
+                        }}
+                      >
+                        {item.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+
               <Link
                 href="/contact"
                 className="btn-primary inline-block text-center shadow-sm hover:shadow-md transition-all duration-300"

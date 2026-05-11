@@ -34,9 +34,9 @@ export const metadata: Metadata = {
     description: "Technology solutions for modern businesses",
   },
   icons: {
-    icon: "/favicon.svg",
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml", sizes: "any" }],
     shortcut: "/favicon.svg",
-    apple: "/favicon.svg",
+    apple: [{ url: "/favicon.svg", type: "image/svg+xml" }],
   },
 };
 
