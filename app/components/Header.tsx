@@ -14,7 +14,7 @@ const Header = () => {
   const pathname = usePathname();
 
   const initiatives = [
-    { name: "Picoids Labs", href: "/picoids-labs" },
+    { name: "Picoids Labs", href: "https://labs.picoids.com" },
     { name: "Employee portal", href: "/employee-portal" },
   ];
 
